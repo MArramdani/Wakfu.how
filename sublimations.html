@@ -555,7 +555,7 @@
             const container = document.getElementById('runesContainer');
             
             if (runesToRender.length === 0) {
-                container.innerHTML = '<div class="no-results">No runes match your search criteria</div>';
+                container.innerHTML = '<div class="no-results">No sublimation matches your search criteria</div>';
                 return;
             }
             
@@ -577,11 +577,7 @@
                     <div class="rune-body">
                         <div class="rune-description">${rune.description}</div>
                         <div class="rune-details">
-                            <div class="detail-item">
-                                <div class="detail-label">Rarity</div>
-                                <div class="detail-value">${rune.rarity}</div>
-                            </div>
-                            <div class="detail-item">
+                            <div class="rune-description">
                                 <div class="detail-label">Level Effect</div>
                                 <div class="detail-value">${rune.effect}</div>
                             </div>
@@ -590,15 +586,20 @@
                                 <div class="detail-value">${rune.maxLevel}</div>
                             </div>
                             <div class="detail-item">
+                                <div class="detail-label">Drop Rarity</div>
+                                <div class="detail-value">${rune.rarity}</div>
+                            </div>
+                            <div class="detail-item">
                                 <div class="detail-label">Level Range</div>
                                 <div class="detail-value">${rune.levelRange}</div>
                             </div>
+                            <div class="detail-item">
+                                <div class="detail-label">Obtenation</div>
+                                <div class="detail-value">${rune.obtenation}</div>
+                            </div>
                         </div>
                     </div>
-                    <div class="rune-footer">
-                        <div class="detail-label">Obtenation</div>
-                        <div class="detail-value">${rune.obtenation}</div>
-                    </div>
+                    
                 `;
                 
                 container.appendChild(card);
