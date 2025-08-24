@@ -12,14 +12,14 @@
         body {
             background: linear-gradient(135deg, #1a2a6c, #2a5298);
             color: #fff;
-            min-height: 85vh;
+            min-height: 100vh;
+            transform: scale(0.85); /* zoom out everything inside */
             padding: 20px;
         }
 
         .container {
             max-width: 2800px;
             margin: 0 auto;
-            transform: scale(0.85); /* zoom out everything inside */
             transform-origin: top center;
         }
         
