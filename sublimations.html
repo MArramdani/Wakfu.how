@@ -1144,7 +1144,7 @@
             },
             {
                 name: "Critical Shield",
-                colors: ["极", "G", "R"],
+                colors: ["B", "G", "R"],
                 description: "[1] 5 Critical Resistance",
                 rarity: "Rare / Mythic / Legendary",
                 effect: "Per additional level: +5 Critical Resistance",
@@ -1606,7 +1606,7 @@
             return runes.filter(rune => {
                 // Search filter
                 if (searchTerm && !rune.name.toLowerCase().includes(searchTerm) && 
-                    !rune.description.toLowerCase().includes(searchTerm)) {
+                    !rune.description.toLowerCase().includes(searchTerm) && !rune.obtenation.toLowerCase().includes(searchTerm) ) {
                     return false;
                 }
                 
