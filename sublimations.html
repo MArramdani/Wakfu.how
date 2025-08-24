@@ -285,6 +285,19 @@
                 <input type="text" id="searchInput" placeholder="Search runes by name...">
                 <button class="search-btn"><i class="fas fa-search"></i></button>
             </div>
+            <div class="filter-group">
+                <select id="rarityFilter" class="filter-select">
+                    <option value="all">All Rarities</option>
+                    <option value="Rare">Rare</option>
+                    <option value="Mythic">Mythic</option>
+                    <option value="Legendary">Legendary</option>
+                </select>
+                <div class="color-filters">
+                    <button class="color-btn color-G" data-color="G" title="Green"></button>
+                    <button class="color-btn color-B" data-color="B" title="Blue"></button>
+                    <button class="color-btn color-R" data-color="R" title="Red"></button>
+                </div>
+            </div>
         </div>
         
         <div class="level-tabs" id="levelTabs">
@@ -609,6 +622,31 @@
                 if (searchTerm && !rune.name.toLowerCase().includes(searchTerm) && 
                     !rune.description.toLowerCase().includes(searchTerm)) {
                     return false;
+                }
+                
+                // Level filter
+                if (activeLevelTab !== 'all' && rune.levelRange !== activeLevelTab) {
+                    return false;
+                }
+                
+                // Rarity filter
+                if (rarityFilter !== 'all' && !rune.rarity.includes(rarityFilter)) {
+                    return false;
+                }
+                
+                // Color filter
+                if (activeColors.length > 0) {
+                    const runeColorsStr = rune.colors.join('');
+                    let hasActiveColor = false;
+                    
+                    for (const color of activeColors) {
+                        if (runeColorsStr.includes(color)) {
+                            hasActiveColor = true;
+                            break;
+                        }
+                    }
+                    
+                    if (!hasActiveColor) return false;
                 }
                 
                 return true;
