@@ -624,31 +624,6 @@
                     return false;
                 }
                 
-                // Level filter
-                if (activeLevelTab !== 'all' && rune.levelRange !== activeLevelTab) {
-                    return false;
-                }
-                
-                // Rarity filter
-                if (rarityFilter !== 'all' && !rune.rarity.includes(rarityFilter)) {
-                    return false;
-                }
-                
-                // Color filter
-                if (activeColors.length > 0) {
-                    const runeColorsStr = rune.colors.join('');
-                    let hasActiveColor = false;
-                    
-                    for (const color of activeColors) {
-                        if (runeColorsStr.includes(color)) {
-                            hasActiveColor = true;
-                            break;
-                        }
-                    }
-                    
-                    if (!hasActiveColor) return false;
-                }
-                
                 return true;
             });
         }
@@ -657,19 +632,6 @@
         document.getElementById('searchInput').addEventListener('input', function() {
             const filteredRunes = filterRunes();
             renderRunes(filteredRunes);
-        });
-        
-        document.getElementById('rarityFilter').addEventListener('change', function() {
-            const filteredRunes = filterRunes();
-            renderRunes(filteredRunes);
-        });
-        
-        document.querySelectorAll('.color-btn').forEach(btn => {
-            btn.addEventListener('click', function() {
-                this.classList.toggle('active');
-                const filteredRunes = filterRunes();
-                renderRunes(filteredRunes);
-            });
         });
         
         document.querySelectorAll('.level-tab').forEach(tab => {
