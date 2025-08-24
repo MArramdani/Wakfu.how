@@ -258,6 +258,23 @@
             color: #94a3b8;
         }
         
+        .card-level-control {
+            padding: 15px;
+            background: rgba(30, 41, 59, 0.9);
+            border-top: 1px solid #334155;
+        }
+        
+        .card-level-slider {
+            width: 100%;
+            margin: 10px 0;
+        }
+        
+        .card-level-display {
+            text-align: center;
+            font-size: 0.9rem;
+            color: #60a5fa;
+        }
+        
         @media (max-width: 768px) {
             .controls {
                 flex-direction: column;
@@ -282,12 +299,12 @@
         
         <div class="controls">
             <div class="search-box">
-                <input type="text" placeholder="Search runes by name...">
+                <input type="text" id="searchInput" placeholder="Search runes by name...">
                 <button class="search-btn"><i class="fas fa-search"></i></button>
             </div>
             
             <div class="filter-group">
-                <select class="filter-select">
+                <select class="filter-select" id="levelFilter">
                     <option value="all">All Levels</option>
                     <option value="1-20">Level 1-20</option>
                     <option value="21-35">Level 21-35</option>
@@ -302,11 +319,11 @@
                     <option value="216-230">Level 216-230</option>
                 </select>
                 
-                <select class="filter-select">
+                <select class="filter-select" id="rarityFilter">
                     <option value="all">All Rarities</option>
-                    <option value="rare">Rare</option>
-                    <option value="myth">Mythic</option>
-                    <option value="leg">Legendary</option>
+                    <option value="Rare">Rare</option>
+                    <option value="Mythic">Mythic</option>
+                    <option value="Legendary">Legendary</option>
                 </select>
                 
                 <div class="color-filters">
@@ -314,11 +331,6 @@
                     <div class="color-btn color-B active" data-color="B"></div>
                     <div class="color-btn color-R active" data-color="R"></div>
                 </div>
-            </div>
-            
-            <div class="level-slider-container">
-                <input type="range" min="1" max="6" value="3" class="level-slider" id="levelSlider">
-                <div class="level-display">Selected Level: <span id="levelValue">3</span></div>
             </div>
         </div>
         
@@ -328,72 +340,75 @@
     </div>
 
     <script>
-        // Rune data - simplified for demonstration
-        // Replace your static runes array and initial renderRunes(runes) call with this:
-
-        async function fetchRunesFromCSV() {
-            const csvUrl = 'https://docs.google.com/spreadsheets/d/e/2PACX-1vTNyLGmKmON9GaQYYRAnKiz3oZe8x0YuF48pUDrGSyNb4H2y_2M-Q97Fvzy_DQg3bJYM-O1JfxiYlf1/pub?output=csv';
-            const response = await fetch(csvUrl);
-            const csvText = await response.text();
-
-            // Simple CSV parser (assumes no commas inside fields)
-            const lines = csvText.split('\n').filter(line => line.trim());
-            const headers = lines[0].split(',').map(h => h.trim());
-            const runes = lines.slice(1).map(line => {
-                const values = line.split(',').map(v => v.trim());
-                let obj = {};
-                headers.forEach((header, i) => {
-                    obj[header] = values[i] || '';
-                });
-                // Convert colors string to array (e.g. "GBG" => ["G","B","G"])
-                if (obj['Rune colors']) {
-                    obj.colors = obj['Rune colors'].split('');
-                } else {
-                    obj.colors = [];
-                }
-                // Normalize keys for your app
-                obj.name = obj['Name'] || '';
-                obj.description = obj['Description'] || '';
-                obj.rarity = obj['Rarity'] || '';
-                obj.effect = obj['Effect for additional levels'] || '';
-                obj.maxLevel = obj['Max level'] || '';
-                obj.obtenation = obj['Obtenation'] || '';
-                obj.levelRange = obj['Level Range'] || '';
-                return obj;
-            });
-
-            renderRunes(runes);
-        }
-
-        fetchRunesFromCSV();
+        // Sample rune data (replaces the CSV fetch for demonstration)
+        const runes = [
+            {
+                name: "Rune of Power",
+                colors: ["G", "B", "R"],
+                description: "Increases attack power by [1] 5%. Per additional level: +0.5%",
+                rarity: "Legendary",
+                maxLevel: "10",
+                levelRange: "126-140",
+                obtenation: "Dropped from Dragon's Lair"
+            },
+            {
+                name: "Rune of Defense",
+                colors: ["G", "G"],
+                description: "Increases defense by [1] 8%. Per additional level: +0.8%",
+                rarity: "Mythic",
+                maxLevel: "8",
+                levelRange: "66-80",
+                obtenation: "Crafted with Essence of Protection"
+            },
+            {
+                name: "Rune of Speed",
+                colors: ["B", "B", "B"],
+                description: "Increases movement speed by [1] 10%. Per additional level: +1%",
+                rarity: "Rare",
+                maxLevel: "5",
+                levelRange: "21-35",
+                obtenation: "Quest reward from Wind Temple"
+            },
+            {
+                name: "Rune of Vitality",
+                colors: ["R", "G"],
+                description: "Increases health by [1] 15%. Per additional level: +1.5%",
+                rarity: "Legendary",
+                maxLevel: "12",
+                levelRange: "186-200",
+                obtenation: "Dropped from Ancient Treant"
+            },
+            {
+                name: "Rune of Precision",
+                colors: ["B", "R"],
+                description: "Increases critical chance by [1] 7%. Per additional level: +0.7%",
+                rarity: "Mythic",
+                maxLevel: "9",
+                levelRange: "141-155",
+                obtenation: "Crafted with Eye of Accuracy"
+            },
+            {
+                name: "Rune of Elemental Fury",
+                colors: ["R", "R", "G"],
+                description: "Increases elemental damage by [1] 12%. Per additional level: +1.2%",
+                rarity: "Legendary",
+                maxLevel: "15",
+                levelRange: "216-230",
+                obtenation: "Dropped from Elemental Fusion Boss"
+            }
+        ];
 
         // Function to render runes
-        function renderRunes(filteredRunes) {
+        function renderRunes(runesToRender) {
             const container = document.getElementById('runesContainer');
-            const level = parseInt(document.getElementById('levelSlider').value);
-            
             container.innerHTML = '';
             
-            filteredRunes.forEach(rune => {
+            runesToRender.forEach(rune => {
                 const card = document.createElement('div');
                 card.className = 'rune-card';
                 
-                // Calculate effect based on level
-                let displayedEffect = rune.description;
-                if (rune.effect.includes('Per additional level')) {
-                    const baseMatch = rune.description.match(/\[(\d+)\]\s*([\d%]+)/);
-                    if (baseMatch) {
-                        const baseLevel = parseInt(baseMatch[1]);
-                        const baseValue = parseFloat(baseMatch[2]);
-                        const increment = parseFloat(rune.effect.match(/[\d.]+/)[0]);
-                        const currentValue = baseValue + (level - baseLevel) * increment;
-                        
-                        displayedEffect = rune.description.replace(
-                            /\[(\d+)\]\s*([\d%]+)/, 
-                            `[${level}] ${currentValue}%`
-                        );
-                    }
-                }
+                // Create a unique ID for this rune's slider
+                const sliderId = `levelSlider-${rune.name.replace(/\s+/g, '-')}`;
                 
                 card.innerHTML = `
                     <div class="rune-header">
@@ -405,7 +420,7 @@
                         </div>
                     </div>
                     <div class="rune-body">
-                        <div class="rune-description">${displayedEffect}</div>
+                        <div class="rune-description" id="desc-${rune.name.replace(/\s+/g, '-')}">${rune.description.replace('[1]', '[3]')}</div>
                         <div class="rune-details">
                             <div class="detail-item">
                                 <div class="detail-label">Droppable Rarity</div>
@@ -425,41 +440,129 @@
                         <div class="detail-label">Obtenation</div>
                         <div class="detail-value">${rune.obtenation}</div>
                     </div>
+                    <div class="card-level-control">
+                        <div class="card-level-display">Adjust Level: <span id="value-${rune.name.replace(/\s+/g, '-')}">3</span></div>
+                        <input type="range" min="1" max="10" value="3" class="card-level-slider" id="${sliderId}" data-rune="${rune.name}">
+                    </div>
                 `;
                 
                 container.appendChild(card);
+                
+                // Add event listener to the slider for this rune
+                const slider = document.getElementById(sliderId);
+                slider.addEventListener('input', function() {
+                    const level = parseInt(this.value);
+                    document.getElementById(`value-${rune.name.replace(/\s+/g, '-')}`).textContent = level;
+                    updateRuneDescription(rune, level);
+                });
             });
         }
         
+        // Function to update rune description based on level
+        function updateRuneDescription(rune, level) {
+            const descElement = document.getElementById(`desc-${rune.name.replace(/\s+/g, '-')}`);
+            
+            if (rune.description.includes('Per additional level')) {
+                const baseMatch = rune.description.match(/\[(\d+)\]\s*([\d%]+)/);
+                if (baseMatch) {
+                    const baseLevel = parseInt(baseMatch[1]);
+                    const baseValue = parseFloat(baseMatch[2]);
+                    const incrementMatch = rune.description.match(/Per additional level: \+([\d.]+)/);
+                    
+                    if (incrementMatch) {
+                        const increment = parseFloat(incrementMatch[1]);
+                        const currentValue = baseValue + (level - baseLevel) * increment;
+                        
+                        const newDescription = rune.description.replace(
+                            /\[(\d+)\]\s*([\d%]+)/, 
+                            `[${level}] ${currentValue.toFixed(1)}%`
+                        );
+                        
+                        descElement.textContent = newDescription;
+                    }
+                }
+            }
+        }
+        
+        // Function to filter runes based on criteria
+        function filterRunes() {
+            const searchTerm = document.getElementById('searchInput').value.toLowerCase();
+            const levelFilter = document.getElementById('levelFilter').value;
+            const rarityFilter = document.getElementById('rarityFilter').value;
+            
+            // Get active colors
+            const activeColors = [];
+            document.querySelectorAll('.color-btn.active').forEach(btn => {
+                activeColors.push(btn.getAttribute('data-color'));
+            });
+            
+            return runes.filter(rune => {
+                // Search filter
+                if (searchTerm && !rune.name.toLowerCase().includes(searchTerm) && 
+                    !rune.description.toLowerCase().includes(searchTerm)) {
+                    return false;
+                }
+                
+                // Level range filter
+                if (levelFilter !== 'all') {
+                    const [minLevel, maxLevel] = levelFilter.split('-').map(Number);
+                    const [runeMinLevel, runeMaxLevel] = rune.levelRange.split('-').map(Number);
+                    
+                    if (runeMinLevel < minLevel || runeMaxLevel > maxLevel) {
+                        return false;
+                    }
+                }
+                
+                // Rarity filter
+                if (rarityFilter !== 'all' && rune.rarity !== rarityFilter) {
+                    return false;
+                }
+                
+                // Color filter
+                if (activeColors.length > 0) {
+                    const runeColorsStr = rune.colors.join('');
+                    let hasActiveColor = false;
+                    
+                    for (const color of activeColors) {
+                        if (runeColorsStr.includes(color)) {
+                            hasActiveColor = true;
+                            break;
+                        }
+                    }
+                    
+                    if (!hasActiveColor) return false;
+                }
+                
+                return true;
+            });
+        }
         
         // Event listeners for filters
-        document.getElementById('levelSlider').addEventListener('input', function() {
-            document.getElementById('levelValue').textContent = this.value;
-            renderRunes(runes); // In a real app, you would filter runes here
-        });
-        
-        document.querySelector('.search-box input').addEventListener('input', function(e) {
-            const searchTerm = e.target.value.toLowerCase();
-            const filteredRunes = runes.filter(rune => 
-                rune.name.toLowerCase().includes(searchTerm) || 
-                rune.description.toLowerCase().includes(searchTerm)
-            );
+        document.getElementById('searchInput').addEventListener('input', function() {
+            const filteredRunes = filterRunes();
             renderRunes(filteredRunes);
         });
         
-        document.querySelectorAll('.filter-select').forEach(select => {
-            select.addEventListener('change', function() {
-                // In a real app, you would implement filtering based on selection
-                renderRunes(runes);
-            });
+        document.getElementById('levelFilter').addEventListener('change', function() {
+            const filteredRunes = filterRunes();
+            renderRunes(filteredRunes);
+        });
+        
+        document.getElementById('rarityFilter').addEventListener('change', function() {
+            const filteredRunes = filterRunes();
+            renderRunes(filteredRunes);
         });
         
         document.querySelectorAll('.color-btn').forEach(btn => {
             btn.addEventListener('click', function() {
                 this.classList.toggle('active');
-                // In a real app, you would filter runes by color here
+                const filteredRunes = filterRunes();
+                renderRunes(filteredRunes);
             });
         });
+        
+        // Initial render
+        renderRunes(runes);
     </script>
 </body>
 </html>
