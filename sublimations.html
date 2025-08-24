@@ -267,7 +267,6 @@
                 width: 100%;
                 justify-content: center;
             }
-            
             .runes-grid {
                 grid-template-columns: 1fr;
             }
@@ -330,98 +329,43 @@
 
     <script>
         // Rune data - simplified for demonstration
-        const runes = [
-            {
-                name: "Influence",
-                colors: ["G", "B", "G"],
-                description: "[1] 3% Critical Hit",
-                rarity: "Rare / Myth / Leg",
-                effect: "Per additional level: +3% Critical hit",
-                maxLevel: 6,
-                obtenation: "Runic Mimic",
-                levelRange: "1-20"
-            },
-            {
-                name: "Length",
-                colors: ["B", "R", "R"],
-                description: "[1] 2% Damage Inflicted on aligned targets 2 or more cells away",
-                rarity: "Rare / Myth / Leg",
-                effect: "Per additional level: +2% Damage Inflicted",
-                maxLevel: 6,
-                obtenation: "Unknown",
-                levelRange: "1-20"
-            },
-            {
-                name: "Condemnation",
-                colors: ["G", "R", "G"],
-                description: "[2] -20 Force of Will. Reduces the next AP loss suffered by 1",
-                rarity: "Myth",
-                effect: "Per additional 2 levels: reduces 1 more AP loss suffered",
-                maxLevel: 6,
-                obtenation: "Unknown",
-                levelRange: "1-20"
-            },
-            {
-                name: "Arcana",
-                colors: ["B", "R", "B"],
-                description: "[1] If the state bearer does not have any armor at end of turn: 50% of level as Armor",
-                rarity: "Rare / Myth / Leg",
-                effect: "Per additional level: +50% armor",
-                maxLevel: 6,
-                obtenation: "Tainela Dimensional Rift",
-                levelRange: "21-35"
-            },
-            {
-                name: "Strong Hand",
-                colors: ["G", "R", "R"],
-                description: "[1] Ending a turn adjacent to an enemy applies -5% Armor received to it (1 turn)",
-                rarity: "Rare / Myth / Leg",
-                effect: "Per additional level: -5% armor received",
-                maxLevel: 6,
-                obtenation: "Unknown",
-                levelRange: "21-35"
-            },
-            {
-                name: "Vital Return",
-                colors: ["G", "R", "G"],
-                description: "[1] Heal: 10% of HP lost of the caster on killing an enemy (2 activations per turn)",
-                rarity: "Rare / Myth",
-                effect: "Per additional level: +10% HP",
-                maxLevel: 2,
-                obtenation: "Unknown",
-                levelRange: "21-35"
-            },
-            {
-                name: "Solid Weapon",
-                colors: ["B", "B", "B"],
-                description: "[1] When inflicting damage on an enemy with a weapon: That enemy reduces their damage on the state bearer by -5%",
-                rarity: "Rare / Myth",
-                effect: "Per additional level: reduces the DMG by another -5%",
-                maxLevel: 2,
-                obtenation: "Sufokia Dimensional Rift",
-                levelRange: "66-80"
-            },
-            {
-                name: "Counterattack",
-                colors: ["R", "G", "R"],
-                description: "[1] When the state bearer suffers direct close-combat damage once per turn of the attacker: The state bearer inflicts light damage on the attacker (10% of level)",
-                rarity: "Rare / Myth / Leg",
-                effect: "Per additional level: +10% of level DMG",
-                maxLevel: 6,
-                obtenation: "Unknown",
-                levelRange: "66-80"
-            },
-            {
-                name: "Nature",
-                colors: ["G", "R", "B"],
-                description: "[1] 2% Heals performed on an ally adjacent to another ally",
-                rarity: "Rare / Myth / Leg",
-                effect: "Per additional level: +2% Heals",
-                maxLevel: 6,
-                obtenation: "Unknown",
-                levelRange: "66-80"
-            }
-        ];
+        // Replace your static runes array and initial renderRunes(runes) call with this:
+
+        async function fetchRunesFromCSV() {
+            const csvUrl = 'https://docs.google.com/spreadsheets/d/e/2PACX-1vTNyLGmKmON9GaQYYRAnKiz3oZe8x0YuF48pUDrGSyNb4H2y_2M-Q97Fvzy_DQg3bJYM-O1JfxiYlf1/pub?output=csv';
+            const response = await fetch(csvUrl);
+            const csvText = await response.text();
+
+            // Simple CSV parser (assumes no commas inside fields)
+            const lines = csvText.split('\n').filter(line => line.trim());
+            const headers = lines[0].split(',').map(h => h.trim());
+            const runes = lines.slice(1).map(line => {
+                const values = line.split(',').map(v => v.trim());
+                let obj = {};
+                headers.forEach((header, i) => {
+                    obj[header] = values[i] || '';
+                });
+                // Convert colors string to array (e.g. "GBG" => ["G","B","G"])
+                if (obj['Rune colors']) {
+                    obj.colors = obj['Rune colors'].split('');
+                } else {
+                    obj.colors = [];
+                }
+                // Normalize keys for your app
+                obj.name = obj['Name'] || '';
+                obj.description = obj['Description'] || '';
+                obj.rarity = obj['Rarity'] || '';
+                obj.effect = obj['Effect for additional levels'] || '';
+                obj.maxLevel = obj['Max level'] || '';
+                obj.obtenation = obj['Obtenation'] || '';
+                obj.levelRange = obj['Level Range'] || '';
+                return obj;
+            });
+
+            renderRunes(runes);
+        }
+
+        fetchRunesFromCSV();
 
         // Function to render runes
         function renderRunes(filteredRunes) {
@@ -487,8 +431,6 @@
             });
         }
         
-        // Initial render
-        renderRunes(runes);
         
         // Event listeners for filters
         document.getElementById('levelSlider').addEventListener('input', function() {
