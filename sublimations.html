@@ -620,30 +620,18 @@
             const filteredRunes = filterRunes();
             renderRunes(filteredRunes);
         });
-
+        
         document.getElementById('rarityFilter').addEventListener('change', function() {
             const filteredRunes = filterRunes();
             renderRunes(filteredRunes);
         });
-
+        
         document.querySelectorAll('.color-btn').forEach(btn => {
             btn.addEventListener('click', function() {
                 this.classList.toggle('active');
                 const filteredRunes = filterRunes();
                 renderRunes(filteredRunes);
             });
-        });
-
-        document.querySelector('.search-btn').addEventListener('click', function() {
-            const filteredRunes = filterRunes();
-            renderRunes(filteredRunes);
-        });
-
-        document.getElementById('searchInput').addEventListener('keypress', function(e) {
-            if (e.key === 'Enter') {
-                const filteredRunes = filterRunes();
-                renderRunes(filteredRunes);
-            }
         });
         
         document.querySelectorAll('.level-tab').forEach(tab => {
