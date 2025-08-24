@@ -567,9 +567,15 @@
                     <div class="rune-header">
                         <div class="rune-name">${rune.name}</div>
                         <div class="rune-colors">
-                            ${rune.colors.map(color => `
-                                <div class="rune-color color-${color}">${color}</div>
-                            `).join('')}
+                            ${rune.colors.map(color => {
+                                let iconUrl = '';
+                                if (color === 'G') iconUrl = 'https://methodwakfu.com/wp-content/uploads/2020/04/chasse_verte_xs.png';
+                                if (color === 'R') iconUrl = 'https://methodwakfu.com/wp-content/uploads/2020/04/chasse_rouge_xs.png';
+                                if (color === 'B') iconUrl = 'https://methodwakfu.com/wp-content/uploads/2020/04/chasse_bleue_xs.png';
+                                return `
+                                    <div class="rune-color" style="background: url('${iconUrl}') center/cover no-repeat;"></div>
+                                `;
+                            }).join('')}
                         </div>
                     </div>
                     <div class="rune-body">
