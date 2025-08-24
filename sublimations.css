@@ -12,8 +12,8 @@
         body {
             background: linear-gradient(135deg, #1a2a6c, #2a5298);
             color: #fff;
-            min-height: 85vh;
-            transform: scale(0.85); /* zoom out everything inside */
+            min-height: 100vh;
+            transform: scale(1); /* zoom out everything inside */
             padding: 20px;
         }
 
