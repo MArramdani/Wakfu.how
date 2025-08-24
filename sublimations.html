@@ -285,21 +285,6 @@
                 <input type="text" id="searchInput" placeholder="Search runes by name...">
                 <button class="search-btn"><i class="fas fa-search"></i></button>
             </div>
-            
-            <div class="filter-group">
-                <select class="filter-select" id="rarityFilter">
-                    <option value="all">All Rarities</option>
-                    <option value="Rare">Rare</option>
-                    <option value="Mythic">Mythic</option>
-                    <option value="Legendary">Legendary</option>
-                </select>
-                
-                <div class="color-filters">
-                    <div class="color-btn color-G active" data-color="G"></div>
-                    <div class="color-btn color-B active" data-color="B"></div>
-                    <div class="color-btn color-R active" data-color="R"></div>
-                </div>
-            </div>
         </div>
         
         <div class="level-tabs" id="levelTabs">
@@ -634,6 +619,31 @@
         document.getElementById('searchInput').addEventListener('input', function() {
             const filteredRunes = filterRunes();
             renderRunes(filteredRunes);
+        });
+
+        document.getElementById('rarityFilter').addEventListener('change', function() {
+            const filteredRunes = filterRunes();
+            renderRunes(filteredRunes);
+        });
+
+        document.querySelectorAll('.color-btn').forEach(btn => {
+            btn.addEventListener('click', function() {
+                this.classList.toggle('active');
+                const filteredRunes = filterRunes();
+                renderRunes(filteredRunes);
+            });
+        });
+
+        document.querySelector('.search-btn').addEventListener('click', function() {
+            const filteredRunes = filterRunes();
+            renderRunes(filteredRunes);
+        });
+
+        document.getElementById('searchInput').addEventListener('keypress', function(e) {
+            if (e.key === 'Enter') {
+                const filteredRunes = filterRunes();
+                renderRunes(filteredRunes);
+            }
         });
         
         document.querySelectorAll('.level-tab').forEach(tab => {
