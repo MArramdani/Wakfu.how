@@ -21,7 +21,7 @@
         }
         
         .container {
-            max-width: 1400px;
+            max-width: 1800px;
             margin: 0 auto;
         }
         
@@ -89,46 +89,6 @@
             background: #2563eb;
         }
         
-        .filter-group {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 15px;
-            align-items: center;
-        }
-        
-        .filter-select {
-            padding: 12px;
-            border-radius: 8px;
-            background: #1e293b;
-            color: white;
-            border: 1px solid #334155;
-            min-width: 150px;
-        }
-        
-        .color-filters {
-            display: flex;
-            gap: 10px;
-            align-items: center;
-        }
-        
-        .color-btn {
-            width: 30px;
-            height: 30px;
-            border-radius: 50%;
-            border: 2px solid transparent;
-            cursor: pointer;
-            transition: transform 0.2s, border-color 0.2s;
-        }
-        
-        .color-btn.active {
-            border-color: white;
-            transform: scale(1.2);
-        }
-        
-        .color-G { background: linear-gradient(135deg, #065f46, #10b981); }
-        .color-B { background: linear-gradient(135deg, #1e40af, #3b82f6); }
-        .color-R { background: linear-gradient(135deg, #991b1b, #dc2626); }
-        
         .level-tabs {
             display: flex;
             flex-wrap: wrap;
@@ -156,7 +116,7 @@
         
         .runes-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+            grid-template-columns: repeat(auto-fill, minmax(800px, 1fr));
             gap: 25px;
         }
         
@@ -166,6 +126,8 @@
             overflow: hidden;
             box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
             transition: transform 0.3s, box-shadow 0.3s;
+            display: flex;
+            flex-direction: column;
         }
         
         .rune-card:hover {
@@ -182,7 +144,7 @@
         }
         
         .rune-name {
-            font-size: 1.5rem;
+            font-size: 1.8rem;
             font-weight: bold;
             color: #60a5fa;
         }
@@ -193,36 +155,47 @@
         }
         
         .rune-color {
-            width: 25px;
-            height: 25px;
-            border-radius: 50%;
+            width: 40px;
+            height: 40px;
             display: flex;
             justify-content: center;
             align-items: center;
-            font-weight: bold;
-            font-size: 0.9rem;
-            color: white;
         }
         
         .rune-body {
             padding: 20px;
+            flex: 1;
+            display: flex;
+            flex-direction: column;
         }
         
         .rune-description {
             background: #1e293b;
             padding: 15px;
             border-radius: 10px;
-            margin-bottom: 20px;
+            margin-bottom: 15px;
             font-size: 1.1rem;
-            min-height: 80px;
-            display: flex;
-            align-items: center;
+        }
+        
+        .level-effect {
+            background: #1e293b;
+            padding: 15px;
+            border-radius: 10px;
+            margin-bottom: 20px;
+        }
+        
+        .effect-label {
+            font-size: 0.9rem;
+            color: #94a3b8;
+            margin-bottom: 8px;
+            font-weight: bold;
         }
         
         .rune-details {
             display: grid;
-            grid-template-columns: 1fr 1fr;
+            grid-template-columns: repeat(4, 1fr);
             gap: 15px;
+            margin-top: auto;
         }
         
         .detail-item {
@@ -241,14 +214,6 @@
             font-weight: 500;
         }
         
-        .rune-footer {
-            padding: 15px 20px;
-            background: rgba(30, 41, 59, 0.9);
-            border-top: 1px solid #334155;
-            font-size: 0.9rem;
-            color: #94a3b8;
-        }
-        
         .no-results {
             text-align: center;
             padding: 40px;
@@ -257,18 +222,25 @@
             grid-column: 1 / -1;
         }
         
-        @media (max-width: 768px) {
-            .controls {
-                flex-direction: column;
-            }
-            
-            .filter-group {
-                width: 100%;
-                justify-content: center;
-            }
-            
+        @media (max-width: 1200px) {
             .runes-grid {
                 grid-template-columns: 1fr;
+            }
+            
+            .rune-details {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+        
+        @media (max-width: 900px) {
+            .rune-details {
+                grid-template-columns: 1fr;
+            }
+            
+            .rune-header {
+                flex-direction: column;
+                gap: 15px;
+                text-align: center;
             }
         }
     </style>
@@ -284,19 +256,6 @@
             <div class="search-box">
                 <input type="text" id="searchInput" placeholder="Search runes by name...">
                 <button class="search-btn"><i class="fas fa-search"></i></button>
-            </div>
-            <div class="filter-group">
-                <select id="rarityFilter" class="filter-select">
-                    <option value="all">All Rarities</option>
-                    <option value="Rare">Rare</option>
-                    <option value="Mythic">Mythic</option>
-                    <option value="Legendary">Legendary</option>
-                </select>
-                <div class="color-filters">
-                    <button class="color-btn color-G" data-color="G" title="Green"></button>
-                    <button class="color-btn color-B" data-color="B" title="Blue"></button>
-                    <button class="color-btn color-R" data-color="R" title="Red"></button>
-                </div>
             </div>
         </div>
         
@@ -808,7 +767,7 @@
                 colors: ["B", "B", "R"],
                 description: "[1] +2% Earth dmg when casting a fire/air/water spell. Stacks up to 30%. consumed on next direct Earth dmg.",
                 rarity: "Rare / Mythic / Legendary",
-                effect: "Per additional level: +2% Earth DMG",
+                effect: "Per additional                level: +2% Earth DMG",
                 maxLevel: "[4]",
                 obtenation: "",
                 levelRange: "141-155"
@@ -900,7 +859,7 @@
                 rarity: "Rare / Mythic",
                 effect: "Per additional level: +10 FoW Even turns. -10 FoW Odd turns",
                 maxLevel: "[2]",
-                obtained: "Gwand Wabbit GM - Womewo's Labowatowy Dungeon",
+                obtenation: "Gwand Wabbit GM - Womewo's Labowatowy Dungeon",
                 levelRange: "141-155"
             },
             {
@@ -938,7 +897,7 @@
             {
                 name: "Dimensionality",
                 colors: ["R", "B", "G"],
-                description: "[2] On the state bearer's first turn: 1 WP (non-regenerable)",
+                description: "[2] On the state bearer's first turn:1 WP (non-regenerable)",
                 rarity: "Mythic",
                 effect: "N/A",
                 maxLevel: "[2]",
@@ -978,7 +937,7 @@
             {
                 name: "Focalization",
                 colors: ["G", "R", "R"],
-                description: "[2] -15% Damage inflicted. At start of turn: 25% Damage inflicted if a single enemy was hit the previous turn",
+                description: "[2] -15% Damage inflicted. At start of turn:25% Damage inflicted if a single enemy was hit the previous turn",
                 rarity: "Mythic",
                 effect: "N/A",
                 maxLevel: "[2]",
@@ -1010,7 +969,7 @@
             {
                 name: "Mania",
                 colors: ["B", "R", "G"],
-                description: "[1] Melee damage removes 50% of level in Armor from the target. -3% Armor received",
+                description: "[1] Melee damage removes 50% of level in Armor from the target-3% Armor received",
                 rarity: "Rare / Mythic / Legendary",
                 effect: "Per additional level: +50% of lvl in Armor removed. -3% armor received",
                 maxLevel: "[4]",
@@ -1023,14 +982,14 @@
                 description: "[1] 2% Damage from behind on even turns. 2% frontal Damage on odd turns",
                 rarity: "Rare / Mythic / Legendary",
                 effect: "Per additional level: +2% on both effects",
-                maxLevel: "[6]",
+                max极: "[6]",
                 obtenation: "",
                 levelRange: "171-185"
             },
             {
                 name: "Clamor",
                 colors: ["G", "B", "R"],
-                description: "[2] -20 Force of Will. Reduces the next MP loss suffered by 1. The effect is reapplied every turn",
+                description: "[2] -20 Force of Will. Reduces the next MP loss suffered by 1The effect is reapplied every turn",
                 rarity: "Mythic",
                 effect: "Per additional 2 levels: reduces 1 more 'MP loss' suffered",
                 maxLevel: "[6]",
@@ -1050,7 +1009,7 @@
             {
                 name: "Vivacity",
                 colors: ["R", "B", "B"],
-                description: "[1] 1 AP-150 Elemental Resistance",
+                description: "[极] 1 AP-150 Elemental Resistance",
                 rarity: "Rare / Mythic",
                 effect: "Per additional level: +75 resistances",
                 maxLevel: "[2]",
@@ -1069,12 +1028,12 @@
             },
             {
                 name: "Berserk Dodge",
-                colors: ["B", "B", "G"],
+                colors: ["极", "B", "G"],
                 description: "[1] When HP are at less than 50%: 50% of level as Dodge",
                 rarity: "Rare / Mythic / Legendary",
                 effect: "Per additional level: +50% of lvl as Dodge",
                 maxLevel: "[6]",
-                obtained: "",
+                obtenation: "",
                 levelRange: "171-185"
             },
             {
@@ -1082,10 +1041,10 @@
                 colors: ["B", "B", "B"],
                 description: "[1] 1 WP-30 Force of Will",
                 rarity: "Rare / Mythic / Legendary",
-                effect: "Per additional level: +10 Force of Will",
+                effect: "极 additional level: +10 Force of Will",
                 maxLevel: "[3]",
                 obtenation: "",
-                levelRange: "171-185"
+                levelRange: "极71-185"
             },
             {
                 name: "Blocking Expert",
@@ -1109,7 +1068,7 @@
             },
             {
                 name: "Visibility",
-                colors: ["B", "G", "G"],
+                colors: ["B", "极", "G"],
                 description: "[1] 1 Range -300 Lock -300 Dodge",
                 rarity: "Rare / Mythic",
                 effect: "Per additional level: +150 Lock + 150 Dodge",
@@ -1122,9 +1081,9 @@
                 colors: ["R", "B", "G"],
                 description: "[1] At start of fight 150% of level as Armor",
                 rarity: "Rare / Mythic / Legendary",
-                effect: "Per additional level: +150% of lvl as Armor",
+                effect: "Per additional level: +极50% of lvl as Armor",
                 maxLevel: "[4]",
-                obtenation: "Koko the Nutt - Tropickle Dungeon",
+                obtained: "Koko the Nutt - Tropickle Dungeon",
                 levelRange: "171-185"
             },
             {
@@ -1150,7 +1109,7 @@
             {
                 name: "Slow Evasion",
                 colors: ["R", "R", "G"],
-                description: "[2] 3% Blocks per turn (max 40)",
+                description: "[2] 3% Blocks per turn (极ax 40)",
                 rarity: "Mythic",
                 effect: "Per additional level: +3% Blocks",
                 maxLevel: "[4]",
@@ -1160,7 +1119,7 @@
             {
                 name: "Topology",
                 colors: ["B", "G", "B"],
-                description: "[1] At the start of combat: Any Dodge by the state bearer is converted into Armor. Converted Dodge is lost.",
+                description: "[1] At the start of combat:Any Dodge by the state bearer is converted into Armor.Converted Dodge is lost.",
                 rarity: "Rare / Mythic / Legendary",
                 effect: "Per additional level: the Armor gained increases by 100%",
                 maxLevel: "[3]",
@@ -1182,7 +1141,7 @@
             {
                 name: "Frenzy",
                 colors: ["R", "G", "B"],
-                description: "[2] -20% Damage inflicted. At start of turn: 10% Damage inflicted per enemy hit in the previous turn.",
+                description: "[2] -20% Damage inflicted. At start of turn:10% Damage inflicted per enemy hit in the previous turn.",
                 rarity: "Mythic",
                 effect: "N/A",
                 maxLevel: "[2]",
@@ -1193,7 +1152,7 @@
                 name: "Berserk Block",
                 colors: ["B", "G", "B"],
                 description: "[1] When HP are at less than 50%: 5% Block",
-                rarity: "Rare / Mythic / Legendary",
+                rarity: "R极e / Mythic / Legendary",
                 effect: "Per additional level: +5% Block",
                 maxLevel: "[6]",
                 obtenation: "Badgwitch the Furiox - Badgerox's Lair Dungeon",
@@ -1201,7 +1160,7 @@
             },
             {
                 name: "Stupefaction",
-                colors: ["G", "B", "G"],
+                colors: ["G", "B", "极"],
                 description: "[1] At start of fight: 5% Critical Hit (1 turn) of 5% level as Critical Mastery (1 turn)",
                 rarity: "Rare / Mythic / Legendary",
                 effect: "Per additional level: +5% for both effects",
@@ -1212,7 +1171,7 @@
             {
                 name: "Fury",
                 colors: ["R", "G", "B"],
-                description: "[2] -15% Damage inflicted. At start of turn: 5% Damage inflicted per entity hit in the previous turn.",
+                description: "[2] -15% Damage inflicted. At start of turn:5% Damage inflicted per entity hit in the previous turn.",
                 rarity: "Mythic",
                 effect: "N/A",
                 maxLevel: "[2]",
@@ -1232,11 +1191,11 @@
             {
                 name: "Resolute",
                 colors: ["R", "B", "R"],
-                description: "[1] After suffering a loss of 3 AP: 10 Force of Will (3 turns)",
+                description: "[1] After suffering a loss of 3 AP:10 Force of Will (3 turns)",
                 rarity: "Rare / Mythic / Legendary",
                 effect: "Per additional level: +10 FoW",
                 maxLevel: "[3]",
-                obtenation: "Sor'Hon, Lord of the Flame - Or'Hodruin Dungeon",
+                obtenation: "Sor'Hon, Lord of the Flame - Or'Hodruin  Dungeon",
                 levelRange: "186-200"
             },
             {
@@ -1252,7 +1211,7 @@
             {
                 name: "Devastate",
                 colors: ["G", "G", "G"],
-                description: "[1] At start of fight: All Masteries: 5% of level. All Resistances: 3",
+                description: "[1] At start of fight: All Masteries: 极% of level. All Resistances: 3",
                 rarity: "Rare / Mythic / Legendary",
                 effect: "Per additional level: +5% of level Masteries +3 resis",
                 maxLevel: "[4]",
@@ -1266,13 +1225,13 @@
                 rarity: "Rare / Mythic / Legendary",
                 effect: "Per additional level: +2% DMG",
                 maxLevel: "[4]",
-                obtenation: "2 Steles Aguabrial - Sor'Hon, Lord of the Flame - Or'Hodruin Dungeon",
+                obtenation: "2 Steles Aguabrial - Sor'Hon, Lord of the Flame - Or'Hodruin  Dungeon",
                 levelRange: "186-200"
             },
             {
                 name: "Lightness",
                 colors: ["B", "R", "B"],
-                description: "[1] After suffering a loss of 3 MP: 10 Force of Will (3 turns)",
+                description: "[1] After suffering a loss of 3 MP:10 Force of Will (3 turns)",
                 rarity: "Rare / Mythic / Legendary",
                 effect: "Per additional level: +10 FoW",
                 maxLevel: "[3]",
@@ -1295,7 +1254,7 @@
                 description: "[1] Performing a Block gives Preparation (+1 Lvl.)",
                 rarity: "Rare / Mythic / Legendary",
                 effect: "Per additional level: +1 lvl Preparation",
-                maxLevel: "[6]",
+                maxLevel: "[6极",
                 obtenation: "",
                 levelRange: "186-200"
             },
@@ -1312,12 +1271,12 @@
             {
                 name: "Critical Hit Expert",
                 colors: ["B", "G", "G"],
-                description: "[1] At end of turn if a critical hit was performed: Heal: 2% of HP lost of the caster",
+                description: "[1] At end of turn if a critical hit was performed: Heal: 2%极 of HP lost of the caster",
                 rarity: "Rare / Mythic / Legendary",
                 effect: "Per additional level: +2% of HP lost",
                 maxLevel: "[4]",
                 obtenation: "Ashdragon - Iced-Over Crest Dungeon",
-                levelRange: "186-200"
+                level极ange: "186-200"
             },
             {
                 name: "AP Return",
@@ -1381,8 +1340,8 @@
             },
             {
                 name: "Secondary Devastation",
-                colors: ["G", "G", "G"],
-                description: "[2] At start of fight: 3% Critical Hit 3% Block 3 Force of Will",
+               极 colors: ["G", "G", "G"],
+                description: "[2] At start of fight:3% Critical Hit 3% Block 3 Force of Will",
                 rarity: "Mythic",
                 effect: "Per additional 2 levels: +3% Crit +3% Block +3 force of Will",
                 maxLevel: "[6]",
@@ -1392,7 +1351,7 @@
             {
                 name: "Obstinacy",
                 colors: ["R", "B", "R"],
-                description: "[1] After suffering a loss of 2 AP: 5 Force of Will (3 turns)",
+                description: "[1] After suffering a loss of 2 AP:5 Force of Will (3 turns)",
                 rarity: "Rare / Mythic",
                 effect: "Per additional level: +5 Force of Will",
                 maxLevel: "[2]",
@@ -1402,10 +1361,10 @@
             {
                 name: "Persistence",
                 colors: ["R", "G", "R"],
-                description: "[2] At end of turn if the state bearer has 6 or more AP: 60 Elemental Resistance (2 turns)",
+                description: "[2] At end of turn if the state bearer has 6 or more AP:60 Elemental Resistance (2 turns)",
                 rarity: "Mythic",
                 effect: "N/A",
-                maxLevel: "[2]",
+                maxLevel: "[2极",
                 obtenation: "",
                 levelRange: "186-200"
             },
@@ -1423,7 +1382,7 @@
             },
             {
                 name: "Critical Shield",
-                colors: ["B", "G", "R"],
+                colors: ["极", "G", "R"],
                 description: "[1] 5 Critical Resistance",
                 rarity: "Rare / Mythic / Legendary",
                 effect: "Per additional level: +5 Critical Resistance",
@@ -1434,7 +1393,7 @@
             {
                 name: "Constant Evasion",
                 colors: ["G", "G", "R"],
-                description: "[1] 3% Block",
+                description: "[1极 3% Block",
                 rarity: "Rare / Mythic / Legendary",
                 effect: "Per additional level: +3% Block",
                 maxLevel: "[6]",
@@ -1449,12 +1408,12 @@
                 effect: "Per additional level: +2% DMG",
                 maxLevel: "[6]",
                 obtenation: "Cerebratacean - Crabstacean Dungeon",
-                levelRange: "201-215"
+                levelRange: "201-极15"
             },
             {
                 name: "Art of Concealment",
                 colors: ["B", "B", "B"],
-                description: "[1] -6% Damage received when the bearer is not in line of sight. 3% Damage received when the bearer is in line of sight",
+                description: "[1] -6% Damage received when the bearer is not in line of sight 3% Damage received when the bearer is in line of sight",
                 rarity: "Rare / Mythic / Legendary",
                 effect: "Per additional level: -6% dmg received outside of LoS +3% dmg received in LoS",
                 maxLevel: "[4]",
@@ -1504,7 +1463,7 @@
             {
                 name: "Conservation",
                 colors: ["B", "G", "B"],
-                description: "[1] When HP are above 90%: 10% Block",
+                description: "[1] When HP are above 90极: 10% Block",
                 rarity: "Rare / Mythic / Legendary",
                 effect: "Per additional level: +10% Block",
                 maxLevel: "[4]",
@@ -1523,10 +1482,10 @@
             },
             {
                 name: "Paradoxical Influence",
-                colors: ["G", "R", "B"],
+                colors: ["G", "极", "B"],
                 description: "[1] If a non-critical hit is performed with an elemental spell: 5% Critical Hit on the following turn",
                 rarity: "Rare / Mythic / Legendary",
-                effect: "Per additional level: +5% Crit",
+                effect: "极er additional level: +5% Crit",
                 maxLevel: "[4]",
                 obtenation: "",
                 levelRange: "201-215"
@@ -1593,7 +1552,7 @@
             },
             {
                 name: "Rear Shield",
-                colors: ["R", "G", "G"],
+                colors: ["R", "极", "G"],
                 description: "[1] 5 Rear Resistance",
                 rarity: "Rare / Mythic / Legendary",
                 effect: "Per additional level: +5 Rear Resistance",
@@ -1614,8 +1573,8 @@
             {
                 name: "Vital Strength",
                 colors: ["R", "G", "B"],
-                description: "[2] At start of turn if HP are above 90%: 1 AP",
-                rarity: "Mythic",
+                description: "[2] At start极 turn if HP are above 90%: 1 AP",
+                rarity: "Myth极",
                 effect: "N/A",
                 maxLevel: "[2]",
                 obtenation: "",
@@ -1634,7 +1593,7 @@
             {
                 name: "Tactical Critical",
                 colors: ["R", "G", "G"],
-                description: "[1] 3% critical damage inflicted if the target has > 50% HP. -3% critical damage inflicted if the target has <= 50% HP",
+                description: "[1] 3% critical damage inflicted if the target has > 50% HP-3% critical damage inflicted if the target has <= 50% HP",
                 rarity: "Rare / Mythic / Legendary",
                 effect: "Per additional lvl +3% crit DMG if HP>50. -3% crit DMG if HP<=50%",
                 maxLevel: "[4]",
@@ -1667,7 +1626,7 @@
                 description: "[1] When the bearer starts their turn below 20% HP: 3% Damage inflicted (1 turn) 50% of level as armor",
                 rarity: "Rare / Mythic / Legendary",
                 effect: "Per additional level: +3% DI +50% of lvl as Armor",
-                maxLevel: "[6]",
+                maxLevel: "[6极",
                 obtenation: "Mount Zinit Dimensional Rift (Ultimate)",
                 levelRange: "201-215"
             },
@@ -1686,7 +1645,7 @@
                 colors: ["R", "G", "B"],
                 description: "[1] If there are two or more allies 1 to 4 cells from the bearer: 2% Damage Inflicted",
                 rarity: "Rare / Mythic / Legendary",
-                effect: "Per additional level: +2% DMG",
+                effect: "Per additional level: +2% DM极",
                 maxLevel: "[4]",
                 obtenation: "",
                 levelRange: "201-215"
@@ -1728,7 +1687,7 @@
                 colors: ["R", "G", "G"],
                 description: "[1] Each time a critical hit is performed (5 activations per turn): Preparation (+2 Lvl.)",
                 rarity: "Rare / Mythic / Legendary",
-                effect: "Per additional level: +2 lvl Preparation",
+                effect: "Per additional level: +极 lvl Preparation",
                 maxLevel: "[4]",
                 obtenation: "",
                 levelRange: "216-230"
@@ -1756,7 +1715,7 @@
             {
                 name: "Carapace",
                 colors: ["R", "B", "B"],
-                description: "[1] -2 max AP. 75 Elemental Resistance",
+                description: "[1] -2 max AP75 Elemental Resistance",
                 rarity: "Rare / Mythic",
                 effect: "Per additional level: +1 AP",
                 maxLevel: "[2]",
@@ -1766,7 +1725,7 @@
             {
                 name: "Heavy Armor",
                 colors: ["R", "G", "B"],
-                description: "[1] -1 max MP. 5% Damage inflicted",
+                description: "[1] -1 max MP5% Damage inflicted",
                 rarity: "Rare / Mythic",
                 effect: "Per additional level: +5% DMG",
                 maxLevel: "[2]",
@@ -1809,13 +1768,21 @@
             const container = document.getElementById('runesContainer');
             
             if (runesToRender.length === 0) {
-                container.innerHTML = '<div class="no-results">No sublimation matches your search criteria</div>';
+                container.innerHTML = '<div class极="no-results">No sublimation matches your search criteria</div>';
                 return;
             }
             
             container.innerHTML = '';
             
+            let lastObtenation = "";
+            
             runesToRender.forEach(rune => {
+                // Use the last obtenation value if current is empty
+                if (rune.obtenation && rune.obtenation.trim() !== "") {
+                    lastObtenation = rune.obtenation;
+                }
+                const obtenationValue = rune.obtenation && rune.obtenation.trim() !== "" ? rune.obtenation : lastObtenation;
+                
                 const card = document.createElement('div');
                 card.className = 'rune-card';
                 
@@ -1829,18 +1796,19 @@
                                 if (color === 'R') iconUrl = 'https://methodwakfu.com/wp-content/uploads/2020/04/chasse_rouge_xs.png';
                                 if (color === 'B') iconUrl = 'https://methodwakfu.com/wp-content/uploads/2020/04/chasse_bleue_xs.png';
                                 return `
-                                    <div class="rune-color" style="background: url('${iconUrl}') center/cover no-repeat;"></div>
+                                    <img src="${iconUrl}" class="rune-color" alt="${color}">
                                 `;
                             }).join('')}
                         </div>
                     </div>
                     <div class="rune-body">
-                        <div class="rune-description">${rune.description}</div>
-                        
-                            <div class="rune-description">
-                                <div class="detail-label">Level Effect</div>
-                                <div class="rune-description">${rune.effect}</div>
-                            </div>
+                        <div class="level-effect">
+                            <div class="effect-label">Level Effect</div>
+                            <div>${rune.effect}</div>
+                        </div>
+                        <div class="rune-description">
+                            ${rune.description}
+                        </div>
                         <div class="rune-details">
                             <div class="detail-item">
                                 <div class="detail-label">Max Level</div>
@@ -1856,11 +1824,10 @@
                             </div>
                             <div class="detail-item">
                                 <div class="detail-label">Obtenation</div>
-                                <div class="detail-value">${rune.obtenation}</div>
+                                <div class="detail-value">${obtenationValue}</div>
                             </div>
                         </div>
                     </div>
-                    
                 `;
                 
                 container.appendChild(card);
@@ -1870,14 +1837,7 @@
         // Function to filter runes based on criteria
         function filterRunes() {
             const searchTerm = document.getElementById('searchInput').value.toLowerCase();
-            const rarityFilter = document.getElementById('rarityFilter').value;
             const activeLevelTab = document.querySelector('.level-tab.active').getAttribute('data-level');
-            
-            // Get active colors
-            const activeColors = [];
-            document.querySelectorAll('.color-btn.active').forEach(btn => {
-                activeColors.push(btn.getAttribute('data-color'));
-            });
             
             return runes.filter(rune => {
                 // Search filter
@@ -1891,26 +1851,6 @@
                     return false;
                 }
                 
-                // Rarity filter
-                if (rarityFilter !== 'all' && !rune.rarity.includes(rarityFilter)) {
-                    return false;
-                }
-                
-                // Color filter
-                if (activeColors.length > 0) {
-                    const runeColorsStr = rune.colors.join('');
-                    let hasActiveColor = false;
-                    
-                    for (const color of activeColors) {
-                        if (runeColorsStr.includes(color)) {
-                            hasActiveColor = true;
-                            break;
-                        }
-                    }
-                    
-                    if (!hasActiveColor) return false;
-                }
-                
                 return true;
             });
         }
@@ -1919,19 +1859,6 @@
         document.getElementById('searchInput').addEventListener('input', function() {
             const filteredRunes = filterRunes();
             renderRunes(filteredRunes);
-        });
-        
-        document.getElementById('rarityFilter').addEventListener('change', function() {
-            const filteredRunes = filterRunes();
-            renderRunes(filteredRunes);
-        });
-        
-        document.querySelectorAll('.color-btn').forEach(btn => {
-            btn.addEventListener('click', function() {
-                this.classList.toggle('active');
-                const filteredRunes = filterRunes();
-                renderRunes(filteredRunes);
-            });
         });
         
         document.querySelectorAll('.level-tab').forEach(tab => {
