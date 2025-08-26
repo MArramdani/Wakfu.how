@@ -176,3 +176,15 @@
                 grid-template-columns: 1fr;
             }
         }
+        .search-box {
+            position: relative;
+        }
+
+        .search-box::after {
+            content: "🔍";
+            position: absolute;
+            right: 15px;
+            top: 50%;
+            transform: translateY(-50%);
+            color: #999;
+        }

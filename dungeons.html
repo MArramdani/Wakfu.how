@@ -248,21 +248,38 @@
         // Function to filter dungeons based on search input
         function setupSearch() {
             const searchInput = document.getElementById('dungeonSearch');
-            
+    
             searchInput.addEventListener('input', () => {
-                const searchTerm = searchInput.value.toLowerCase();
+                const searchTerm = searchInput.value.toLowerCase().trim();
                 const allDungeonItems = document.querySelectorAll('.dungeon-item');
-                
+                let hasVisibleItems = false;
+        
+                // First show all items if search is empty
+                if (searchTerm === '') {
+                    allDungeonItems.forEach(item => {
+                        item.style.display = 'block';
+                    });
+            
+                    // Show all brackets
+                    document.querySelectorAll('.bracket').forEach(bracket => {
+                        bracket.style.display = 'block';
+                    });
+            
+                    return;
+                }
+        
+                // Filter items based on search
                 allDungeonItems.forEach(item => {
                     const dungeonName = item.getAttribute('data-name');
                     if (dungeonName.includes(searchTerm)) {
                         item.style.display = 'block';
+                        hasVisibleItems = true;
                     } else {
                         item.style.display = 'none';
                     }
                 });
-                
-                // Hide empty brackets
+        
+                // Hide/show brackets based on whether they have visible items
                 document.querySelectorAll('.bracket').forEach(bracket => {
                     const visibleDungeons = bracket.querySelectorAll('.dungeon-item[style="display: block"]');
                     if (visibleDungeons.length === 0) {
