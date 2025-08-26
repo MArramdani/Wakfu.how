@@ -178,124 +178,127 @@
             ]
         };
 
-        // Function to generate the HTML for the dungeons page
-        function generateDungeonsPage() {
-            const bracketsContainer = document.getElementById('bracketsContainer');
+            // Function to generate the HTML for the dungeons page
+    function generateDungeonsPage() {
+        const bracketsContainer = document.getElementById('bracketsContainer');
+        
+        // Sort brackets in ascending order
+        const brackets = Object.keys(dungeonsByBracket).sort((a, b) => parseInt(a) - parseInt(b));
+        
+        brackets.forEach(bracket => {
+            const bracketElement = document.createElement('div');
+            bracketElement.className = 'bracket';
             
-            // Sort brackets in ascending order
-            const brackets = Object.keys(dungeonsByBracket).sort((a, b) => parseInt(a) - parseInt(b));
+            // Create bracket header
+            const bracketHeader = document.createElement('div');
+            bracketHeader.className = 'bracket-header';
+            bracketHeader.innerHTML = `
+                <span class="bracket-title">Level ${bracket} Dungeons</span>
+                <span class="bracket-count">${dungeonsByBracket[bracket].length} dungeons</span>
+            `;
             
-            brackets.forEach(bracket => {
-                const bracketElement = document.createElement('div');
-                bracketElement.className = 'bracket';
-                
-                // Create bracket header
-                const bracketHeader = document.createElement('div');
-                bracketHeader.className = 'bracket-header';
-                bracketHeader.innerHTML = `
-                    <span class="bracket-title">Level ${bracket} Dungeons</span>
-                    <span class="bracket-count">${dungeonsByBracket[bracket].length} dungeons</span>
+            // Create bracket content
+            const bracketContent = document.createElement('div');
+            bracketContent.className = 'bracket-content';
+            
+            // Create image placeholder
+            const bracketImage = document.createElement('div');
+            bracketImage.className = 'bracket-image';
+            bracketImage.innerHTML = `
+                <div class="bracket-image-placeholder">
+                    [Image for Level ${bracket} Bracket]
+                </div>
+            `;
+            
+            // Create dungeons list
+            const dungeonsList = document.createElement('div');
+            dungeonsList.className = 'dungeons-list';
+            
+            // Add each dungeon to the list
+            dungeonsByBracket[bracket].forEach(dungeon => {
+                const dungeonItem = document.createElement('div');
+                dungeonItem.className = 'dungeon-item';
+                dungeonItem.setAttribute('data-name', dungeon.toLowerCase());
+                dungeonItem.innerHTML = `
+                    <div class="dungeon-name">${dungeon}</div>
+                    <div class="dungeon-level">Level ${bracket}</div>
                 `;
                 
-                // Create bracket content
-                const bracketContent = document.createElement('div');
-                bracketContent.className = 'bracket-content';
-                
-                // Create image placeholder
-                const bracketImage = document.createElement('div');
-                bracketImage.className = 'bracket-image';
-                bracketImage.innerHTML = `
-                    <div class="bracket-image-placeholder">
-                        [Image for Level ${bracket} Bracket]
-                    </div>
-                `;
-                
-                // Create dungeons list
-                const dungeonsList = document.createElement('div');
-                dungeonsList.className = 'dungeons-list';
-                
-                // Add each dungeon to the list
-                dungeonsByBracket[bracket].forEach(dungeon => {
-                    const dungeonItem = document.createElement('div');
-                    dungeonItem.className = 'dungeon-item';
-                    dungeonItem.setAttribute('data-name', dungeon.toLowerCase());
-                    dungeonItem.innerHTML = `
-                        <div class="dungeon-name">${dungeon}</div>
-                        <div class="dungeon-level">Level ${bracket}</div>
-                    `;
-                    
-                    // Add click event to navigate to dungeon page
-                    dungeonItem.addEventListener('click', () => {
-                        // In a real implementation, this would navigate to the dungeon's page
-                        alert(`Navigating to ${dungeon} page (to be implemented)`);
-                        // window.location.href = `/dungeons/${dungeon.toLowerCase().replace(/\s+/g, '-')}`;
-                    });
-                    
-                    dungeonsList.appendChild(dungeonItem);
+                // Add click event to navigate to dungeon page
+                dungeonItem.addEventListener('click', () => {
+                    // In a real implementation, this would navigate to the dungeon's page
+                    alert(`Navigating to ${dungeon} page (to be implemented)`);
+                    // window.location.href = `/dungeons/${dungeon.toLowerCase().replace(/\s+/g, '-')}`;
                 });
                 
-                // Assemble the bracket
-                bracketContent.appendChild(bracketImage);
-                bracketContent.appendChild(dungeonsList);
-                
-                bracketElement.appendChild(bracketHeader);
-                bracketElement.appendChild(bracketContent);
-                
-                bracketsContainer.appendChild(bracketElement);
+                dungeonsList.appendChild(dungeonItem);
             });
-        }
-
-        // Function to filter dungeons based on search input
-        function setupSearch() {
-            const searchInput = document.getElementById('dungeonSearch');
-    
-            searchInput.addEventListener('input', () => {
-                const searchTerm = searchInput.value.toLowerCase().trim();
-                const allDungeonItems = document.querySelectorAll('.dungeon-item');
-                let hasVisibleItems = false;
-        
-                // First show all items if search is empty
-                if (searchTerm === '') {
-                    allDungeonItems.forEach(item => {
-                        item.style.display = 'block';
-                    });
             
-                    // Show all brackets
-                    document.querySelectorAll('.bracket').forEach(bracket => {
-                        bracket.style.display = 'block';
-                    });
+            // Assemble the bracket
+            bracketContent.appendChild(bracketImage);
+            bracketContent.appendChild(dungeonsList);
             
-                    return;
-                }
-        
-                // Filter items based on search
-                allDungeonItems.forEach(item => {
-                    const dungeonName = item.getAttribute('data-name');
-                    if (dungeonName.includes(searchTerm)) {
-                        item.style.display = 'block';
-                        hasVisibleItems = true;
-                    } else {
-                        item.style.display = 'none';
-                    }
-                });
-        
-                // Hide/show brackets based on whether they have visible items
-                document.querySelectorAll('.bracket').forEach(bracket => {
-                    const visibleDungeons = bracket.querySelectorAll('.dungeon-item[style="display: block"]');
-                    if (visibleDungeons.length === 0) {
-                        bracket.style.display = 'none';
-                    } else {
-                        bracket.style.display = 'block';
-                    }
-                });
-            });
-        }
-
-        // Initialize the page when it loads
-        document.addEventListener('DOMContentLoaded', () => {
-            generateDungeonsPage();
-            setupSearch();
+            bracketElement.appendChild(bracketHeader);
+            bracketElement.appendChild(bracketContent);
+            
+            bracketsContainer.appendChild(bracketElement);
         });
-    </script>
+    }
+
+    // Function to filter dungeons based on search input
+    function setupSearch() {
+        const searchInput = document.getElementById('dungeonSearch');
+        
+        searchInput.addEventListener('input', () => {
+            const searchTerm = searchInput.value.toLowerCase().trim();
+            const allDungeonItems = document.querySelectorAll('.dungeon-item');
+            const allBrackets = document.querySelectorAll('.bracket');
+            
+            // If search is empty, show everything
+            if (!searchTerm) {
+                allDungeonItems.forEach(item => {
+                    item.style.display = 'block';
+                });
+                allBrackets.forEach(bracket => {
+                    bracket.style.display = 'block';
+                });
+                return;
+            }
+            
+            // Track which brackets have visible items
+            const visibleBrackets = new Set();
+            
+            // Filter items based on search
+            allDungeonItems.forEach(item => {
+                const dungeonName = item.getAttribute('data-name');
+                if (dungeonName.includes(searchTerm)) {
+                    item.style.display = 'block';
+                    // Find the parent bracket and mark it as having visible items
+                    const bracket = item.closest('.bracket');
+                    if (bracket) {
+                        visibleBrackets.add(bracket);
+                    }
+                } else {
+                    item.style.display = 'none';
+                }
+            });
+            
+            // Show/hide brackets based on whether they have visible items
+            allBrackets.forEach(bracket => {
+                if (visibleBrackets.has(bracket)) {
+                    bracket.style.display = 'block';
+                } else {
+                    bracket.style.display = 'none';
+                }
+            });
+        });
+    }
+
+    // Initialize the page when it loads
+    document.addEventListener('DOMContentLoaded', () => {
+        generateDungeonsPage();
+        setupSearch();
+    });
+</script>
 </body>
 </html>

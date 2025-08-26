@@ -188,3 +188,12 @@
             transform: translateY(-50%);
             color: #999;
         }
+        #dungeonSearch {
+    transition: all 0.3s ease;
+}
+
+#dungeonSearch:focus {
+    border-color: var(--secondary);
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(52, 152, 219, 0.2);
+}
