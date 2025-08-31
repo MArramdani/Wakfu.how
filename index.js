@@ -3,21 +3,23 @@ document.addEventListener('DOMContentLoaded', function() {
     const navLinks = document.querySelectorAll('.nav-link');
     const sidebar = document.querySelector('.sidebar');
     const toggleButton = document.querySelector('.sidebar-toggle');
+    const mainContent = document.getElementById('main-content');
     
     // Set active link based on current page
     function setActiveLink() {
         const currentPage = window.location.pathname.split('/').pop() || 'index.html';
+        const currentHash = window.location.hash || '#home';
         
         navLinks.forEach(link => {
-            const linkHref = link.getAttribute('href');
-            
             // Remove active class from all links first
             link.classList.remove('active');
             
-            // Check if this link matches current page
+            const linkHref = link.getAttribute('href');
+            
+            // Check if this link matches current page or hash
             if (linkHref === currentPage || 
                 (currentPage === '' && linkHref === 'index.html') ||
-                (window.location.hash && linkHref === window.location.hash)) {
+                (linkHref === currentHash)) {
                 link.classList.add('active');
             }
         });
@@ -25,31 +27,6 @@ document.addEventListener('DOMContentLoaded', function() {
     
     // Set initial active state
     setActiveLink();
-    
-    // Add click event listeners to all navigation links
-    navLinks.forEach(link => {
-        link.addEventListener('click', function(e) {
-            const href = this.getAttribute('href');
-            
-            // Handle hash links (internal page navigation)
-            if (href.startsWith('#')) {
-                e.preventDefault();
-                
-                // Remove active class from all links
-                navLinks.forEach(l => l.classList.remove('active'));
-                // Add active class to clicked link
-                this.classList.add('active');
-                
-                // Update URL hash
-                window.location.hash = href;
-                
-                // Update content for hash-based navigation
-                updateContentForHash(href);
-            }
-            // For actual page links, let the browser handle them normally
-            // (no preventDefault(), so they will work as regular links)
-        });
-    });
     
     // Update content based on hash
     function updateContentForHash(hash) {
@@ -61,12 +38,12 @@ document.addEventListener('DOMContentLoaded', function() {
         
         // Simple content switching based on hash
         switch(hash) {
-            case '#analytics':
+            case '#getting-started':
                 pageTitle.textContent = 'Getting Started with Wakfu';
                 pageDescription.textContent = 'Begin your adventure in the World of Twelve with our comprehensive beginner guides.';
                 updateCardContent(contentCards, 'Getting Started');
                 break;
-            case '#settings':
+            case '#community':
                 pageTitle.textContent = 'Latest Community Posts';
                 pageDescription.textContent = 'Stay updated with the latest discussions, news, and updates from the Wakfu community.';
                 updateCardContent(contentCards, 'Community');
@@ -103,6 +80,30 @@ document.addEventListener('DOMContentLoaded', function() {
             }
         });
     }
+    
+    // Add click event listeners to all navigation links
+    navLinks.forEach(link => {
+        link.addEventListener('click', function(e) {
+            const href = this.getAttribute('href');
+            
+            // Handle hash links (internal page navigation)
+            if (href.startsWith('#')) {
+                e.preventDefault();
+                
+                // Remove active class from all links
+                navLinks.forEach(l => l.classList.remove('active'));
+                // Add active class to clicked link
+                this.classList.add('active');
+                
+                // Update URL hash
+                window.location.hash = href;
+                
+                // Update content for hash-based navigation
+                updateContentForHash(href);
+            }
+            // For actual page links, let the browser handle them normally
+        });
+    });
     
     // Handle hash changes on page load
     if (window.location.hash) {
@@ -145,12 +146,6 @@ document.addEventListener('DOMContentLoaded', function() {
             }
         });
     }
-    
-    // Remove the debug script if it exists
-    const debugScript = document.querySelector('script[src*="debug"]');
-    if (debugScript) {
-        debugScript.remove();
-    }
 });
 
 // Handle actual page navigation (for when users click on real page links)
@@ -169,14 +164,15 @@ async function loadPage(page) {
         // Extract just the main content from the response
         const parser = new DOMParser();
         const doc = parser.parseFromString(html, 'text/html');
-        const mainContent = doc.querySelector('.main-content');
+        const newMainContent = doc.querySelector('.main-content');
         
-        if (!mainContent) {
+        if (!newMainContent) {
             throw new Error('No .main-content element found in the response');
         }
         
         // Update the main content area
-        document.getElementById('main-content').innerHTML = mainContent.innerHTML;
+        const mainContent = document.getElementById('main-content');
+        mainContent.innerHTML = newMainContent.innerHTML;
         
         // Update page title if available
         const newTitle = doc.querySelector('title');
@@ -184,11 +180,26 @@ async function loadPage(page) {
             document.title = newTitle.textContent;
         }
         
+        // Update navigation active state
+        const navLinks = document.querySelectorAll('.nav-link');
+        const currentPage = window.location.pathname.split('/').pop() || 'index.html';
+        
+        navLinks.forEach(link => {
+            link.classList.remove('active');
+            const linkHref = link.getAttribute('href');
+            
+            if (linkHref === currentPage || 
+                (currentPage === '' && linkHref === 'index.html')) {
+                link.classList.add('active');
+            }
+        });
+        
         console.log('Page loaded successfully:', page);
         
     } catch (error) {
         console.error('Error loading page:', error);
-        document.getElementById('main-content').innerHTML = `
+        const mainContent = document.getElementById('main-content');
+        mainContent.innerHTML = `
             <div class="page-header">
                 <h1 class="page-title">Error Loading Content</h1>
                 <p class="page-description">The page could not be loaded. Please try again later.</p>
