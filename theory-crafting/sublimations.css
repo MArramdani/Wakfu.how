@@ -61,32 +61,6 @@
     background: #4a8f8a;
 }
 
-.level-tabs {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 10px;
-    margin-bottom: 20px;
-    padding: 0 10px;
-}
-
-.level-tab {
-    padding: 10px 20px;
-    background: rgba(36, 7, 80, 0.4);
-    border-radius: 8px;
-    cursor: pointer;
-    transition: all 0.3s;
-    border: 1px solid rgba(87, 123, 141, 0.3);
-}
-
-.level-tab.active {
-    background: #57A6A1;
-    font-weight: bold;
-}
-
-.level-tab:hover {
-    background: rgba(36, 7, 80, 0.6);
-}
-
 .category-filter {
     display: flex;
     flex-wrap: wrap;

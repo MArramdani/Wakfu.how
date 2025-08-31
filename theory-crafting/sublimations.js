@@ -102,13 +102,6 @@ async function initApp() {
 
 // Initialize the page after data is loaded
 function initializePage() {
-    // Extract unique level ranges
-    const levelRanges = [...new Set(runes.map(rune => rune.levelRange))].sort((a, b) => {
-        const aMin = parseInt(a.split('-')[0]);
-        const bMin = parseInt(b.split('-')[0]);
-        return aMin - bMin;
-    });
-
     // Extract unique categories
     const categories = [...new Set(runes.map(rune => rune.category))].sort();
 
@@ -126,18 +119,10 @@ function initializePage() {
         });
     }
 
-    // Generate level tabs
+    // Remove level tabs section
     const levelTabsContainer = document.getElementById('levelTabs');
     if (levelTabsContainer) {
-        levelTabsContainer.innerHTML = '<div class="level-tab active" data-level="all">All Levels</div>';
-        
-        levelRanges.forEach(range => {
-            const tab = document.createElement('div');
-            tab.className = 'level-tab';
-            tab.textContent = `Level ${range}`;
-            tab.setAttribute('data-level', range);
-            levelTabsContainer.appendChild(tab);
-        });
+        levelTabsContainer.style.display = 'none';
     }
 
     // Function to render runes
@@ -160,50 +145,54 @@ function initializePage() {
             
             // Generate description with current values
             let description = rune.description;
-            if (rune.values) {
+            if (rune.values && rune.values.length > 0) {
                 rune.values.forEach(value => {
                     const calculatedValue = value.base + (value.increment * (currentLevel - rune.minLevel));
                     description = description.replace(`[${value.placeholder}]`, calculatedValue);
                 });
             }
             
-            // Generate color elements - show only the icon without background
-const colorElements = rune.colors.map(color => {
-    if (color === 'R') {
-        return `<div class="rune-color" title="Red Slot">
-            <img src="https://methodwakfu.com/wp-content/uploads/2020/04/chasse_rouge_xs.png" class="color-icon" alt="Red">
-        </div>`;
-    } else if (color === 'G') {
-        return `<div class="rune-color" title="Green Slot">
-            <img src="https://methodwakfu.com/wp-content/uploads/2020/04/chasse_verte_xs.png" class="color-icon" alt="Green">
-        </div>`;
-    } else if (color === 'B') {
-        return `<div class="rune-color" title="Blue Slot">
-            <img src="https://methodwakfu.com/wp-content/uploads/2020/04/chasse_bleue_xs.png" class="color-icon" alt="Blue">
-        </div>`;
-    } else if (color === 'Epic') {
-        return `<div class="rune-color" title="Epic">
-            <img src="PATH_TO_EPIC_ICON" class="color-icon" alt="Epic">
-        </div>`;
-    } else if (color === 'Relic') {
-        return `<div class="rune-color" title="Relic">
-            <img src="PATH_TO_RELIC_ICON" class="color-icon" alt="Relic">
-        </div>`;
-    }
-    return '';
-}).join('');
+            // Generate color elements
+            const colorElements = rune.colors.map(color => {
+                if (color === 'R') {
+                    return `<div class="rune-color" title="Red Slot">
+                        <img src="https://methodwakfu.com/wp-content/uploads/2020/04/chasse_rouge_xs.png" class="color-icon" alt="Red">
+                    </div>`;
+                } else if (color === 'G') {
+                    return `<div class="rune-color" title="Green Slot">
+                        <img src="https://methodwakfu.com/wp-content/uploads/2020/04/chasse_verte_xs.png" class="color-icon" alt="Green">
+                    </div>`;
+                } else if (color === 'B') {
+                    return `<div class="rune-color" title="Blue Slot">
+                        <img src="https://methodwakfu.com/wp-content/uploads/2020/04/chasse_bleue_xs.png" class="color-icon" alt="Blue">
+                    </div>`;
+                } else if (color === 'Epic') {
+                    return `<div class="rune-color" title="Epic Slot">
+                        <img src="https://static.ankama.com/wakfu/portal/game/item/115/81224133.png" class="color-icon" alt="Epic">
+                    </div>`;
+                } else if (color === 'Relic') {
+                    return `<div class="rune-color" title="Relic Slot">
+                        <img src="https://static.ankama.com/wakfu/portal/game/item/115/81224139.png" class="color-icon" alt="Relic">
+                    </div>`;
+                }
+                return '';
+            }).join('');
             
             // Generate rarity icons
-const rarityIcons = rune.rarity.map(rarity => {
-    if (rarity === 'Rare') {
-        return `<img src="https://static.ankama.com/wakfu/portal/game/item/115/81228822.png" class="rarity-icon" alt="Rare" title="Rare">`;
-    } else if (rarity === 'Mythic') {
-        return `<img src="https://static.ankama.com/wakfu/portal/game/item/115/81228823.png" class="rarity-icon" alt="Mythic" title="Mythic">`;
-    } else if (rarity === 'Legendary') {
-        return `<img src="https://static.ankama.com/wakfu/portal/game/item/115/81227111.png" class="rarity-icon" alt="Legendary" title="Legendary">`;
-    }
-    return '';
-}).join('');
+            const rarityIcons = rune.rarity.map(rarity => {
+                if (rarity === 'Rare') {
+                    return `<img src="https://static.ankama.com/wakfu/portal/game/item/115/81228822.png" class="rarity-icon" alt="Rare" title="Rare">`;
+                } else if (rarity === 'Mythic') {
+                    return `<img src="https://static.ankama.com/wakfu/portal/game/item/115/81228823.png" class="rarity-icon" alt="Mythic" title="Mythic">`;
+                } else if (rarity === 'Legendary') {
+                    return `<img src="https://static.ankama.com/wakfu/portal/game/item/115/81227111.png" class="rarity-icon" alt="Legendary" title="Legendary">`;
+                } else if (rarity === 'Epic') {
+                    return `<img src="https://static.ankama.com/wakfu/portal/game/item/115/81224133.png" class="rarity-icon" alt="Epic" title="Epic">`;
+                } else if (rarity === 'Relic') {
+                    return `<img src="https://static.ankama.com/wakfu/portal/game/item/115/81224139.png" class="rarity-icon" alt="Relic" title="Relic">`;
+                }
+                return '';
+            }).join('');
             
             const card = document.createElement('div');
             card.className = 'rune-card';
@@ -261,7 +250,7 @@ const rarityIcons = rune.rarity.map(rarity => {
                 
                 // Update description with new values
                 let updatedDescription = rune.description;
-                if (rune.values) {
+                if (rune.values && rune.values.length > 0) {
                     rune.values.forEach(value => {
                         const calculatedValue = value.base + (value.increment * (level - rune.minLevel));
                         updatedDescription = updatedDescription.replace(`[${value.placeholder}]`, calculatedValue);
@@ -279,15 +268,13 @@ const rarityIcons = rune.rarity.map(rarity => {
     // Function to filter runes based on criteria
     function filterRunes() {
         const searchInput = document.getElementById('searchInput');
-        const activeLevelTab = document.querySelector('.level-tab.active');
         const activeCategoryTab = document.querySelector('.category-tab.active');
         
-        if (!searchInput || !activeLevelTab || !activeCategoryTab) {
+        if (!searchInput || !activeCategoryTab) {
             return runes;
         }
         
         const searchTerm = searchInput.value.toLowerCase();
-        const activeLevel = activeLevelTab.getAttribute('data-level');
         const activeCategory = activeCategoryTab.getAttribute('data-category');
         
         return runes.filter(rune => {
@@ -295,11 +282,6 @@ const rarityIcons = rune.rarity.map(rarity => {
             if (searchTerm && !rune.name.toLowerCase().includes(searchTerm) && 
                 !rune.description.toLowerCase().includes(searchTerm) && 
                 !rune.obtenation.name.toLowerCase().includes(searchTerm)) {
-                return false;
-            }
-            
-            // Level filter
-            if (activeLevel !== 'all' && rune.levelRange !== activeLevel) {
                 return false;
             }
             
@@ -325,19 +307,6 @@ const rarityIcons = rune.rarity.map(rarity => {
     const searchBtn = document.querySelector('.search-btn');
     if (searchBtn) {
         searchBtn.addEventListener('click', function() {
-            const filteredRunes = filterRunes();
-            renderRunes(filteredRunes);
-        });
-    }
-    
-    // Level tabs event listener
-    const levelTabsContainerListener = document.getElementById('levelTabs');
-    if (levelTabsContainerListener) {
-        levelTabsContainerListener.addEventListener('click', function(e) {
-            const tab = e.target.closest('.level-tab');
-            if (!tab) return;
-            document.querySelectorAll('.level-tab').forEach(t => t.classList.remove('active'));
-            tab.classList.add('active');
             const filteredRunes = filterRunes();
             renderRunes(filteredRunes);
         });
