@@ -87,10 +87,38 @@
     background: rgba(36, 7, 80, 0.6);
 }
 
+.category-filter {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-bottom: 20px;
+    padding: 10px;
+    background: rgba(52, 76, 100, 0.6);
+    border-radius: 12px;
+}
+
+.category-tab {
+    padding: 8px 16px;
+    background: rgba(36, 7, 80, 0.4);
+    border-radius: 6px;
+    cursor: pointer;
+    transition: all 0.3s;
+    border: 1px solid rgba(87, 123, 141, 0.3);
+}
+
+.category-tab.active {
+    background: #57A6A1;
+    font-weight: bold;
+}
+
+.category-tab:hover {
+    background: rgba(36, 7, 80, 0.6);
+}
+
 /* ===== RUNES GRID ===== */
 .runes-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(800px, 1fr));
+    grid-template-columns: repeat(3, 1fr);
     gap: 25px;
 }
 
@@ -104,6 +132,7 @@
     flex-direction: column;
     border: 1px solid rgba(87, 123, 141, 0.3);
     backdrop-filter: blur(5px);
+    padding: 20px;
 }
 
 .rune-card:hover {
@@ -112,17 +141,26 @@
 }
 
 .rune-header {
-    padding: 20px;
-    background: linear-gradient(90deg, #240750, #344C64);
     display: flex;
     justify-content: space-between;
-    align-items: center;
+    align-items: flex-start;
+    margin-bottom: 15px;
+}
+
+.rune-name-container {
+    flex: 1;
 }
 
 .rune-name {
     font-size: 1.8rem;
     font-weight: bold;
     color: #57A6A1;
+    margin-bottom: 5px;
+}
+
+.rune-level {
+    font-size: 1rem;
+    color: #577B8D;
 }
 
 .rune-colors {
@@ -131,8 +169,8 @@
 }
 
 .rune-color {
-    width: 40px;
-    height: 40px;
+    width: 30px;
+    height: 30px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -140,11 +178,44 @@
     border: 2px solid rgba(255, 255, 255, 0.2);
 }
 
-.rune-body {
-    padding: 20px;
-    flex: 1;
+.color-icon {
+    width: 20px;
+    height: 20px;
+}
+
+.divider {
+    height: 1px;
+    background: rgba(87, 123, 141, 0.3);
+    margin: 15px 0;
+}
+
+.rune-meta {
     display: flex;
-    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 15px;
+}
+
+.obtenation {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.obtenation-icon {
+    width: 30px;
+    height: 30px;
+    border-radius: 4px;
+}
+
+.rarity {
+    display: flex;
+    gap: 5px;
+}
+
+.rarity-icon {
+    width: 25px;
+    height: 25px;
 }
 
 .rune-description {
@@ -154,78 +225,54 @@
     margin-bottom: 15px;
     font-size: 1.1rem;
     border: 1px solid rgba(87, 123, 141, 0.3);
+    min-height: 80px;
 }
 
-.level-effect-maxlevel {
+.level-controls {
     display: flex;
-    align-items: flex-start;
-    gap: 16px;
-    margin-bottom: 20px;
-}
-
-.level-effect {
-    flex: 1;
-    background: rgba(36, 7, 80, 0.4);
-    padding: 15px;
-    border-radius: 8px;
-    border: 1px solid rgba(87, 123, 141, 0.3);
-}
-
-.effect-label {
-    font-size: 0.9rem;
-    color: #577B8D;
-    margin-bottom: 8px;
-    font-weight: bold;
-}
-
-.max-level-mini {
-    background: rgba(36, 7, 80, 0.4);
-    padding: 10px 18px;
-    border-radius: 8px;
-    min-width: 80px;
-    display: flex;
-    flex-direction: column;
-    align-items: flex-end;
-    justify-content: flex-start;
-    border: 1px solid rgba(87, 123, 141, 0.3);
-}
-
-.max-level-mini .detail-label {
-    font-size: 0.9rem;
-    color: #577B8D;
-    margin-bottom: 4px;
-    font-weight: bold;
-}
-
-.max-level-mini .detail-value {
-    font-weight: 500;
-    font-size: 1.2rem;
-    color: #57A6A1;
-}
-
-.rune-details {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
+    align-items: center;
     gap: 15px;
-    margin-top: auto;
+    margin-top: 15px;
 }
 
-.detail-item {
+.level-slider {
+    flex: 1;
+    -webkit-appearance: none;
+    height: 8px;
+    border-radius: 4px;
     background: rgba(36, 7, 80, 0.4);
-    padding: 12px;
+    outline: none;
+}
+
+.level-slider::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background: #57A6A1;
+    cursor: pointer;
+}
+
+.level-slider::-moz-range-thumb {
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background: #57A6A1;
+    cursor: pointer;
+}
+
+.level-display {
+    width: 40px;
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: rgba(36, 7, 80, 0.4);
     border-radius: 8px;
+    font-weight: bold;
+    color: #57A6A1;
     border: 1px solid rgba(87, 123, 141, 0.3);
-}
-
-.detail-label {
-    font-size: 0.85rem;
-    color: #577B8D;
-    margin-bottom: 5px;
-}
-
-.detail-value {
-    font-weight: 500;
-    color: #e0e0e0;
 }
 
 .no-results {
@@ -240,17 +287,6 @@
 }
 
 /* Color indicators for runes */
-.rune-color {
-    width: 30px;
-    height: 30px;
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-weight: bold;
-    color: white;
-}
-
 .color-green {
     background-color: #4CAF50;
 }
@@ -263,34 +299,37 @@
     background-color: #2196F3;
 }
 
+.color-epic {
+    background: linear-gradient(45deg, #ff00cc, #ff0066);
+    color: white;
+    font-weight: bold;
+}
+
+.color-relic {
+    background: linear-gradient(45deg, #9b59b6, #8e44ad);
+    color: white;
+    font-weight: bold;
+}
+
 /* ===== RESPONSIVE DESIGN ===== */
 @media (max-width: 1200px) {
     .runes-grid {
-        grid-template-columns: 1fr;
-    }
-    
-    .rune-details {
         grid-template-columns: repeat(2, 1fr);
     }
 }
 
 @media (max-width: 900px) {
-    .rune-details {
+    .runes-grid {
         grid-template-columns: 1fr;
     }
     
     .rune-header {
         flex-direction: column;
         gap: 15px;
-        text-align: center;
     }
     
-    .level-effect-maxlevel {
+    .level-controls {
         flex-direction: column;
-    }
-    
-    .max-level-mini {
-        align-items: center;
     }
 }
 
@@ -307,5 +346,11 @@
 @media (max-width: 576px) {
     .rune-name {
         font-size: 1.5rem;
+    }
+    
+    .rune-meta {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 10px;
     }
 }
