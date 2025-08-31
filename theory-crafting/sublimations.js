@@ -42,7 +42,6 @@ async function loadRuneData() {
                 "step": 1,
                 "obtenation": {
                     "name": "Runic Mimic",
-                    "icon": "https://static.ankama.com/wakfu/portal/game/monster/200/190004327.w133h.png",
                     "localIcon": "./icons/runic_mimic.png"
                 },
                 "levelRange": "1-20",
@@ -66,7 +65,6 @@ async function loadRuneData() {
                 "step": 1,
                 "obtenation": {
                     "name": "Rift",
-                    "icon": "https://static.ankama.com/wakfu/portal/game/monster/200/190004327.w133h.png",
                     "localIcon": "./icons/rift.png"
                 },
                 "levelRange": "201-215",
@@ -88,23 +86,13 @@ async function loadRuneData() {
     }
 }
 
-// Function to handle image loading with fallback
-function loadImageWithFallback(url, fallback, alt, className) {
+// Function to load local image
+function loadLocalImage(src, alt, className) {
     const img = new Image();
+    img.src = src;
     img.alt = alt;
     if (className) img.className = className;
-    
-    return new Promise((resolve) => {
-        img.onload = () => resolve(img);
-        img.onerror = () => {
-            const fallbackImg = new Image();
-            fallbackImg.src = fallback;
-            fallbackImg.alt = alt;
-            if (className) fallbackImg.className = className;
-            resolve(fallbackImg);
-        };
-        img.src = url;
-    });
+    return Promise.resolve(img);
 }
 
 // Initialize the application
@@ -185,29 +173,26 @@ function initializePage() {
                 });
             }
             
-            // Generate color elements with fallback
+            // Generate color elements with local icons
             const colorElements = [];
             for (const color of rune.colors) {
                 let colorElement;
                 if (color === 'R') {
-                    colorElement = await loadImageWithFallback(
-                        "https://methodwakfu.com/wp-content/uploads/2020/04/chasse_rouge_xs.png",
+                    colorElement = await loadLocalImage(
                         localIcons.red,
                         "Red Slot",
                         "color-icon"
                     );
                     colorElement = colorElement.outerHTML;
                 } else if (color === 'G') {
-                    colorElement = await loadImageWithFallback(
-                        "https://methodwakfu.com/wp-content/uploads/2020/04/chasse_verte_xs.png",
+                    colorElement = await loadLocalImage(
                         localIcons.green,
                         "Green Slot",
                         "color-icon"
                     );
                     colorElement = colorElement.outerHTML;
                 } else if (color === 'B') {
-                    colorElement = await loadImageWithFallback(
-                        "https://methodwakfu.com/wp-content/uploads/2020/04/chasse_bleue_xs.png",
+                    colorElement = await loadLocalImage(
                         localIcons.blue,
                         "Blue Slot",
                         "color-icon"
@@ -223,45 +208,40 @@ function initializePage() {
                 }
             }
             
-            // Generate rarity icons with fallback
+            // Generate rarity icons with local icons
             const rarityIcons = [];
             for (const rarity of rune.rarity) {
                 let rarityElement;
                 if (rarity === 'Rare') {
-                    rarityElement = await loadImageWithFallback(
-                        "https://static.ankama.com/wakfu/portal/game/item/115/81228822.png",
+                    rarityElement = await loadLocalImage(
                         localIcons.rare,
                         "Rare",
                         "rarity-icon"
                     );
                     rarityElement = rarityElement.outerHTML;
                 } else if (rarity === 'Mythic') {
-                    rarityElement = await loadImageWithFallback(
-                        "https://static.ankama.com/wakfu/portal/game/item/115/81228823.png",
+                    rarityElement = await loadLocalImage(
                         localIcons.mythic,
                         "Mythic",
                         "rarity-icon"
                     );
                     rarityElement = rarityElement.outerHTML;
                 } else if (rarity === 'Legendary') {
-                    rarityElement = await loadImageWithFallback(
-                        "https://static.ankama.com/wakfu/portal/game/item/115/81227111.png",
+                    rarityElement = await loadLocalImage(
                         localIcons.legendary,
                         "Legendary",
                         "rarity-icon"
                     );
                     rarityElement = rarityElement.outerHTML;
                 } else if (rarity === 'Epic') {
-                    rarityElement = await loadImageWithFallback(
-                        "https://static.ankama.com/wakfu/portal/game/item/115/81224133.png",
+                    rarityElement = await loadLocalImage(
                         localIcons.epic,
                         "Epic",
                         "rarity-icon"
                     );
                     rarityElement = rarityElement.outerHTML;
                 } else if (rarity === 'Relic') {
-                    rarityElement = await loadImageWithFallback(
-                        "https://static.ankama.com/wakfu/portal/game/item/115/81224139.png",
+                    rarityElement = await loadLocalImage(
                         localIcons.relic,
                         "Relic",
                         "rarity-icon"
@@ -274,12 +254,11 @@ function initializePage() {
                 }
             }
             
-            // Load obtenation icon with fallback - use local icon if available
+            // Load obtenation icon with local icon
             let obtenationIcon = '';
-            if (rune.obtenation.icon) {
-                const obtenationElement = await loadImageWithFallback(
-                    rune.obtenation.localIcon || rune.obtenation.icon,
-                    "./icons/default_monster.png",
+            if (rune.obtenation.localIcon) {
+                const obtenationElement = await loadLocalImage(
+                    rune.obtenation.localIcon,
                     rune.obtenation.name,
                     "obtenation-icon"
                 );
