@@ -49,5 +49,41 @@
                 "placeholder": "Y"
             }
         ]
+    },
+    {
+        "name": "Distribution",
+        "colors": ["Relic"],
+        "description": "When the bearer heals an ally, 25% of the healing is converted into Armor and 25% is lost",
+        "rarity": ["Relic"],
+        "effect": "Per additional level: -1 max WP +2% DMG",
+        "maxLevel": 1,
+        "minLevel": 1,
+        "step": 1,
+        "obtenation": {
+            "name": "Companionship Stone",
+            "icon": "https://static.ankama.com/wakfu/portal/game/item/115/53129850.png"
+        },
+        "levelRange": "",
+        "category": "Protection",
+        "values": [
+        ]
+    },
+    {
+        "name": "Distribution 2 testing",
+        "colors": ["Epic"],
+        "description": "When the bearer heals an ally, 50% of the healing is converted into resistances",
+        "rarity": ["Epic"],
+        "effect": "Per additional level: -1 max WP +2% DMG",
+        "maxLevel": 1,
+        "minLevel": 1,
+        "step": 1,
+        "obtenation": {
+            "name": "Companionship Stone",
+            "icon": "https://static.ankama.com/wakfu/portal/game/item/115/53129850.png"
+        },
+        "levelRange": "",
+        "category": "Protection",
+        "values": [
+        ]
     }
 ]
