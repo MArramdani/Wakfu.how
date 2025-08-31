@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wakfu Dungeons Directory</title>
+    <link rel="stylesheet" href="./dungeons.css">
+</head>
+<body>
+    <header>
+        <h1>Wakfu Dungeons Directory</h1>
+        <p class="subtitle">Explore all dungeons of the World of Twelve</p>
+    </header>
+    
+    <!-- Navigation Sidebar -->
+    <nav class="sidebar">
+        <div class="logo-container">
+            <div class="logo">
+                <span class="logo-text">Wakfu.How</span>
+            </div>
+            <div class="logo-subtitle"></div>
+        </div>
+        <button class="sidebar-toggle" title="Collapse/Expand sidebar">
+            <span class="toggle-icon">◀</span>
+        </button>
+        
+        <ul class="nav-menu">
+            <li class="nav-item">
+                <a href="../index.html" class="nav-link">
+                    <span class="nav-icon">🏰</span>
+                    <span class="nav-text">Home</span>
+                </a>
+            </li>
+            <li class="nav-item">
+                <a href="#analytics" class="nav-link">
+                    <span class="nav-icon">⚔️</span>
+                    <span class="nav-text">Get Started</span>
+                </a>
+            </li>
+            <li class="nav-item">
+                <a href="dungeons.html" class="nav-link active">
+                    <span class="nav-icon">🗺️</span>
+                    <span class="nav-text">Guides</span>
+                </a>
+            </li>
+            <li class="nav-item">
+                <a href="../Theory Crafting/sublimations.html" class="nav-link">
+                    <span class="nav-icon">🧪</span>
+                    <span class="nav-text">Theory Crafting</span>
+                </a>
+            </li>
+            <li class="nav-item">
+                <a href="#settings" class="nav-link">
+                    <span class="nav-icon">📢</span>
+                    <span class="nav-text">Latest Posts</span>
+                </a>
+            </li>
+        </ul>
+    </nav>
+    
+    <div class="container">
+        <div class="search-box">
+            <input type="text" id="dungeonSearch" placeholder="Search for a dungeon...">
+        </div>
+        
+        <div class="brackets-container" id="bracketsContainer">
+            <!-- Brackets will be inserted here by JavaScript -->
+        </div>
+    </div>
+    
+    <footer>
+        <p>Wakfu.how is a non-official website and is not affiliated with Ankama. <a href="http://wakfu.com/">Wakfu</a> is an MMORPG published by Ankama. All rights reserved.</p>
+    </footer>
+
+    <script src="./dungeons.js"></script>
+</body>
+</html>

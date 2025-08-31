@@ -11,10 +11,33 @@ body {
     display: flex;
     flex-direction: column;
     min-height: 100vh;
-    background-color: linear-gradient(to bottom, #240750, #1a2e48);
-    color: #333;
+    background: linear-gradient(to bottom, #1d0b38, #23064f);
+    color: #e0e0e0;
     margin: 0;
     overflow-x: hidden;
+}
+
+/* ===== HEADER STYLES ===== */
+header {
+    background: linear-gradient(135deg, #240750 0%, #344C64 100%);
+    color: white;
+    padding: 2rem;
+    text-align: center;
+    border-bottom: 4px solid #57A6A1;
+    margin-left: 260px;
+    transition: all 0.3s ease;
+}
+
+h1 {
+    font-size: 2.5rem;
+    margin-bottom: 0.5rem;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.subtitle {
+    font-size: 1.2rem;
+    opacity: 0.9;
+    color: #57A6A1;
 }
 
 /* ===== SIDEBAR NAVIGATION ===== */
@@ -24,13 +47,12 @@ body {
     color: white;
     position: fixed;
     height: 100vh;
-    overflow: hidden; /* Disable sidebar scrolling */
+    overflow: hidden;
     transition: all 0.3s ease;
     z-index: 1000;
     box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
 }
 
-/* Logo area styling */
 .logo-container {
     padding: 24px 20px;
     border-bottom: 1px solid rgba(255, 255, 255, 0.1);
@@ -49,14 +71,12 @@ body {
     margin-top: 5px;
 }
 
-/* Navigation menu - allows scrolling if needed */
 .nav-menu {
     padding: 20px 0;
-    height: calc(100vh - 100px); /* Adjust based on logo height */
-    overflow-y: auto; /* Enable menu scrolling */
+    height: calc(100vh - 100px);
+    overflow-y: auto;
 }
 
-/* Custom scrollbar for navigation menu */
 .nav-menu::-webkit-scrollbar {
     width: 4px;
 }
@@ -70,7 +90,6 @@ body {
     border-radius: 2px;
 }
 
-/* Navigation items */
 .nav-item {
     list-style: none;
     margin: 8px 0;
@@ -139,7 +158,6 @@ body {
     margin-left: -1px;
 }
 
-/* Pulse animation to draw attention to the toggle */
 @keyframes pulse {
     0% { transform: scale(1); }
     50% { transform: scale(1.1); }
@@ -147,7 +165,7 @@ body {
 }
 
 .sidebar-toggle {
-    animation: pulse 2s ease-in-out 3; /* Pulse 3 times when page loads */
+    animation: pulse 2s ease-in-out 3;
 }
 
 /* ===== COLLAPSED SIDEBAR STATE ===== */
@@ -182,127 +200,159 @@ body {
 }
 
 .sidebar.collapsed .toggle-icon {
-    transform: rotate(180deg); /* Arrow points right when collapsed */
+    transform: rotate(180deg);
 }
 
-/* Adjust content when sidebar is collapsed */
-.sidebar.collapsed ~ .main-content,
+.sidebar.collapsed ~ header,
+.sidebar.collapsed ~ .container,
 .sidebar.collapsed ~ footer {
     margin-left: 70px;
 }
 
-/* ===== MAIN CONTENT AREA (DARK MODE) ===== */
-.main-content {
-    flex: 1;
+/* ===== MAIN CONTENT AREA ===== */
+.container {
+    max-width: 1200px;
+    margin: 2rem auto;
+    padding: 0 1rem;
     margin-left: 260px;
-    padding: 30px;
-    background: linear-gradient(to bottom, #1d0b38, #23064f);
-    color: #e0e0e0;
-    min-height: 100vh;
-    transition: margin-left 0.3s ease;
+    transition: all 0.3s ease;
 }
 
-.page-header {
-    margin-bottom: 30px;
+/* ===== SEARCH BOX STYLES ===== */
+.search-box {
+    margin-bottom: 2rem;
+    position: relative;
 }
 
-.page-title {
-    font-size: 28px;
-    color: #57A6A1; /* Accent color */
-    margin-bottom: 10px;
+.search-box::after {
+    content: "🔍";
+    position: absolute;
+    right: 15px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #577B8D;
 }
 
-.page-description {
-    color: #577B8D; /* Secondary color */
-    line-height: 1.6;
-    max-width: 800px;
-}
-
-.content-card {
-    background: rgba(52, 76, 100, 0.6); /* #344C64 with transparency */
-    border-radius: 12px;
-    padding: 25px;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
-    margin-bottom: 25px;
-    border: 1px solid rgba(87, 123, 141, 0.3); /* #577B8D border */
-    backdrop-filter: blur(5px);
-}
-
-.content-card h2 {
-    color: #57A6A1; /* Accent color for headings */
-    margin-bottom: 15px;
-}
-
-.content-card p {
-    line-height: 1.7;
-    color: #d0d0d0;
-}
-
-/* Link styles for dark mode */
-.main-content a {
-    color: #57A6A1;
-    text-decoration: none;
-}
-
-.main-content a:hover {
-    color: #4a8f8a;
-    text-decoration: underline;
-}
-
-/* Additional content elements for dark mode */
-.main-content pre {
-    background: rgba(36, 7, 80, 0.8);
-    border: 1px solid #344C64;
-    border-radius: 6px;
-    padding: 15px;
-    overflow-x: auto;
-}
-
-.main-content code {
-    background: rgba(52, 76, 100, 0.3);
-    padding: 2px 6px;
-    border-radius: 4px;
-    color: #57A6A1;
-}
-
-.main-content table {
+#dungeonSearch {
     width: 100%;
-    border-collapse: collapse;
-    margin: 15px 0;
+    padding: 12px 20px;
+    border: 2px solid #344C64;
+    border-radius: 8px;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+    background-color: rgba(52, 76, 100, 0.3);
+    color: #e0e0e0;
 }
 
-.main-content th {
-    background: rgba(52, 76, 100, 0.8);
+#dungeonSearch:focus {
+    border-color: #57A6A1;
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(87, 166, 161, 0.2);
+}
+
+#dungeonSearch::placeholder {
+    color: #577B8D;
+}
+
+/* ===== BRACKETS & DUNGEON STYLES ===== */
+.brackets-container {
+    display: grid;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.bracket {
+    background: rgba(52, 76, 100, 0.6);
+    border-radius: 12px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    overflow: hidden;
+    backdrop-filter: blur(5px);
+    border: 1px solid rgba(87, 123, 141, 0.3);
+}
+
+.bracket-header {
+    background: linear-gradient(to right, #344C64, #240750);
+    color: white;
+    padding: 1rem 1.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.bracket-title {
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+.bracket-count {
+    background-color: #57A6A1;
+    padding: 4px 10px;
+    border-radius: 20px;
+    font-size: 0.9rem;
+}
+
+.bracket-content {
+    display: grid;
+    grid-template-columns: max-content;
+    gap: 1rem;
+}
+
+.bracket-image {
+    padding: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: rgba(36, 7, 80, 0.3);
+}
+
+.bracket-image-placeholder {
+    width: 200px;
+    height: 200px;
+    background: rgba(87, 123, 141, 0.2);
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #577B8D;
+    font-style: italic;
+    text-align: center;
+    padding: 1rem;
+    border: 2px dashed #577B8D;
+}
+
+.dungeons-list {
+    padding: 1.5rem;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 1rem;
+}
+
+.dungeon-item {
+    background: rgba(36, 7, 80, 0.4);
+    border-radius: 8px;
+    padding: 1rem;
+    transition: all 0.3s ease;
+    border-left: 4px solid #344C64;
+    cursor: pointer;
+}
+
+.dungeon-item:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+    border-left-color: #57A6A1;
+    background: rgba(36, 7, 80, 0.6);
+}
+
+.dungeon-name {
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+    color: #e0e0e0;
+}
+
+.dungeon-level {
     color: #57A6A1;
-    padding: 12px;
-    text-align: left;
-}
-
-.main-content td {
-    padding: 10px 12px;
-    border-bottom: 1px solid #344C64;
-}
-
-.main-content tr:hover {
-    background: rgba(87, 123, 141, 0.1);
-}
-
-/* Custom scrollbar for main content */
-.main-content::-webkit-scrollbar {
-    width: 8px;
-}
-
-.main-content::-webkit-scrollbar-track {
-    background: rgba(52, 76, 100, 0.3);
-}
-
-.main-content::-webkit-scrollbar-thumb {
-    background: #577B8D;
-    border-radius: 4px;
-}
-
-.main-content::-webkit-scrollbar-thumb:hover {
-    background: #57A6A1;
+    font-size: 0.9rem;
+    font-weight: 500;
 }
 
 /* ===== FOOTER ===== */
@@ -310,15 +360,15 @@ footer {
     background: linear-gradient(to right, #240750, #344C64);
     color: white;
     text-align: center;
-    padding: 10px;
-    width: 100%;
+    padding: 1.5rem;
+    margin-top: 3rem;
     border-top: 2px solid #57A6A1;
-    position: relative;
-    margin-top: auto;
+    margin-left: 260px;
+    transition: all 0.3s ease;
 }
 
 footer p {
-    margin: 2px 0;
+    margin: 8px 0;
     font-size: 14px;
 }
 
@@ -332,12 +382,9 @@ footer a:hover {
 }
 
 /* ===== RESPONSIVE DESIGN ===== */
-
-/* Tablet view (max-width: 992px) */
 @media (max-width: 992px) {
     .sidebar {
         width: 70px;
-        overflow: visible;
     }
     
     .logo-text, 
@@ -366,12 +413,27 @@ footer a:hover {
         font-size: 20px;
     }
     
-    .main-content {
+    header,
+    .container,
+    footer {
         margin-left: 70px;
+    }
+    
+    .bracket-content {
+        grid-template-columns: 1fr;
+    }
+    
+    .bracket-image {
+        order: 2;
     }
 }
 
-/* Mobile view (max-width: 576px) */
+@media (max-width: 768px) {
+    .dungeons-list {
+        grid-template-columns: 1fr;
+    }
+}
+
 @media (max-width: 576px) {
     body {
         flex-direction: column;
@@ -395,8 +457,11 @@ footer a:hover {
         flex-shrink: 0;
     }
     
-    .main-content,
-    .sidebar.collapsed ~ .main-content,
+    header,
+    .container,
+    footer,
+    .sidebar.collapsed ~ header,
+    .sidebar.collapsed ~ .container,
     .sidebar.collapsed ~ footer {
         margin-left: 0;
     }
@@ -408,6 +473,14 @@ footer a:hover {
     }
     
     .sidebar-toggle {
-        display: none; /* Hide toggle on mobile */
+        display: none;
+    }
+    
+    header {
+        padding: 1.5rem;
+    }
+    
+    h1 {
+        font-size: 2rem;
     }
 }
