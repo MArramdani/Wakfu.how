@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sublimation Rune Gallery - Wakfu.How</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="sublimations.css">
+</head>
+<body>
+    <!-- Navigation Sidebar -->
+    <nav class="sidebar">
+        <div class="logo-container">
+            <div class="logo">
+                <span class="logo-text">Wakfu.How</span>
+            </div>
+            <div class="logo-subtitle">Sublimations</div>
+        </div>
+        <button class="sidebar-toggle" title="Collapse/Expand sidebar">
+            <span class="toggle-icon">◀</span>
+        </button>
+        
+        <ul class="nav-menu">
+            <li class="nav-item">
+                <a href="../index.html" class="nav-link">
+                    <span class="nav-icon">🏰</span>
+                    <span class="nav-text">Home</span>
+                </a>
+            </li>
+            <li class="nav-item">
+                <a href="#analytics" class="nav-link">
+                    <span class="nav-icon">⚔️</span>
+                    <span class="nav-text">Get Started</span>
+                </a>
+            </li>
+            <li class="nav-item">
+                <a href="../guides/dungeons.html" class="nav-link">
+                    <span class="nav-icon">🗺️</span>
+                    <span class="nav-text">Guides</span>
+                </a>
+            </li>
+            <li class="nav-item">
+                <a href="sublimations.html" class="nav-link active">
+                    <span class="nav-icon">🧪</span>
+                    <span class="nav-text">Theory Crafting</span>
+                </a>
+            </li>
+            <li class="nav-item">
+                <a href="#settings" class="nav-link">
+                    <span class="nav-icon">📢</span>
+                    <span class="nav-text">Latest Posts</span>
+                </a>
+            </li>
+        </ul>
+    </nav>
+
+    <header>
+        <h1>Sublimation Rune Gallery</h1>
+        <p class="subtitle">Browse through all sublimation runes with detailed information. Use filters to find exactly what you need.</p>
+    </header>
+    
+    <div class="container">
+        <div class="controls">
+            <div class="search-box">
+                <input type="text" id="searchInput" placeholder="Search runes by name...">
+                <button class="search-btn"><i class="fas fa-search"></i></button>
+            </div>
+        </div>
+        
+        <div class="level-tabs" id="levelTabs">
+            <!-- Level tabs will be generated here -->
+        </div>
+        
+        <div class="runes-grid" id="runesContainer">
+            <!-- Runes will be dynamically inserted here -->
+        </div>
+    </div>
+
+    <footer>
+        <p>Wakfu.How is a non-official website and is not affiliated with Ankama.</p>
+        <p><a href="http://wakfu.com/">Wakfu</a> is an MMORPG published by Ankama. All rights reserved.</p>
+    </footer>
+
+    <script src="sublimations.js"></script>
+</body>
+</html>
