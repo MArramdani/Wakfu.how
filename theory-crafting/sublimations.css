@@ -158,6 +158,28 @@
     height: 40px;
 }
 
+.special-color {
+    width: 40px;
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 6px;
+    font-weight: bold;
+    font-size: 0.8rem;
+    text-align: center;
+}
+
+.special-color.epic {
+    background: linear-gradient(45deg, #ff00cc, #ff0066);
+    color: white;
+}
+
+.special-color.relic {
+    background: linear-gradient(45deg, #9b59b6, #8e44ad);
+    color: white;
+}
+
 .color-green,
 .color-red,
 .color-blue,

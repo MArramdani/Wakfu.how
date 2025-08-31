@@ -1,3 +1,4 @@
+
 [
     {
         "name": "Influence",
@@ -10,7 +11,8 @@
         "step": 1,
         "obtenation": {
             "name": "Runic Mimic",
-            "icon": "https://static.ankama.com/wakfu/portal/game/monster/200/190004327.w133h.png"
+            "icon": "https://static.ankama.com/wakfu/portal/game/monster/200/190004327.w133h.png",
+            "localIcon": "./icons/runic_mimic.png"
         },
         "levelRange": "1-20",
         "category": "Crit %",
@@ -33,7 +35,8 @@
         "step": 1,
         "obtenation": {
             "name": "Rift",
-            "icon": "https://static.ankama.com/wakfu/portal/game/monster/200/190004328.w133h.png"
+            "icon": "https://static.ankama.com/wakfu/portal/game/monster/200/190004328.w133h.png",
+            "localIcon": "./icons/rift.png"
         },
         "levelRange": "201-215",
         "category": "Damage %",
@@ -61,7 +64,8 @@
         "step": 1,
         "obtenation": {
             "name": "Companionship Stone",
-            "icon": "https://static.ankama.com/wakfu/portal/game/item/115/53129850.png"
+            "icon": "https://static.ankama.com/wakfu/portal/game/item/115/53129850.png",
+            "localIcon": "./icons/companionship_stone.png"
         },
         "levelRange": "",
         "category": "Protection",
@@ -79,7 +83,8 @@
         "step": 1,
         "obtenation": {
             "name": "Companionship Stone",
-            "icon": "https://static.ankama.com/wakfu/portal/game/item/115/53129850.png"
+            "icon": "https://static.ankama.com/wakfu/portal/game/item/115/53129850.png",
+            "localIcon": "./icons/companionship_stone.png"
         },
         "levelRange": "",
         "category": "Protection",

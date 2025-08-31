@@ -42,7 +42,8 @@ async function loadRuneData() {
                 "step": 1,
                 "obtenation": {
                     "name": "Runic Mimic",
-                    "icon": "https://static.ankama.com/wakfu/portal/game/monster/200/190004327.w133h.png"
+                    "icon": "https://static.ankama.com/wakfu/portal/game/monster/200/190004327.w133h.png",
+                    "localIcon": "./icons/runic_mimic.png"
                 },
                 "levelRange": "1-20",
                 "category": "Crit %",
@@ -65,7 +66,8 @@ async function loadRuneData() {
                 "step": 1,
                 "obtenation": {
                     "name": "Rift",
-                    "icon": "https://static.ankama.com/wakfu/portal/game/monster/200/190004327.w133h.png"
+                    "icon": "https://static.ankama.com/wakfu/portal/game/monster/200/190004327.w133h.png",
+                    "localIcon": "./icons/rift.png"
                 },
                 "levelRange": "201-215",
                 "category": "Damage %",
@@ -211,22 +213,9 @@ function initializePage() {
                         "color-icon"
                     );
                     colorElement = colorElement.outerHTML;
-                } else if (color === 'Epic') {
-                    colorElement = await loadImageWithFallback(
-                        "https://static.ankama.com/wakfu/portal/game/item/115/81224133.png",
-                        localIcons.epic,
-                        "Epic Slot",
-                        "color-icon"
-                    );
-                    colorElement = colorElement.outerHTML;
-                } else if (color === 'Relic') {
-                    colorElement = await loadImageWithFallback(
-                        "https://static.ankama.com/wakfu/portal/game/item/115/81224139.png",
-                        localIcons.relic,
-                        "Relic Slot",
-                        "color-icon"
-                    );
-                    colorElement = colorElement.outerHTML;
+                } else if (color === 'Epic' || color === 'Relic') {
+                    // For Epic and Relic, just show text without icon
+                    colorElement = `<div class="special-color ${color.toLowerCase()}">${color}</div>`;
                 }
                 
                 if (colorElement) {
@@ -285,11 +274,11 @@ function initializePage() {
                 }
             }
             
-            // Load obtenation icon with fallback
+            // Load obtenation icon with fallback - use local icon if available
             let obtenationIcon = '';
             if (rune.obtenation.icon) {
                 const obtenationElement = await loadImageWithFallback(
-                    rune.obtenation.icon,
+                    rune.obtenation.localIcon || rune.obtenation.icon,
                     "./icons/default_monster.png",
                     rune.obtenation.name,
                     "obtenation-icon"
@@ -297,13 +286,16 @@ function initializePage() {
                 obtenationIcon = obtenationElement.outerHTML;
             }
             
+            // Check if this is a Relic or Epic rune (no slider needed)
+            const isSpecialRune = rune.colors.includes('Relic') || rune.colors.includes('Epic');
+            
             const card = document.createElement('div');
             card.className = 'rune-card';
             card.innerHTML = `
                 <div class="rune-header">
                     <div class="rune-name-container">
                         <div class="rune-name">${rune.name}</div>
-                        <div class="rune-level">Lvl. ${currentLevel}</div>
+                        ${!isSpecialRune ? `<div class="rune-level">Lvl. ${currentLevel}</div>` : ''}
                     </div>
                     <div class="rune-colors">
                         ${colorElements.join('')}
@@ -328,6 +320,7 @@ function initializePage() {
                     ${description}
                 </div>
                 
+                ${!isSpecialRune ? `
                 <div class="divider"></div>
                 
                 <div class="level-controls">
@@ -340,29 +333,32 @@ function initializePage() {
                            data-rune="${rune.name}">
                     <div class="level-display">${currentLevel}</div>
                 </div>
+                ` : ''}
             `;
             
-            // Add event listener to the slider
-            const slider = card.querySelector('.level-slider');
-            const levelDisplay = card.querySelector('.level-display');
-            
-            slider.addEventListener('input', function() {
-                const level = parseInt(this.value);
-                levelDisplay.textContent = level;
-                currentLevels[rune.name] = level;
+            // Add event listener to the slider if it's not a special rune
+            if (!isSpecialRune) {
+                const slider = card.querySelector('.level-slider');
+                const levelDisplay = card.querySelector('.level-display');
                 
-                // Update description with new values
-                let updatedDescription = rune.description;
-                if (rune.values && rune.values.length > 0) {
-                    rune.values.forEach(value => {
-                        const calculatedValue = value.base + (value.increment * (level - rune.minLevel));
-                        updatedDescription = updatedDescription.replace(`[${value.placeholder}]`, calculatedValue);
-                    });
-                }
-                
-                card.querySelector('.rune-description').textContent = updatedDescription;
-                card.querySelector('.rune-level').textContent = `Lvl. ${level}`;
-            });
+                slider.addEventListener('input', function() {
+                    const level = parseInt(this.value);
+                    levelDisplay.textContent = level;
+                    currentLevels[rune.name] = level;
+                    
+                    // Update description with new values
+                    let updatedDescription = rune.description;
+                    if (rune.values && rune.values.length > 0) {
+                        rune.values.forEach(value => {
+                            const calculatedValue = value.base + (value.increment * (level - rune.minLevel));
+                            updatedDescription = updatedDescription.replace(`[${value.placeholder}]`, calculatedValue);
+                        });
+                    }
+                    
+                    card.querySelector('.rune-description').textContent = updatedDescription;
+                    card.querySelector('.rune-level').textContent = `Lvl. ${level}`;
+                });
+            }
             
             container.appendChild(card);
         }
