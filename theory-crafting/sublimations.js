@@ -2,6 +2,18 @@
 let runes = [];
 let currentLevels = {}; // Store current level for each rune
 
+// Local icon paths
+const localIcons = {
+    red: "./icons/red_slot.png",
+    green: "./icons/green_slot.png",
+    blue: "./icons/blue_slot.png",
+    epic: "./icons/epic_slot.png",
+    relic: "./icons/relic_slot.png",
+    rare: "./icons/rare_icon.png",
+    mythic: "./icons/mythic_icon.png",
+    legendary: "./icons/legendary_icon.png"
+};
+
 // Function to load rune data with fallback
 async function loadRuneData() {
     try {
@@ -74,6 +86,25 @@ async function loadRuneData() {
     }
 }
 
+// Function to handle image loading with fallback
+function loadImageWithFallback(url, fallback, alt, className) {
+    const img = new Image();
+    img.alt = alt;
+    if (className) img.className = className;
+    
+    return new Promise((resolve) => {
+        img.onload = () => resolve(img);
+        img.onerror = () => {
+            const fallbackImg = new Image();
+            fallbackImg.src = fallback;
+            fallbackImg.alt = alt;
+            if (className) fallbackImg.className = className;
+            resolve(fallbackImg);
+        };
+        img.src = url;
+    });
+}
+
 // Initialize the application
 async function initApp() {
     try {
@@ -126,7 +157,7 @@ function initializePage() {
     }
 
     // Function to render runes
-    function renderRunes(runesToRender) {
+    async function renderRunes(runesToRender) {
         const container = document.getElementById('runesContainer');
         if (!container) {
             console.error('Runes container not found');
@@ -140,7 +171,7 @@ function initializePage() {
         
         container.innerHTML = '';
         
-        runesToRender.forEach(rune => {
+        for (const rune of runesToRender) {
             const currentLevel = currentLevels[rune.name] || rune.minLevel;
             
             // Generate description with current values
@@ -152,47 +183,119 @@ function initializePage() {
                 });
             }
             
-            // Generate color elements
-            const colorElements = rune.colors.map(color => {
+            // Generate color elements with fallback
+            const colorElements = [];
+            for (const color of rune.colors) {
+                let colorElement;
                 if (color === 'R') {
-                    return `<div class="rune-color" title="Red Slot">
-                        <img src="https://methodwakfu.com/wp-content/uploads/2020/04/chasse_rouge_xs.png" class="color-icon" alt="Red">
-                    </div>`;
+                    colorElement = await loadImageWithFallback(
+                        "https://methodwakfu.com/wp-content/uploads/2020/04/chasse_rouge_xs.png",
+                        localIcons.red,
+                        "Red Slot",
+                        "color-icon"
+                    );
+                    colorElement = colorElement.outerHTML;
                 } else if (color === 'G') {
-                    return `<div class="rune-color" title="Green Slot">
-                        <img src="https://methodwakfu.com/wp-content/uploads/2020/04/chasse_verte_xs.png" class="color-icon" alt="Green">
-                    </div>`;
+                    colorElement = await loadImageWithFallback(
+                        "https://methodwakfu.com/wp-content/uploads/2020/04/chasse_verte_xs.png",
+                        localIcons.green,
+                        "Green Slot",
+                        "color-icon"
+                    );
+                    colorElement = colorElement.outerHTML;
                 } else if (color === 'B') {
-                    return `<div class="rune-color" title="Blue Slot">
-                        <img src="https://methodwakfu.com/wp-content/uploads/2020/04/chasse_bleue_xs.png" class="color-icon" alt="Blue">
-                    </div>`;
+                    colorElement = await loadImageWithFallback(
+                        "https://methodwakfu.com/wp-content/uploads/2020/04/chasse_bleue_xs.png",
+                        localIcons.blue,
+                        "Blue Slot",
+                        "color-icon"
+                    );
+                    colorElement = colorElement.outerHTML;
                 } else if (color === 'Epic') {
-                    return `<div class="rune-color" title="Epic Slot">
-                        <img src="https://static.ankama.com/wakfu/portal/game/item/115/81224133.png" class="color-icon" alt="Epic">
-                    </div>`;
+                    colorElement = await loadImageWithFallback(
+                        "https://static.ankama.com/wakfu/portal/game/item/115/81224133.png",
+                        localIcons.epic,
+                        "Epic Slot",
+                        "color-icon"
+                    );
+                    colorElement = colorElement.outerHTML;
                 } else if (color === 'Relic') {
-                    return `<div class="rune-color" title="Relic Slot">
-                        <img src="https://static.ankama.com/wakfu/portal/game/item/115/81224139.png" class="color-icon" alt="Relic">
-                    </div>`;
+                    colorElement = await loadImageWithFallback(
+                        "https://static.ankama.com/wakfu/portal/game/item/115/81224139.png",
+                        localIcons.relic,
+                        "Relic Slot",
+                        "color-icon"
+                    );
+                    colorElement = colorElement.outerHTML;
                 }
-                return '';
-            }).join('');
+                
+                if (colorElement) {
+                    colorElements.push(`<div class="rune-color" title="${color === 'R' ? 'Red' : color === 'G' ? 'Green' : color === 'B' ? 'Blue' : color} Slot">${colorElement}</div>`);
+                }
+            }
             
-            // Generate rarity icons
-            const rarityIcons = rune.rarity.map(rarity => {
+            // Generate rarity icons with fallback
+            const rarityIcons = [];
+            for (const rarity of rune.rarity) {
+                let rarityElement;
                 if (rarity === 'Rare') {
-                    return `<img src="https://static.ankama.com/wakfu/portal/game/item/115/81228822.png" class="rarity-icon" alt="Rare" title="Rare">`;
+                    rarityElement = await loadImageWithFallback(
+                        "https://static.ankama.com/wakfu/portal/game/item/115/81228822.png",
+                        localIcons.rare,
+                        "Rare",
+                        "rarity-icon"
+                    );
+                    rarityElement = rarityElement.outerHTML;
                 } else if (rarity === 'Mythic') {
-                    return `<img src="https://static.ankama.com/wakfu/portal/game/item/115/81228823.png" class="rarity-icon" alt="Mythic" title="Mythic">`;
+                    rarityElement = await loadImageWithFallback(
+                        "https://static.ankama.com/wakfu/portal/game/item/115/81228823.png",
+                        localIcons.mythic,
+                        "Mythic",
+                        "rarity-icon"
+                    );
+                    rarityElement = rarityElement.outerHTML;
                 } else if (rarity === 'Legendary') {
-                    return `<img src="https://static.ankama.com/wakfu/portal/game/item/115/81227111.png" class="rarity-icon" alt="Legendary" title="Legendary">`;
+                    rarityElement = await loadImageWithFallback(
+                        "https://static.ankama.com/wakfu/portal/game/item/115/81227111.png",
+                        localIcons.legendary,
+                        "Legendary",
+                        "rarity-icon"
+                    );
+                    rarityElement = rarityElement.outerHTML;
                 } else if (rarity === 'Epic') {
-                    return `<img src="https://static.ankama.com/wakfu/portal/game/item/115/81224133.png" class="rarity-icon" alt="Epic" title="Epic">`;
+                    rarityElement = await loadImageWithFallback(
+                        "https://static.ankama.com/wakfu/portal/game/item/115/81224133.png",
+                        localIcons.epic,
+                        "Epic",
+                        "rarity-icon"
+                    );
+                    rarityElement = rarityElement.outerHTML;
                 } else if (rarity === 'Relic') {
-                    return `<img src="https://static.ankama.com/wakfu/portal/game/item/115/81224139.png" class="rarity-icon" alt="Relic" title="Relic">`;
+                    rarityElement = await loadImageWithFallback(
+                        "https://static.ankama.com/wakfu/portal/game/item/115/81224139.png",
+                        localIcons.relic,
+                        "Relic",
+                        "rarity-icon"
+                    );
+                    rarityElement = rarityElement.outerHTML;
                 }
-                return '';
-            }).join('');
+                
+                if (rarityElement) {
+                    rarityIcons.push(rarityElement);
+                }
+            }
+            
+            // Load obtenation icon with fallback
+            let obtenationIcon = '';
+            if (rune.obtenation.icon) {
+                const obtenationElement = await loadImageWithFallback(
+                    rune.obtenation.icon,
+                    "./icons/default_monster.png",
+                    rune.obtenation.name,
+                    "obtenation-icon"
+                );
+                obtenationIcon = obtenationElement.outerHTML;
+            }
             
             const card = document.createElement('div');
             card.className = 'rune-card';
@@ -203,7 +306,7 @@ function initializePage() {
                         <div class="rune-level">Lvl. ${currentLevel}</div>
                     </div>
                     <div class="rune-colors">
-                        ${colorElements}
+                        ${colorElements.join('')}
                     </div>
                 </div>
                 
@@ -211,11 +314,11 @@ function initializePage() {
                 
                 <div class="rune-meta">
                     <div class="obtenation">
-                        ${rune.obtenation.icon ? `<img src="${rune.obtenation.icon}" class="obtenation-icon" alt="${rune.obtenation.name}">` : ''}
+                        ${obtenationIcon}
                         <span>${rune.obtenation.name}</span>
                     </div>
                     <div class="rarity">
-                        ${rarityIcons}
+                        ${rarityIcons.join('')}
                     </div>
                 </div>
                 
@@ -262,7 +365,7 @@ function initializePage() {
             });
             
             container.appendChild(card);
-        });
+        }
     }
     
     // Function to filter runes based on criteria
