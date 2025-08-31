@@ -41,6 +41,34 @@ async function loadRuneData() {
                         "placeholder": "X"
                     }
                 ]
+            },
+            {
+                "name": "Raw Power",
+                "colors": ["G", "G", "G"],
+                "description": "At start of Fight -[X] max WP. For each WP spent during turn: [Y]% damage inflicted",
+                "rarity": ["Rare", "Mythic", "Legendary"],
+                "effect": "Per additional level: -1 max WP +2% DMG",
+                "maxLevel": 4,
+                "minLevel": 1,
+                "step": 1,
+                "obtenation": {
+                    "name": "Rift",
+                    "icon": "https://static.ankama.com/wakfu/portal/game/monster/200/190004327.w133h.png"
+                },
+                "levelRange": "201-215",
+                "category": "Damage %",
+                "values": [
+                    {
+                        "base": 1,
+                        "increment": 1,
+                        "placeholder": "X"
+                    },
+                    {
+                        "base": 2,
+                        "increment": 2,
+                        "placeholder": "Y"
+                    }
+                ]
             }
         ];
     }
@@ -134,7 +162,7 @@ function initializePage() {
             let description = rune.description;
             if (rune.values) {
                 rune.values.forEach(value => {
-                    let calculatedValue = value.base + (value.increment * (currentLevel - rune.minLevel));
+                    const calculatedValue = value.base + (value.increment * (currentLevel - rune.minLevel));
                     description = description.replace(`[${value.placeholder}]`, calculatedValue);
                 });
             }
