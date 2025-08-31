@@ -37,8 +37,7 @@ async function loadRuneData() {
                 "maxLevel": "[6]",
                 "obtenation": "",
                 "levelRange": "1-20"
-            },
-            // Add more fallback data as needed
+            }
         ];
     }
 }
@@ -230,29 +229,6 @@ function initializePage() {
         const filteredRunes = filterRunes();
         renderRunes(filteredRunes);
     });
-    
-    // Sidebar toggle functionality
-    const sidebarToggle = document.querySelector('.sidebar-toggle');
-    const sidebar = document.querySelector('.sidebar');
-    
-    if (sidebarToggle && sidebar) {
-        // Check if we have a saved state in localStorage
-        const isCollapsed = localStorage.getItem('sidebarCollapsed') === 'true';
-        
-        // Set initial state
-        if (isCollapsed) {
-            sidebar.classList.add('collapsed');
-        }
-        
-        // Toggle sidebar
-        sidebarToggle.addEventListener('click', function() {
-            sidebar.classList.toggle('collapsed');
-            
-            // Save state to localStorage
-            const isNowCollapsed = sidebar.classList.contains('collapsed');
-            localStorage.setItem('sidebarCollapsed', isNowCollapsed);
-        });
-    }
     
     // Initial render
     renderRunes(runes);

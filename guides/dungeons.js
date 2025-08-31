@@ -264,34 +264,8 @@ function setupSearch() {
     });
 }
 
-// Sidebar toggle functionality
-function setupSidebarToggle() {
-    const sidebar = document.querySelector('.sidebar');
-    const toggleButton = document.querySelector('.sidebar-toggle');
-    
-    // Check if we have a saved state in localStorage
-    const isCollapsed = localStorage.getItem('sidebarCollapsed') === 'true';
-    
-    // Set initial state
-    if (isCollapsed) {
-        sidebar.classList.add('collapsed');
-    }
-    
-    // Toggle sidebar
-    if (toggleButton) {
-        toggleButton.addEventListener('click', function() {
-            sidebar.classList.toggle('collapsed');
-            
-            // Save state to localStorage
-            const isNowCollapsed = sidebar.classList.contains('collapsed');
-            localStorage.setItem('sidebarCollapsed', isNowCollapsed);
-        });
-    }
-}
-
 // Initialize the page when it loads
 document.addEventListener('DOMContentLoaded', () => {
     generateDungeonsPage();
     setupSearch();
-    setupSidebarToggle();
 });

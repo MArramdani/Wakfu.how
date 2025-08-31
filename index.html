@@ -13,67 +13,66 @@
             <div class="logo">
                 <span class="logo-text">Wakfu.How</span>
             </div>
-            <div class="logo-subtitle"></div>
+            <div class="logo-subtitle">Guides & Resources</div>
         </div>
         <button class="sidebar-toggle" title="Collapse/Expand sidebar">
             <span class="toggle-icon">◀</span>
         </button>
         
         <ul class="nav-menu">
-    <li class="nav-item">
-        <a href="index.html" class="nav-link active">
-            <span class="nav-icon">🏰</span>
-            <span class="nav-text">Home</span>
-        </a>
-    </li>
-    <li class="nav-item">
-        <a href="#analytics" class="nav-link">
-            <span class="nav-icon">⚔️</span>
-            <span class="nav-text">Get Started</span>
-        </a>
-    </li>
-    <li class="nav-item">
-        <a href="guides/dungeons.html" class="nav-link">
-            <span class="nav-icon">🗺️</span>
-            <span class="nav-text">Guides</span>
-        </a>
-    </li>
-    <li class="nav-item">
-        <a href=theory-crafting/sublimations.html" class="nav-link">
-            <span class="nav-icon">🧪</span>
-            <span class="nav-text">Theory Crafting</span>
-        </a>
-    </li>
-    <li class="nav-item">
-        <a href="#settings" class="nav-link">
-            <span class="nav-icon">📢</span>
-            <span class="nav-text">Latest Posts</span>
-        </a>
-    </li>
-</ul>
+            <li class="nav-item">
+                <a href="index.html" class="nav-link active">
+                    <span class="nav-icon">🏰</span>
+                    <span class="nav-text">Home</span>
+                </a>
+            </li>
+            <li class="nav-item">
+                <a href="#getting-started" class="nav-link">
+                    <span class="nav-icon">⚔️</span>
+                    <span class="nav-text">Get Started</span>
+                </a>
+            </li>
+            <li class="nav-item">
+                <a href="guides/dungeons.html" class="nav-link">
+                    <span class="nav-icon">🗺️</span>
+                    <span class="nav-text">Guides</span>
+                </a>
+            </li>
+            <li class="nav-item">
+                <a href="theory-crafting/sublimations.html" class="nav-link">
+                    <span class="nav-icon">🧪</span>
+                    <span class="nav-text">Theory Crafting</span>
+                </a>
+            </li>
+            <li class="nav-item">
+                <a href="#community" class="nav-link">
+                    <span class="nav-icon">📢</span>
+                    <span class="nav-text">Latest Posts</span>
+                </a>
+            </li>
         </ul>
     </nav>
 
     <!-- Main Content -->
-    <main class="main-content">
+    <main class="main-content" id="main-content">
         <div class="page-header">
-            <h1 class="page-title">Projects Overview</h1>
-            <p class="page-description">Manage your ongoing projects, track progress, and collaborate with your team members.</p>
+            <h1 class="page-title">Wakfu Guides & Resources</h1>
+            <p class="page-description">Your comprehensive resource for Wakfu game guides, dungeon strategies, and theorycrafting.</p>
         </div>
         
         <div class="content-card">
-            <h2>Current Projects</h2>
-            <p>Here you can see all your active projects. Click on any project to view detailed information, update progress, or manage team assignments.</p>
+            <h2>About Wakfu</h2>
+            <p>Explore comprehensive resources and information about Wakfu. Find everything you need to enhance your gameplay experience in the World of Twelve.</p>
         </div>
         
         <div class="content-card">
-            <h2>Project Statistics</h2>
-            <p>Track your project metrics and performance indicators. Monitor deadlines, resource allocation, and completion rates across all projects.</p>
+            <h2>Wakfu Resources</h2>
+            <p>Access detailed guides, strategies, and tips to master various aspects of the game, from beginner tutorials to advanced end-game content.</p>
         </div>
         
         <div class="content-card">
-            <h2>Recent Activity</h2>
-            <p>Stay updated with the latest changes, comments, and updates from your team members across all projects.</p>
+            <h2>Latest Wakfu Updates</h2>
+            <p>Stay informed about the newest developments, changes, and community discussions related to Wakfu and its ever-evolving world.</p>
         </div>
     </main>
 
@@ -82,23 +81,5 @@
     <footer>
         <p>Wakfu.how is a non-official website and is not affiliated with Ankama. <a href="http://wakfu.com/">Wakfu</a> is an MMORPG published by Ankama. All rights reserved.</p>
     </footer>
-    <script>
-// Debug script
-document.addEventListener('DOMContentLoaded', function() {
-    const debugEl = document.getElementById('debug-content');
-    debugEl.textContent = 'DOM loaded';
-    
-    // Check if navigation elements exist
-    const navLinks = document.querySelectorAll('.nav-link[data-page]');
-    debugEl.textContent += ` - Found ${navLinks.length} nav links`;
-    
-    // Add click listener to document to see if events are firing
-    document.addEventListener('click', function(e) {
-        if (e.target.closest('.nav-link')) {
-            debugEl.textContent = `Clicked on nav link: ${e.target.closest('.nav-link').getAttribute('data-page')}`;
-        }
-    });
-});
-</script>
 </body>
 </html>
