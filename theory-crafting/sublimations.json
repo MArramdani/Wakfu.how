@@ -33,9 +33,9 @@
         "step": 1,
         "obtenation": {
             "name": "Rift",
-            "icon": "https://static.ankama.com/wakfu/portal/game/monster/200/190004327.w133h.png"
+            "icon": "https://static.ankama.com/wakfu/portal/game/monster/200/190004328.w133h.png"
         },
-        "levelRange": "1-20",
+        "levelRange": "201-215",
         "category": "Damage %",
         "values": [
             {
@@ -47,29 +47,6 @@
                 "base": 2,
                 "increment": 2,
                 "placeholder": "Y"
-            }
-        ]
-    },
-    {
-        "name": "Elemental Mastery",
-        "colors": ["G", "B", "G"],
-        "description": "[X]% Elemental Resistance",
-        "rarity": ["Rare", "Mythic", "Legendary"],
-        "effect": "Per additional level: +3% Elemental Resistance",
-        "maxLevel": 6,
-        "minLevel": 1,
-        "step": 1,
-        "obtenation": {
-            "name": "Elemental Mimic",
-            "icon": "https://static.ankama.com/wakfu/portal/game/monster/200/190004327.w133h.png"
-        },
-        "levelRange": "1-20",
-        "category": "Elemental Resist %",
-        "values": [
-            {
-                "base": 3,
-                "increment": 3,
-                "placeholder": "X"
             }
         ]
     }

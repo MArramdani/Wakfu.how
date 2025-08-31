@@ -167,39 +167,43 @@ function initializePage() {
                 });
             }
             
-            // Generate color elements
-            const colorElements = rune.colors.map(color => {
-                if (color === 'R') {
-                    return `<div class="rune-color color-red" title="Red Slot">
-                        <img src="https://methodwakfu.com/wp-content/uploads/2020/04/chasse_rouge_xs.png" class="color-icon" alt="Red">
-                    </div>`;
-                } else if (color === 'G') {
-                    return `<div class="rune-color color-green" title="Green Slot">
-                        <img src="https://methodwakfu.com/wp-content/uploads/2020/04/chasse_verte_xs.png" class="color-icon" alt="Green">
-                    </div>`;
-                } else if (color === 'B') {
-                    return `<div class="rune-color color-blue" title="Blue Slot">
-                        <img src="https://methodwakfu.com/wp-content/uploads/2020/04/chasse_bleue_xs.png" class="color-icon" alt="Blue">
-                    </div>`;
-                } else if (color === 'Epic') {
-                    return `<div class="rune-color color-epic" title="Epic">Epic</div>`;
-                } else if (color === 'Relic') {
-                    return `<div class="rune-color color-relic" title="Relic">Relic</div>`;
-                }
-                return '';
-            }).join('');
+            // Generate color elements - show only the icon without background
+const colorElements = rune.colors.map(color => {
+    if (color === 'R') {
+        return `<div class="rune-color" title="Red Slot">
+            <img src="https://methodwakfu.com/wp-content/uploads/2020/04/chasse_rouge_xs.png" class="color-icon" alt="Red">
+        </div>`;
+    } else if (color === 'G') {
+        return `<div class="rune-color" title="Green Slot">
+            <img src="https://methodwakfu.com/wp-content/uploads/2020/04/chasse_verte_xs.png" class="color-icon" alt="Green">
+        </div>`;
+    } else if (color === 'B') {
+        return `<div class="rune-color" title="Blue Slot">
+            <img src="https://methodwakfu.com/wp-content/uploads/2020/04/chasse_bleue_xs.png" class="color-icon" alt="Blue">
+        </div>`;
+    } else if (color === 'Epic') {
+        return `<div class="rune-color" title="Epic">
+            <img src="PATH_TO_EPIC_ICON" class="color-icon" alt="Epic">
+        </div>`;
+    } else if (color === 'Relic') {
+        return `<div class="rune-color" title="Relic">
+            <img src="PATH_TO_RELIC_ICON" class="color-icon" alt="Relic">
+        </div>`;
+    }
+    return '';
+}).join('');
             
             // Generate rarity icons
-            const rarityIcons = rune.rarity.map(rarity => {
-                if (rarity === 'Rare') {
-                    return `<img src="https://static.ankama.com/wakfu/portal/game/item/115/81228822.png" class="rarity-icon" alt="Rare" title="Rare">`;
-                } else if (rarity === 'Mythic') {
-                    return `<img src="https://static.ankama.com/wakfu/portal/game/item/115/81228823.png" class="rarity-icon" alt="Mythic" title="Mythic">`;
-                } else if (rarity === 'Legendary') {
-                    return `<img src="https://static.ankama.com/wakfu/portal/game/item/115/81227111.png" class="rarity-icon" alt="Legendary" title="Legendary">`;
-                }
-                return '';
-            }).join('');
+const rarityIcons = rune.rarity.map(rarity => {
+    if (rarity === 'Rare') {
+        return `<img src="https://static.ankama.com/wakfu/portal/game/item/115/81228822.png" class="rarity-icon" alt="Rare" title="Rare">`;
+    } else if (rarity === 'Mythic') {
+        return `<img src="https://static.ankama.com/wakfu/portal/game/item/115/81228823.png" class="rarity-icon" alt="Mythic" title="Mythic">`;
+    } else if (rarity === 'Legendary') {
+        return `<img src="https://static.ankama.com/wakfu/portal/game/item/115/81227111.png" class="rarity-icon" alt="Legendary" title="Legendary">`;
+    }
+    return '';
+}).join('');
             
             const card = document.createElement('div');
             card.className = 'rune-card';
