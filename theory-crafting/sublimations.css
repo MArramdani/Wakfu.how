@@ -92,7 +92,7 @@
 /* ===== RUNES GRID ===== */
 .runes-grid {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(4, 1fr);
     gap: 25px;
 }
 
@@ -128,8 +128,16 @@
 .rune-name {
     font-size: 1.8rem;
     font-weight: bold;
-    color: #57A6A1;
+    color: #6fd6d0;
     margin-bottom: 5px;
+}
+
+.rune-name.relic-name {
+    color: #9b59b6;
+}
+
+.rune-name.epic-name {
+    color: #ff00cc;
 }
 
 .rune-level {
@@ -143,8 +151,8 @@
 }
 
 .rune-color {
-    width: 40px;
-    height: 40px;
+    width: 32px;
+    height: 32px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -154,13 +162,13 @@
 }
 
 .color-icon {
-    width: 40px;
-    height: 40px;
+    width: 32px;
+    height: 32px;
 }
 
 .special-color {
-    width: 80px;
-    height: 40px;
+    width: 64px;
+    height: 32px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -208,8 +216,8 @@
 }
 
 .obtenation-icon {
-    width: 50px;
-    height: 50px;
+    width: 40px;
+    height: 40px;
     border-radius: 4px;
     border: 1px solid rgba(255, 255, 255, 0.2);
 }
@@ -220,8 +228,8 @@
 }
 
 .rarity-icon {
-    width: 50px;
-    height: 50px;
+    width: 40px;
+    height: 40px;
     filter: drop-shadow(0 0 2px rgba(0, 0, 0, 0.7));
 }
 
@@ -229,7 +237,7 @@
     background: rgba(36, 7, 80, 0.4);
     padding: 15px;
     border-radius: 8px;
-    margin-bottom: 15px;
+    margin-bottom: 10px;
     font-size: 1.1rem;
     border: 1px solid rgba(87, 123, 141, 0.3);
     min-height: 80px;
@@ -239,7 +247,7 @@
     display: flex;
     align-items: center;
     gap: 15px;
-    margin-top: 15px;
+    margin-top: 5px;
 }
 
 .level-slider {
@@ -320,6 +328,12 @@
 }
 
 /* ===== RESPONSIVE DESIGN ===== */
+@media (max-width: 1600px) {
+    .runes-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
 @media (max-width: 1200px) {
     .runes-grid {
         grid-template-columns: repeat(2, 1fr);
