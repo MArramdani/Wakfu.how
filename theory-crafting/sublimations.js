@@ -81,6 +81,27 @@ async function loadRuneData() {
                         "placeholder": "Y"
                     }
                 ]
+            },
+            {
+                "name": "Flee",
+                "colors": ["B", "G", "G"],
+                "description": "1 mp After dodging with loss ([X] max per turn)",
+                "rarity": ["Mythic"],
+                "effect": "Per additional 2 levels: +1 max per turn",
+                "maxLevel": 6,
+                "minLevel": 2,
+                "step": 2,
+                "obtenation": {
+                    "name": "Kween's Gawden Dungeon",
+                    "localIcon": "./icons/viziew.png"
+                },
+                "values": [
+                    {
+                        "base": 1,
+                        "increment": 1,
+                        "placeholder": "X"
+                    }
+                ]
             }
         ];
     }
@@ -168,7 +189,9 @@ function initializePage() {
             let description = rune.description;
             if (rune.values && rune.values.length > 0) {
                 rune.values.forEach(value => {
-                    const calculatedValue = value.base + (value.increment * (currentLevel - rune.minLevel));
+                    // Calculate how many "steps" have been taken from the minimum level
+                    const steps = Math.floor((currentLevel - rune.minLevel) / rune.step);
+                    const calculatedValue = value.base + (value.increment * steps);
                     // Use global regex to replace ALL occurrences
                     const regex = new RegExp(`\\[${value.placeholder}\\]`, 'g');
                     description = description.replace(regex, calculatedValue);
@@ -334,7 +357,9 @@ function initializePage() {
                     let updatedDescription = rune.description;
                     if (rune.values && rune.values.length > 0) {
                         rune.values.forEach(value => {
-                            const calculatedValue = value.base + (value.increment * (level - rune.minLevel) / rune.step);
+                            // Calculate how many "steps" have been taken from the minimum level
+                            const steps = Math.floor((level - rune.minLevel) / rune.step);
+                            const calculatedValue = value.base + (value.increment * steps);
                             // Use global regex to replace ALL occurrences
                             const regex = new RegExp(`\\[${value.placeholder}\\]`, 'g');
                             updatedDescription = updatedDescription.replace(regex, calculatedValue);
