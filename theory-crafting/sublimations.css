@@ -123,13 +123,16 @@
 
 .rune-name-container {
     flex: 1;
+    isplay: flex; /* Add this */
+    justify-content: space-between; /* Add this */
+    align-items: center; /* Add this */
 }
 
 .rune-name {
     font-size: 1.8rem;
     font-weight: bold;
     color: #6fd6d0;
-    margin-bottom: 5px;
+    margin-bottom: 0px;
     text-shadow: 
         -1px -1px 0 rgba(0, 0, 0, 0.5),
         1px -1px 0 rgba(0, 0, 0, 0.5),
@@ -161,6 +164,7 @@
 .rune-level {
     font-size: 1rem;
     color: #577B8D;
+    margin-left: 10px;
 }
 
 .rune-colors {
