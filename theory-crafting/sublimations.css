@@ -328,13 +328,11 @@
 .level-slider.fixed-level::-webkit-slider-thumb {
     position: relative;
     top: -6px;
-    transform: translateX(100%); /* Move to far right */
 }
 
 .level-slider.fixed-level::-moz-range-thumb {
     position: relative;
     top: -6px;
-    transform: translateX(100%); /* Move to far right */
 }
 
 /* For Firefox */
