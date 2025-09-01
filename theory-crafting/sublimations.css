@@ -130,20 +130,32 @@
     font-weight: bold;
     color: #6fd6d0;
     margin-bottom: 5px;
-    border: 2px solid rgba(87, 166, 161, 0.3);
-    padding: 5px 10px;
-    border-radius: 6px;
+    text-shadow: 
+        -1px -1px 0 rgba(0, 0, 0, 0.5),
+        1px -1px 0 rgba(0, 0, 0, 0.5),
+        -1px 1px 0 rgba(0, 0, 0, 0.5),
+        1px 1px 0 rgba(0, 0, 0, 0.5);
     display: inline-block;
+    padding: 2px 0; /* Minimal padding for better appearance */
 }
+
 
 .rune-name.relic-name {
     color: #9b59b6;
-    border-color: rgba(155, 89, 182, 0.3);
+    text-shadow: 
+        -1px -1px 0 rgba(0, 0, 0, 0.5),
+        1px -1px 0 rgba(0, 0, 0, 0.5),
+        -1px 1px 0 rgba(0, 0, 0, 0.5),
+        1px 1px 0 rgba(0, 0, 0, 0.5);
 }
 
 .rune-name.epic-name {
     color: #ff00cc;
-    border-color: rgba(255, 0, 204, 0.3);
+    text-shadow: 
+        -1px -1px 0 rgba(0, 0, 0, 0.5),
+        1px -1px 0 rgba(0, 0, 0, 0.5),
+        -1px 1px 0 rgba(0, 0, 0, 0.5),
+        1px 1px 0 rgba(0, 0, 0, 0.5);
 }
 
 .rune-level {
@@ -314,15 +326,15 @@
 }
 
 .level-slider.fixed-level::-webkit-slider-thumb {
-    margin-left: auto;
-    margin-right: 0;
+    position: relative;
     top: -6px;
+    transform: translateX(100%); /* Move to far right */
 }
 
 .level-slider.fixed-level::-moz-range-thumb {
-    margin-left: auto;
-    margin-right: 0;
+    position: relative;
     top: -6px;
+    transform: translateX(100%); /* Move to far right */
 }
 
 /* For Firefox */
