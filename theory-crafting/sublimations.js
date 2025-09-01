@@ -329,7 +329,7 @@ function initializePage() {
                     let updatedDescription = rune.description;
                     if (rune.values && rune.values.length > 0) {
                         rune.values.forEach(value => {
-                            const calculatedValue = value.base + (value.increment * (level - rune.minLevel));
+                            const calculatedValue = value.base + (value.increment * (level - rune.minLevel) / rune.step);
                             updatedDescription = updatedDescription.replace(`[${value.placeholder}]`, calculatedValue);
                         });
                     }
