@@ -326,15 +326,13 @@
 }
 
 .level-slider.fixed-level::-webkit-slider-thumb {
-    position: relative;
-    top: -6px;
-    transform: translateX(100%); /* Move to far right */
+    margin-left: auto;
+    margin-right: 0;
 }
 
 .level-slider.fixed-level::-moz-range-thumb {
-    position: relative;
-    top: -6px;
-    transform: translateX(100%); /* Move to far right */
+    margin-left: auto;
+    margin-right: 0;
 }
 
 /* For Firefox */
