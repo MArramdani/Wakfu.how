@@ -409,7 +409,7 @@
       "G",
       "B"
     ],
-    "description": "The first critical hit in the turn inflicts [X]% additional damageThe following ones inflict -[Y]% less damage",
+    "description": "The first critical hit in the turn inflicts [X]% additional damage. The following ones inflict -[Y]% less damage",
     "rarity": [
       "Rare",
       "Mythic"
@@ -1017,8 +1017,9 @@
         "placeholder": "X"
       },
       {
-        "base": null,
-        "increment": null
+        "base": 4,
+        "increment": 4,
+        "placeholder": "Y"
       }
     ]
   },
