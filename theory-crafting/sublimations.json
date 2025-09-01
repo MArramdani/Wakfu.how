@@ -9,14 +9,15 @@
     "description": "[X]% Critical Hit",
     "rarity": [
       "Rare",
-      "Myth",
-      "Leg"
+      "Mythic",
+      "Legendary"
     ],
     "effect": "Per additional level: +3% Critical hit",
     "maxLevel": 6,
     "minLevel": 1,
     "step": 1,
     "obtenation": {
+      "name": "Runic Mimic",
       "localIcon": "./icons/runic.png"
     },
     "category": "Stats Increase",
@@ -42,14 +43,15 @@
     "description": "[X]% Damage Inflicted on aligned targets 2 or more cells away from the state bearer",
     "rarity": [
       "Rare",
-      "Myth",
-      "Leg"
+      "Mythic",
+      "Legendary"
     ],
     "effect": "Per additional level: +2% Damage Inflicted",
     "maxLevel": 6,
     "minLevel": 1,
     "step": 1,
     "obtenation": {
+      "name": "Runic Mimic",
       "localIcon": "./icons/runic.png"
     },
     "category": "Offensive",
@@ -74,13 +76,14 @@
     ],
     "description": "-20 Force of Will. Reduces the next AP loss suffered by 1, [X] time(s). The effect is reapplied every turn",
     "rarity": [
-      "Myth"
+      "Mythic"
     ],
     "effect": "Per additional 2 levels: reduces 1 more \"AP loss\" suffered ",
     "maxLevel": 6,
     "minLevel": 2,
     "step": 2,
     "obtenation": {
+      "name": "Runic Mimic",
       "localIcon": "./icons/runic.png"
     },
     "category": "Defensive",
@@ -106,14 +109,15 @@
     "description": "If the state bearer does not have any armor at end of turn: [X]% of level as Armor",
     "rarity": [
       "Rare",
-      "Myth",
-      "Leg"
+      "Mythic",
+      "Legendary"
     ],
     "effect": "Per additional level: +50% armor",
     "maxLevel": 6,
     "minLevel": 1,
     "step": 1,
     "obtenation": {
+      "name": "Tainela",
       "localIcon": "./icons/rift.png"
     },
     "category": "Defensive",
@@ -139,14 +143,15 @@
     "description": "Ending a turn adjacent to an enemy applies -[X]% Armor received to it (1 turn)",
     "rarity": [
       "Rare",
-      "Myth",
-      "Leg"
+      "Mythic",
+      "Legendary"
     ],
     "effect": "Per additional level: -5% armor received",
     "maxLevel": 6,
     "minLevel": 1,
     "step": 1,
     "obtenation": {
+      "name": "Tainela",
       "localIcon": "./icons/rift.png"
     },
     "category": "Support",
@@ -172,13 +177,14 @@
     "description": "Heal: [X]% of HP lost of the caster on killing an enemy (2 activations per turn)",
     "rarity": [
       "Rare",
-      "Myth"
+      "Mythic"
     ],
     "effect": "Per additional level: +10% HP",
     "maxLevel": 2,
     "minLevel": 1,
     "step": 1,
     "obtenation": {
+      "name": "Tainela",
       "localIcon": "./icons/rift.png"
     },
     "category": "Defensive",
@@ -204,14 +210,15 @@
     "description": "-10% Damage inflicted with a weapon. When inflicting damage on an enemy with a two-handed weapon: Steals [X]% of level in Lock (1 turn not stackable)",
     "rarity": [
       "Rare",
-      "Myth",
-      "Leg"
+      "Mythic",
+      "Legendary"
     ],
     "effect": "Per additional level: steals +15% of level in Lock",
     "maxLevel": 4,
     "minLevel": 1,
     "step": 1,
     "obtenation": {
+      "name": "Tainela",
       "localIcon": "./icons/rift.png"
     },
     "category": "Support",
@@ -237,13 +244,14 @@
     "description": "When inflicting damage on an enemy with a weapon: That enemy reduces their damage on the state bearer by -[X] % (1 turn not stackable) The state bearer must have a shield equipped",
     "rarity": [
       "Rare",
-      "Myth"
+      "Mythic"
     ],
     "effect": "Per additional level: reduces the DMG by another -5%",
     "maxLevel": 2,
     "minLevel": 1,
     "step": 1,
     "obtenation": {
+      "name": "Sufokia",
       "localIcon": "./icons/rift.png"
     },
     "category": "Support",
@@ -269,14 +277,15 @@
     "description": "When the state bearer suffers direct close-combat damage once per turn of the attacker: The state bearer inflicts light damage on the attacker ([X]% of level)",
     "rarity": [
       "Rare",
-      "Myth",
-      "Leg"
+      "Mythic",
+      "Legendary"
     ],
     "effect": "Per additional level: +10% of level DMG",
     "maxLevel": 6,
     "minLevel": 1,
     "step": 1,
     "obtenation": {
+      "name": "Sufokia",
       "localIcon": "./icons/rift.png"
     },
     "category": "Offensive",
@@ -302,14 +311,15 @@
     "description": "[X]% Heals performed on an ally adjacent to another ally",
     "rarity": [
       "Rare",
-      "Myth",
-      "Leg"
+      "Mythic",
+      "Legendary"
     ],
     "effect": "Per additional level: +2% Heals",
     "maxLevel": 6,
     "minLevel": 1,
     "step": 1,
     "obtenation": {
+      "name": "Sufokia",
       "localIcon": "./icons/rift.png"
     },
     "category": "Support",
@@ -335,13 +345,14 @@
     "description": "When the state bearer starts their turn with all their WP (or all their QB): [X]% Critical Hit (1 turn)",
     "rarity": [
       "Rare",
-      "Myth"
+      "Mythic"
     ],
     "effect": "Per additional level: +10% Critical Hit",
     "maxLevel": 6,
     "minLevel": 1,
     "step": 1,
     "obtenation": {
+      "name": "Sufokia",
       "localIcon": "./icons/rift.png"
     },
     "category": "Stats Increase",
@@ -367,14 +378,15 @@
     "description": "-10% Heals performed. The state bearer is healed by [X] % of heals performed on their allies",
     "rarity": [
       "Rare",
-      "Myth",
-      "Leg"
+      "Mythic",
+      "Legendary"
     ],
     "effect": "Per additional level: +4% healed",
     "maxLevel": 4,
     "minLevel": 1,
     "step": 1,
     "obtenation": {
+      "name": "Amakna",
       "localIcon": "./icons/rift.png"
     },
     "category": "Support",
@@ -400,13 +412,14 @@
     "description": "The first critical hit in the turn inflicts [X]% additional damageThe following ones inflict -[Y]% less damage",
     "rarity": [
       "Rare",
-      "Myth"
+      "Mythic"
     ],
     "effect": "Per additional level: +6% additional DMG -3% less DMG",
     "maxLevel": 2,
     "minLevel": 1,
     "step": 1,
     "obtenation": {
+      "name": "Amakna",
       "localIcon": "./icons/rift.png"
     },
     "category": "Offensive",
@@ -437,14 +450,15 @@
     "description": "When ending turn with less than 50% HP: Heals: [X] % of missing HP",
     "rarity": [
       "Rare",
-      "Myth",
-      "Leg"
+      "Mythic",
+      "Legendary"
     ],
     "effect": "Per additional level: +5% of missing health",
     "maxLevel": 4,
     "minLevel": 1,
     "step": 1,
     "obtenation": {
+      "name": "Amakna",
       "localIcon": "./icons/rift.png"
     },
     "category": "Defensive",
@@ -469,13 +483,14 @@
     ],
     "description": "At the start of the first turn if secondary masteries are <= 0: [X] max WP and [X] Range -[Y]% Armor given and received",
     "rarity": [
-      "Myth"
+      "Mythic"
     ],
     "effect": "Per additional 2 levels: +1 max WP +1 Range -10% armor given/received",
     "maxLevel": 6,
     "minLevel": 2,
     "step": 2,
     "obtenation": {
+      "name": "Amakna",
       "localIcon": "./icons/rift.png"
     },
     "category": "Stats Increase",
@@ -506,14 +521,15 @@
     "description": "[X]% non-critical damage and heals inflicted -[X]% critical damage and heals inflicted",
     "rarity": [
       "Rare",
-      "Myth",
-      "Leg"
+      "Mythic",
+      "Legendary"
     ],
     "effect": "Per additional level: +2% non-crit DMG/Heal. -2% crit DMG/Heal",
     "maxLevel": 6,
     "minLevel": 1,
     "step": 1,
     "obtenation": {
+      "name": "Frigost",
       "localIcon": "./icons/rift.png"
     },
     "category": "Stats Increase",
@@ -539,14 +555,15 @@
     "description": "When the state bearer starts their turn with 50% or less of their WP (or their QB): [X]% Critical Damage inflicted (1 turn) [Y]% of level as Armor",
     "rarity": [
       "Rare",
-      "Myth",
-      "Leg"
+      "Mythic",
+      "Legendary"
     ],
     "effect": "Per additional level: +3% Critical Damage +100% armor",
     "maxLevel": 4,
     "minLevel": 1,
     "step": 1,
     "obtenation": {
+      "name": "Frigost",
       "localIcon": "./icons/rift.png"
     },
     "category": "Stats Increase",
@@ -577,14 +594,15 @@
     "description": "If no other shield dagger or two-handed weapon is equipped at start of fight: [X]% of level in Elemental Mastery [Y]% of Damage inflicted on a target with Armor",
     "rarity": [
       "Rare",
-      "Myth",
-      "Leg"
+      "Mythic",
+      "Legendary"
     ],
     "effect": "Per additional level: +25% level of Elemental Mastery +2% Damage inflicted on a target with Armor",
     "maxLevel": 6,
     "minLevel": 1,
     "step": 1,
     "obtenation": {
+      "name": "Frigost",
       "localIcon": "./icons/rift.png"
     },
     "category": "Stats Increase",
@@ -614,13 +632,14 @@
     ],
     "description": "When the state bearer suffers direct close-combat damage once per turn of the attacker: The state bearer turns toward them.",
     "rarity": [
-      "Myth"
+      "Mythic"
     ],
     "effect": "N/A",
     "maxLevel": 2,
     "minLevel": 2,
     "step": 2,
     "obtenation": {
+      "name": "Frigost",
       "localIcon": "./icons/rift.png"
     },
     "category": "Defensive",
@@ -641,14 +660,15 @@
     "description": "Heal [X]% of max HP when below 20% max hp (once per fight)",
     "rarity": [
       "Rare",
-      "Myth",
-      "Leg"
+      "Mythic",
+      "Legendary"
     ],
     "effect": "Per additional level: heal +5% of max HP",
     "maxLevel": 6,
     "minLevel": 1,
     "step": 1,
     "obtenation": {
+      "name": "Blackspore Dungeon",
       "localIcon": "./icons/sugnuf.png"
     },
     "category": "Defensive",
@@ -674,14 +694,15 @@
     "description": "At start of fight: [X]% of level as Dodge",
     "rarity": [
       "Rare",
-      "Myth",
-      "Leg"
+      "Mythic",
+      "Legendary"
     ],
     "effect": "Per additional level: +50% of level as Dodge",
     "maxLevel": 6,
     "minLevel": 1,
     "step": 1,
     "obtenation": {
+      "name": "Blackspore Dungeon",
       "localIcon": "./icons/sugnuf.png"
     },
     "category": "Stats Increase",
@@ -707,14 +728,15 @@
     "description": "[X]% DMG inflicted on targets exactly 3 cells away",
     "rarity": [
       "Rare",
-      "Myth",
-      "Leg"
+      "Mythic",
+      "Legendary"
     ],
     "effect": "Per additional level: +3% DMG",
     "maxLevel": 6,
     "minLevel": 1,
     "step": 1,
     "obtenation": {
+      "name": "Blackspore Dungeon",
       "localIcon": "./icons/sugnuf.png"
     },
     "category": "Offensive",
@@ -740,14 +762,15 @@
     "description": "At start of fight: [X]% of level as Lock",
     "rarity": [
       "Rare",
-      "Myth",
-      "Leg"
+      "Mythic",
+      "Legendary"
     ],
     "effect": "Per additional level: +50% of level as Lock",
     "maxLevel": 6,
     "minLevel": 1,
     "step": 1,
     "obtenation": {
+      "name": "Dirty Trouffe Estate Dungeon",
       "localIcon": "./icons/rascal.png"
     },
     "category": "Stats Increase",
@@ -773,14 +796,15 @@
     "description": "At start of turn: Converts [X]% of current HP into Armor",
     "rarity": [
       "Rare",
-      "Myth",
-      "Leg"
+      "Mythic",
+      "Legendary"
     ],
     "effect": "Per additional level: +10% current HP converted",
     "maxLevel": 6,
     "minLevel": 1,
     "step": 1,
     "obtenation": {
+      "name": "Dirty Trouffe Estate Dungeon",
       "localIcon": "./icons/rascal.png"
     },
     "category": "Defensive",
@@ -806,14 +830,15 @@
     "description": "-20% Heals received. When the bearer inflicts damage in a diagonal line: Steals [X]% of damage inflicted",
     "rarity": [
       "Rare",
-      "Myth",
-      "Leg"
+      "Mythic",
+      "Legendary"
     ],
     "effect": "Per additional level: +4% DMG stolen",
     "maxLevel": 4,
     "minLevel": 1,
     "step": 1,
     "obtenation": {
+      "name": "Dirty Trouffe Estate Dungeon",
       "localIcon": "./icons/rascal.png"
     },
     "category": "Offensive",
@@ -838,13 +863,14 @@
     ],
     "description": "Recover [X] AP when you cause an enemy to lose Armor (2 activations per turn)",
     "rarity": [
-      "Myth"
+      "Mythic"
     ],
     "effect": "Per additional 2 levels: Recovers +1 AP",
     "maxLevel": 4,
     "minLevel": 2,
     "step": 2,
     "obtenation": {
+      "name": "Treechnid Dungeon",
       "localIcon": "./icons/soft_oak.png"
     },
     "category": "Stats Increase",
@@ -870,14 +896,15 @@
     "description": "[X]% Armor given",
     "rarity": [
       "Rare",
-      "Myth",
-      "Leg"
+      "Mythic",
+      "Legendary"
     ],
     "effect": "Per additional level: +3% Armor given",
     "maxLevel": 6,
     "minLevel": 1,
     "step": 1,
     "obtenation": {
+      "name": "Treechnid Dungeon",
       "localIcon": "./icons/soft_oak.png"
     },
     "category": "Stats Increase",
@@ -903,14 +930,15 @@
     "description": "When the bearer removes all of a target's armor: [X]% damage inflicted for the rest of the turn 30% maximum",
     "rarity": [
       "Rare",
-      "Myth",
-      "Leg"
+      "Mythic",
+      "Legendary"
     ],
     "effect": "Per additional level: +3% DMG",
     "maxLevel": 4,
     "minLevel": 1,
     "step": 1,
     "obtenation": {
+      "name": "Treechnid Dungeon",
       "localIcon": "./icons/soft_oak.png"
     },
     "category": "Offensive",
@@ -936,14 +964,15 @@
     "description": "Each time indirect dmg inflicted: -[X]% Indirect dmg +[X]% Indirect DMG (Max 40%)",
     "rarity": [
       "Rare",
-      "Myth",
-      "Leg"
+      "Mythic",
+      "Legendary"
     ],
     "effect": "Per additional level: -2% Direct DMG +2% Indirect DMG",
     "maxLevel": 4,
     "minLevel": 1,
     "step": 1,
     "obtenation": {
+      "name": "Great Zomkin's Compost Dungeon",
       "localIcon": "./icons/culinary.png"
     },
     "category": "Offensive",
@@ -969,14 +998,15 @@
     "description": "Outside of your turn: [X] FoW. During your turn: -[Y] FoW",
     "rarity": [
       "Rare",
-      "Myth",
-      "Leg"
+      "Mythic",
+      "Legendary"
     ],
     "effect": "Per additional level: +3 FoW outisde of turn. -4 FoW during turn",
     "maxLevel": 6,
     "minLevel": 1,
     "step": 1,
     "obtenation": {
+      "name": "Great Zomkin's Compost Dungeon",
       "localIcon": "./icons/culinary.png"
     },
     "category": "Defensive",
@@ -1002,14 +1032,15 @@
     "description": "-20% Heals performed. For each turn without performing heals: [X]% Heals performed Stackable up to 40%",
     "rarity": [
       "Rare",
-      "Myth",
-      "Leg"
+      "Mythic",
+      "Legendary"
     ],
     "effect": "Per additional level: +5% Heals",
     "maxLevel": 4,
     "minLevel": 1,
     "step": 1,
     "obtenation": {
+      "name": "Great Zomkin's Compost Dungeon",
       "localIcon": "./icons/culinary.png"
     },
     "category": "Support",
@@ -1034,13 +1065,14 @@
     ],
     "description": "Reduces direct damage received greater than 20% of max HP by 400% of level (once per round)",
     "rarity": [
-      "Myth"
+      "Mythic"
     ],
     "effect": "N/A",
     "maxLevel": 2,
     "minLevel": 2,
     "step": 2,
     "obtenation": {
+      "name": "Lenald Palace Dungeon",
       "localIcon": "./icons/lenald.png"
     },
     "category": "Defensive",
@@ -1060,13 +1092,14 @@
     ],
     "description": "At end of turn if the state bearer has 2 or more AP: [X] Elemental Resistance (1 turn)",
     "rarity": [
-      "Myth"
+      "Mythic"
     ],
     "effect": "Per additional 2 levels: +25 Elemental Resistance",
     "maxLevel": 4,
     "minLevel": 2,
     "step": 2,
     "obtenation": {
+      "name": "Lenald Palace Dungeon",
       "localIcon": "./icons/lenald.png"
     },
     "category": "Defensive",
@@ -1092,14 +1125,15 @@
     "description": "At start of fight: [X]% Block (1 turn)",
     "rarity": [
       "Rare",
-      "Myth",
-      "Leg"
+      "Mythic",
+      "Legendary"
     ],
     "effect": "Per additional level: +5% Block",
     "maxLevel": 6,
     "minLevel": 1,
     "step": 1,
     "obtenation": {
+      "name": "Kween's Gawden Dungeon",
       "localIcon": "./icons/viziew.png"
     },
     "category": "Stats Increase",
@@ -1125,14 +1159,15 @@
     "description": "When you inflict direct dmg. Once per turn: Inflict [X]% of level as Light damage on enemies aligned with the target",
     "rarity": [
       "Rare",
-      "Myth",
-      "Leg"
+      "Mythic",
+      "Legendary"
     ],
     "effect": "Per additional level: +10% of level as DMG",
     "maxLevel": 4,
     "minLevel": 1,
     "step": 1,
     "obtenation": {
+      "name": "Kween's Gawden Dungeon",
       "localIcon": "./icons/viziew.png"
     },
     "category": "Offensive",
@@ -1157,13 +1192,14 @@
     ],
     "description": "1 mp After dodging with loss ([X] max per turn)",
     "rarity": [
-      "Myth"
+      "Mythic"
     ],
     "effect": "Per additional 2 levels: +1 max per turn",
     "maxLevel": 6,
     "minLevel": 2,
     "step": 2,
     "obtenation": {
+      "name": "Kween's Gawden Dungeon",
       "localIcon": "./icons/viziew.png"
     },
     "category": "Stats Increase",
@@ -1189,14 +1225,15 @@
     "description": "[X]% Damage from behind -[Y]% frontal and side Damage",
     "rarity": [
       "Rare",
-      "Myth",
-      "Leg"
+      "Mythic",
+      "Legendary"
     ],
     "effect": "Per additional level: +3% Dmg behind -2% frontal/side DMG",
     "maxLevel": 6,
     "minLevel": 1,
     "step": 1,
     "obtenation": {
+      "name": "Bonta",
       "localIcon": "./icons/rift.png"
     },
     "category": "Offensive",
@@ -1227,14 +1264,15 @@
     "description": "[X]% Armor given to an aligned ally at a distance",
     "rarity": [
       "Rare",
-      "Myth",
-      "Leg"
+      "Mythic",
+      "Legendary"
     ],
     "effect": "Per additional level: +4% Armor given",
     "maxLevel": 6,
     "minLevel": 1,
     "step": 1,
     "obtenation": {
+      "name": "Bonta",
       "localIcon": "./icons/rift.png"
     },
     "category": "Support",
@@ -1260,13 +1298,14 @@
     "description": "Gains [X]% of level as Flaming on killing an enemy (1 activation per turn)",
     "rarity": [
       "Rare",
-      "Myth"
+      "Mythic"
     ],
     "effect": "Per additional level: +50% of lvl",
     "maxLevel": 2,
     "minLevel": 1,
     "step": 1,
     "obtenation": {
+      "name": "Bonta",
       "localIcon": "./icons/rift.png"
     },
     "category": "Offensive",
@@ -1292,14 +1331,15 @@
     "description": "-10% Damage inflicted with a weapon. When inflicting damage on an enemy with a two-handed weapon: Steals [X]% of level in Dodge (1 turn not stackable)",
     "rarity": [
       "Rare",
-      "Myth",
-      "Leg"
+      "Mythic",
+      "Legendary"
     ],
     "effect": "Per additional level: +15% of lvl in Dodge",
     "maxLevel": 4,
     "minLevel": 1,
     "step": 1,
     "obtenation": {
+      "name": "Bonta",
       "localIcon": "./icons/rift.png"
     },
     "category": "Support",
@@ -1325,14 +1365,15 @@
     "description": "Receive [X]% of max HP as Armor when below 20% max hp (once per fight)",
     "rarity": [
       "Rare",
-      "Myth",
-      "Leg"
+      "Mythic",
+      "Legendary"
     ],
     "effect": "Per additional level: +5% of max HP as Armor",
     "maxLevel": 6,
     "minLevel": 1,
     "step": 1,
     "obtenation": {
+      "name": "Srambad Dungeon",
       "localIcon": "./icons/srambad.png"
     },
     "category": "Defensive",
@@ -1357,13 +1398,14 @@
     ],
     "description": "Regains [X]% of max HP as Armor by killing an enemy (2 activations per turn)",
     "rarity": [
-      "Myth"
+      "Mythic"
     ],
     "effect": "Per additional 2 levels: +5% of max HP",
     "maxLevel": 4,
     "minLevel": 2,
     "step": 2,
     "obtenation": {
+      "name": "Srambad Dungeon",
       "localIcon": "./icons/srambad.png"
     },
     "category": "Defensive",
@@ -1389,13 +1431,14 @@
     "description": "When you cause an enemy to lose armor: inflict [X]% of level as dmg on the target. (2 activations per turn)",
     "rarity": [
       "Rare",
-      "Myth"
+      "Mythic"
     ],
     "effect": "Per additional level: +10% of DMG",
     "maxLevel": 4,
     "minLevel": 1,
     "step": 1,
     "obtenation": {
+      "name": "Srambad Dungeon",
       "localIcon": "./icons/srambad.png"
     },
     "category": "Offensive",
@@ -1421,14 +1464,15 @@
     "description": " + [X]% Water dmg when casting a fire/air/earth spell. Stacks up to 30%. consumed on next direct Water dmg.",
     "rarity": [
       "Rare",
-      "Myth",
-      "Leg"
+      "Mythic",
+      "Legendary"
     ],
     "effect": "Per additional level: +2% Water DMG",
     "maxLevel": 4,
     "minLevel": 1,
     "step": 1,
     "obtenation": {
+      "name": "Enurado Dungeon",
       "localIcon": "./icons/enurado.png"
     },
     "category": "Offensive",
@@ -1454,14 +1498,15 @@
     "description": "[X]% Earth DMG",
     "rarity": [
       "Rare",
-      "Myth",
-      "Leg"
+      "Mythic",
+      "Legendary"
     ],
     "effect": "Per additional level: +4% Earth DMG",
     "maxLevel": 4,
     "minLevel": 1,
     "step": 1,
     "obtenation": {
+      "name": "Enurado Dungeon",
       "localIcon": "./icons/enurado.png"
     },
     "category": "Offensive",
@@ -1487,14 +1532,15 @@
     "description": " + [X]% Fire dmg when casting a water/air/earth spell. Stacks up to 30%. consumed on next direct Fire dmg.",
     "rarity": [
       "Rare",
-      "Myth",
-      "Leg"
+      "Mythic",
+      "Legendary"
     ],
     "effect": "Per additional level: +2% Fire DMG",
     "maxLevel": 4,
     "minLevel": 1,
     "step": 1,
     "obtenation": {
+      "name": "Enurado Dungeon",
       "localIcon": "./icons/enurado.png"
     },
     "category": "Offensive",
@@ -1520,14 +1566,15 @@
     "description": "[X]% Air DMG",
     "rarity": [
       "Rare",
-      "Myth",
-      "Leg"
+      "Mythic",
+      "Legendary"
     ],
     "effect": "Per additional level: +4% Air DMG",
     "maxLevel": 4,
     "minLevel": 1,
     "step": 1,
     "obtenation": {
+      "name": "Enurado Dungeon",
       "localIcon": "./icons/enurado.png"
     },
     "category": "Offensive",
@@ -1553,14 +1600,15 @@
     "description": "[X]% Water DMG",
     "rarity": [
       "Rare",
-      "Myth",
-      "Leg"
+      "Mythic",
+      "Legendary"
     ],
     "effect": "Per additional level: +4% Water DMG",
     "maxLevel": 4,
     "minLevel": 1,
     "step": 1,
     "obtenation": {
+      "name": "Blopera Dungeon",
       "localIcon": "./icons/blopera.png"
     },
     "category": "Offensive",
@@ -1586,14 +1634,15 @@
     "description": " + [X]% Earth dmg when casting a fire/air/water spell. Stacks up to 30%. consumed on next direct Earth dmg.",
     "rarity": [
       "Rare",
-      "Myth",
-      "Leg"
+      "Mythic",
+      "Legendary"
     ],
     "effect": "Per additional level: +2% Earth DMG",
     "maxLevel": 4,
     "minLevel": 1,
     "step": 1,
     "obtenation": {
+      "name": "Blopera Dungeon",
       "localIcon": "./icons/blopera.png"
     },
     "category": "Offensive",
@@ -1619,14 +1668,15 @@
     "description": " + [X]% Air dmg when casting a fire/water/earth spell. Stacks up to 30%. consumed on next direct Air dmg.",
     "rarity": [
       "Rare",
-      "Myth",
-      "Leg"
+      "Mythic",
+      "Legendary"
     ],
     "effect": "Per additional level: +2% Air DMG",
     "maxLevel": 4,
     "minLevel": 1,
     "step": 1,
     "obtenation": {
+      "name": "Blopera Dungeon",
       "localIcon": "./icons/blopera.png"
     },
     "category": "Offensive",
@@ -1652,14 +1702,15 @@
     "description": "[X]% Fire DMG",
     "rarity": [
       "Rare",
-      "Myth",
-      "Leg"
+      "Mythic",
+      "Legendary"
     ],
     "effect": "Per additional level: +4% Fire DMG",
     "maxLevel": 4,
     "minLevel": 1,
     "step": 1,
     "obtenation": {
+      "name": "Blopera Dungeon",
       "localIcon": "./icons/blopera.png"
     },
     "category": "Offensive",
@@ -1685,13 +1736,14 @@
     "description": "After suffering a loss of 2 MP: [X] Force of Will (3 turns)",
     "rarity": [
       "Rare",
-      "Myth"
+      "Mythic"
     ],
     "effect": "Per additional level: +5 Force of Will",
     "maxLevel": 2,
     "minLevel": 1,
     "step": 1,
     "obtenation": {
+      "name": "Wellspring of Evil Dungeon",
       "localIcon": "./icons/bulbrute.png"
     },
     "category": "Support",
@@ -1717,14 +1769,15 @@
     "description": "[X]% to characteristic bonuses received. Affects all characteristic bonuses (Masteries Resistances Armor) received in combat and cast by an entity other than the state bearer.The value is always rounded down.",
     "rarity": [
       "Rare",
-      "Myth",
-      "Leg"
+      "Mythic",
+      "Legendary"
     ],
     "effect": "Per additional level: +3% to characteristic bonuses",
     "maxLevel": 4,
     "minLevel": 1,
     "step": 1,
     "obtenation": {
+      "name": "Wellspring of Evil Dungeon",
       "localIcon": "./icons/bulbrute.png"
     },
     "category": "Support",
@@ -1749,13 +1802,14 @@
     ],
     "description": "Recovers [X] MP on killing an enemy (2 activations per turn)",
     "rarity": [
-      "Myth"
+      "Mythic"
     ],
     "effect": "Per additional 2 levels: +1 MP",
     "maxLevel": 4,
     "minLevel": 2,
     "step": 2,
     "obtenation": {
+      "name": "Wellspring of Evil Dungeon",
       "localIcon": "./icons/bulbrute.png"
     },
     "category": "Stats Increase",
@@ -1781,14 +1835,15 @@
     "description": "[X]% Indirect Damage",
     "rarity": [
       "Rare",
-      "Myth",
-      "Leg"
+      "Mythic",
+      "Legendary"
     ],
     "effect": "Per additional level: +5% Indirect Damage",
     "maxLevel": 6,
     "minLevel": 1,
     "step": 1,
     "obtenation": {
+      "name": "Sandyoptera Mother-Hive Dungeon",
       "localIcon": "./icons/sandy.png"
     },
     "category": "Offensive",
@@ -1814,14 +1869,15 @@
     "description": "Receive [X] Resistances when below 20% max hp (once per fight)",
     "rarity": [
       "Rare",
-      "Myth",
-      "Leg"
+      "Mythic",
+      "Legendary"
     ],
     "effect": "Per additional level: +20 Resistances",
     "maxLevel": 6,
     "minLevel": 1,
     "step": 1,
     "obtenation": {
+      "name": "Sandyoptera Mother-Hive Dungeon",
       "localIcon": "./icons/sandy.png"
     },
     "category": "Defensive",
@@ -1847,14 +1903,15 @@
     "description": "Increases Health Steals performed by [X]%",
     "rarity": [
       "Rare",
-      "Myth",
-      "Leg"
+      "Mythic",
+      "Legendary"
     ],
     "effect": "Per additional level: +5% Health Steals",
     "maxLevel": 6,
     "minLevel": 1,
     "step": 1,
     "obtenation": {
+      "name": "Sandyoptera Mother-Hive Dungeon",
       "localIcon": "./icons/sandy.png"
     },
     "category": "Defensive",
@@ -1880,13 +1937,14 @@
     "description": "Even turns: [X] Force of Will. Odd turns: -[X] Force of Will",
     "rarity": [
       "Rare",
-      "Myth"
+      "Mythic"
     ],
     "effect": "Per additional level: +10 FoW Even turns. -10 FoW Odd turns",
     "maxLevel": 2,
     "minLevel": 1,
     "step": 1,
     "obtenation": {
+      "name": "Womewo's Labowatowy Dungeon",
       "localIcon": "./icons/womewo.png"
     },
     "category": "Support",
@@ -1912,14 +1970,15 @@
     "description": "[X]% Damage inflicted in a diagonal line",
     "rarity": [
       "Rare",
-      "Myth",
-      "Leg"
+      "Mythic",
+      "Legendary"
     ],
     "effect": "Per additional level: +6% DMG",
     "maxLevel": 4,
     "minLevel": 1,
     "step": 1,
     "obtenation": {
+      "name": "Womewo's Labowatowy Dungeon",
       "localIcon": "./icons/womewo.png"
     },
     "category": "Offensive",
@@ -1944,13 +2003,14 @@
     ],
     "description": "- 1 WP max. + 1 wp at end of turn if you did not spend any WP during the turn",
     "rarity": [
-      "Myth"
+      "Mythic"
     ],
     "effect": "N/A",
     "maxLevel": 2,
     "minLevel": 2,
     "step": 2,
     "obtenation": {
+      "name": "Womewo's Labowatowy Dungeon",
       "localIcon": "./icons/womewo.png"
     },
     "category": "Stats Increase",
@@ -1971,13 +2031,14 @@
     "description": "[X]% Critical Hit -[X]% Damage and Heals",
     "rarity": [
       "Rare",
-      "Myth"
+      "Mythic"
     ],
     "effect": "Per additional level: +50% Crit/ -50% DMG and Heals",
     "maxLevel": 2,
     "minLevel": 1,
     "step": 1,
     "obtenation": {
+      "name": "Mecha Factory Dungeon",
       "localIcon": "./icons/vertox.png"
     },
     "category": "Stats Increase",
@@ -2002,13 +2063,14 @@
     ],
     "description": " On the state bearer's first turn:1 WP (non-regenerable)",
     "rarity": [
-      "Myth"
+      "Mythic"
     ],
     "effect": "N/A",
     "maxLevel": 2,
     "minLevel": 2,
     "step": 2,
     "obtenation": {
+      "name": "Mecha Factory Dungeon",
       "localIcon": "./icons/vertox.png"
     },
     "category": "Stats Increase",
@@ -2029,14 +2091,15 @@
     "description": "[X]% Damage Inflicted on targets in close combat",
     "rarity": [
       "Rare",
-      "Myth",
-      "Leg"
+      "Mythic",
+      "Legendary"
     ],
     "effect": "Per additional level: +2% Damage Inflicted",
     "maxLevel": 6,
     "minLevel": 1,
     "step": 1,
     "obtenation": {
+      "name": "Mecha Factory Dungeon",
       "localIcon": "./icons/vertox.png"
     },
     "category": "Offensive",
@@ -2061,13 +2124,14 @@
     ],
     "description": "- [X]% indirect Damage received",
     "rarity": [
-      "Myth"
+      "Mythic"
     ],
     "effect": "Per additional 2 levels: -15% Indirect Damage received",
     "maxLevel": 4,
     "minLevel": 2,
     "step": 2,
     "obtenation": {
+      "name": "Ow El Dungeon",
       "localIcon": "./icons/robowl.png"
     },
     "category": "Offensive",
@@ -2093,14 +2157,15 @@
     "description": "[X]% Critical Hits per turn (max 30)",
     "rarity": [
       "Rare",
-      "Myth",
-      "Leg"
+      "Mythic",
+      "Legendary"
     ],
     "effect": "Per additional level: +1% Critical Hits per turn",
     "maxLevel": 4,
     "minLevel": 1,
     "step": 1,
     "obtenation": {
+      "name": "Ow El Dungeon",
       "localIcon": "./icons/robowl.png"
     },
     "category": "Stats Increase",
@@ -2125,13 +2190,14 @@
     ],
     "description": "-15% Damage inflicted. At start of turn: 25% Damage inflicted if a single enemy was hit the previous turn",
     "rarity": [
-      "Myth"
+      "Mythic"
     ],
     "effect": "N/A",
     "maxLevel": 2,
     "minLevel": 2,
     "step": 2,
     "obtenation": {
+      "name": "Ow El Dungeon",
       "localIcon": "./icons/robowl.png"
     },
     "category": "Offensive",
@@ -2152,14 +2218,15 @@
     "description": "[X]% Heals performed on an aligned ally at a distance",
     "rarity": [
       "Rare",
-      "Myth",
-      "Leg"
+      "Mythic",
+      "Legendary"
     ],
     "effect": "Per additional level: +2% Heals",
     "maxLevel": 6,
     "minLevel": 1,
     "step": 1,
     "obtenation": {
+      "name": "Moon",
       "localIcon": "./icons/rift.png"
     },
     "category": "Support",
@@ -2185,14 +2252,15 @@
     "description": "[X] Damage inflicted with a Weapon. When inflicting damage on an enemy with a two-handed weapon: Incurable (level: AP cost of the weapon) on the enemy and state bearer",
     "rarity": [
       "Rare",
-      "Myth",
-      "Leg"
+      "Mythic",
+      "Legendary"
     ],
     "effect": "Per additional level: +5% DMG infliected with weapon",
     "maxLevel": 4,
     "minLevel": 1,
     "step": 1,
     "obtenation": {
+      "name": "Moon",
       "localIcon": "./icons/rift.png"
     },
     "category": "Offensive",
@@ -2218,14 +2286,15 @@
     "description": "Melee damage removes [X]% of level in Armor from the target -[Y]% Armor received",
     "rarity": [
       "Rare",
-      "Myth",
-      "Leg"
+      "Mythic",
+      "Legendary"
     ],
     "effect": "Per additional level: +50% of lvl in Armor removed. -3% armor received",
     "maxLevel": 4,
     "minLevel": 1,
     "step": 1,
     "obtenation": {
+      "name": "Moon",
       "localIcon": "./icons/rift.png"
     },
     "category": "Offensive",
@@ -2256,14 +2325,15 @@
     "description": "[X]% Damage from behind on even turns. [X]% frontal Damage on odd turns",
     "rarity": [
       "Rare",
-      "Myth",
-      "Leg"
+      "Mythic",
+      "Legendary"
     ],
     "effect": "Per additional level: +2% on both effects",
     "maxLevel": 6,
     "minLevel": 1,
     "step": 1,
     "obtenation": {
+      "name": "Moon",
       "localIcon": "./icons/rift.png"
     },
     "category": "Offensive",
@@ -2288,13 +2358,14 @@
     ],
     "description": "-20 Force of Will. Reduces the next MP loss suffered by 1, [X] time(s). The effect is reapplied every turn",
     "rarity": [
-      "Myth"
+      "Mythic"
     ],
     "effect": "Per additional 2 levels: reduces 1 more \"MP loss\" suffered ",
     "maxLevel": 6,
     "minLevel": 2,
     "step": 2,
     "obtenation": {
+      "name": "Crocodyl Dungeon",
       "localIcon": "./icons/nyl.png"
     },
     "category": "Defensive",
@@ -2320,14 +2391,15 @@
     "description": "When HP are at less than 50%: [X]% of level as Lock",
     "rarity": [
       "Rare",
-      "Myth",
-      "Leg"
+      "Mythic",
+      "Legendary"
     ],
     "effect": "Per additional level: +50% of lvl as Lock",
     "maxLevel": 6,
     "minLevel": 1,
     "step": 1,
     "obtenation": {
+      "name": "Crocodyl Dungeon",
       "localIcon": "./icons/nyl.png"
     },
     "category": "Defensive",
@@ -2353,13 +2425,14 @@
     "description": "1 AP [X] Elemental Resistance",
     "rarity": [
       "Rare",
-      "Myth"
+      "Mythic"
     ],
     "effect": "Per additional level: +75 resistances",
     "maxLevel": 2,
     "minLevel": 1,
     "step": 1,
     "obtenation": {
+      "name": "Crocodyl Dungeon",
       "localIcon": "./icons/nyl.png"
     },
     "category": "Stats Increase",
@@ -2385,14 +2458,15 @@
     "description": "- [X]% to characterstic penalties received. Affects all characterstic penalties (Masteries, Resitances, Armor, Critical Hits, etc.) received in combat and cast by an entity other than the state bearer. The value is always rounded down.",
     "rarity": [
       "Rare",
-      "Myth",
-      "Leg"
+      "Mythic",
+      "Legendary"
     ],
     "effect": "Per additional level: -5% ",
     "maxLevel": 6,
     "minLevel": 1,
     "step": 1,
     "obtenation": {
+      "name": "Kannivore Dungeon",
       "localIcon": "./icons/grozepin.png"
     },
     "category": "Defensive",
@@ -2418,14 +2492,15 @@
     "description": "When HP are at less than 50%: [X]% of level as Dodge",
     "rarity": [
       "Rare",
-      "Myth",
-      "Leg"
+      "Mythic",
+      "Legendary"
     ],
     "effect": "Per additional level: +50% of lvl as Dodge",
     "maxLevel": 6,
     "minLevel": 1,
     "step": 1,
     "obtenation": {
+      "name": "Kannivore Dungeon",
       "localIcon": "./icons/grozepin.png"
     },
     "category": "Defensive",
@@ -2451,14 +2526,15 @@
     "description": "1 WP [X] Force of Will",
     "rarity": [
       "Rare",
-      "Myth",
-      "Leg"
+      "Mythic",
+      "Legendary"
     ],
     "effect": "Per additional level: +10 Force of Will",
     "maxLevel": 3,
     "minLevel": 1,
     "step": 1,
     "obtenation": {
+      "name": "Kannivore Dungeon",
       "localIcon": "./icons/grozepin.png"
     },
     "category": "Stats Increase",
@@ -2483,13 +2559,14 @@
     ],
     "description": "-50 Elemental Resistance, -15% Damage received during a Block",
     "rarity": [
-      "Myth"
+      "Mythic"
     ],
     "effect": "N/A",
     "maxLevel": 2,
     "minLevel": 2,
     "step": 2,
     "obtenation": {
+      "name": "Kanniball Dungeon",
       "localIcon": "./icons/kanniball.png"
     },
     "category": "Defensive",
@@ -2510,14 +2587,15 @@
     "description": "Reduces Ranged Damage suffered by 50% of level [X] times per turn",
     "rarity": [
       "Rare",
-      "Myth",
-      "Leg"
+      "Mythic",
+      "Legendary"
     ],
     "effect": "Per additional level: + 2 times per turn",
     "maxLevel": 4,
     "minLevel": 1,
     "step": 1,
     "obtenation": {
+      "name": "Kanniball Dungeon",
       "localIcon": "./icons/kanniball.png"
     },
     "category": "Defensive",
@@ -2543,13 +2621,14 @@
     "description": "1 Range [X] Lock [X] Dodge",
     "rarity": [
       "Rare",
-      "Myth"
+      "Mythic"
     ],
     "effect": "Per additional level: +150 Lock + 150 Dodge",
     "maxLevel": 2,
     "minLevel": 1,
     "step": 1,
     "obtenation": {
+      "name": "Kanniball Dungeon",
       "localIcon": "./icons/kanniball.png"
     },
     "category": "Stats Increase",
@@ -2575,14 +2654,15 @@
     "description": "At start of fight [X]% of level as Armor",
     "rarity": [
       "Rare",
-      "Myth",
-      "Leg"
+      "Mythic",
+      "Legendary"
     ],
     "effect": "Per additional level: +150% of lvl as Armor",
     "maxLevel": 4,
     "minLevel": 1,
     "step": 1,
     "obtenation": {
+      "name": "Tropickle Dungeon",
       "localIcon": "./icons/koko.png"
     },
     "category": "Defensive",
@@ -2608,14 +2688,15 @@
     "description": "Reduces Melee Damage suffered by 50% of level [X] times per turn",
     "rarity": [
       "Rare",
-      "Myth",
-      "Leg"
+      "Mythic",
+      "Legendary"
     ],
     "effect": "Per additional level: + 2 times per turn",
     "maxLevel": 4,
     "minLevel": 1,
     "step": 1,
     "obtenation": {
+      "name": "Tropickle Dungeon",
       "localIcon": "./icons/koko.png"
     },
     "category": "Defensive",
@@ -2641,13 +2722,14 @@
     "description": "1 MP [X]% Damage inflicted",
     "rarity": [
       "Rare",
-      "Myth"
+      "Mythic"
     ],
     "effect": "Per additional level: +10% DMG inflicted",
     "maxLevel": 2,
     "minLevel": 1,
     "step": 1,
     "obtenation": {
+      "name": "Tropickle Dungeon",
       "localIcon": "./icons/koko.png"
     },
     "category": "Stats Increase",
@@ -2672,13 +2754,14 @@
     ],
     "description": "[X]% Blocks per turn (max 40)",
     "rarity": [
-      "Myth"
+      "Mythic"
     ],
     "effect": "Per additional level: +3% Blocks",
     "maxLevel": 4,
     "minLevel": 2,
     "step": 2,
     "obtenation": {
+      "name": "1 Steles - Forbidden City Dungeon",
       "localIcon": "./icons/pandora.png"
     },
     "category": "Stats Increase",
@@ -2704,14 +2787,15 @@
     "description": "At the start of combat :Any Dodge by the state bearer is converted into Armor, at a rate 1 to [X].Converted Dodge is lost.",
     "rarity": [
       "Rare",
-      "Myth",
-      "Leg"
+      "Mythic",
+      "Legendary"
     ],
     "effect": "Per additional level: the Armor gained increases by 100%",
     "maxLevel": 3,
     "minLevel": 1,
     "step": 1,
     "obtenation": {
+      "name": "2 Steles - Forbidden City Dungeon",
       "localIcon": "./icons/pandora.png"
     },
     "category": "Defensive",
@@ -2736,13 +2820,14 @@
     ],
     "description": "20% indirect Damage in even rounds",
     "rarity": [
-      "Myth"
+      "Mythic"
     ],
     "effect": "N/A",
     "maxLevel": 2,
     "minLevel": 2,
     "step": 2,
     "obtenation": {
+      "name": "3 Steles - Forbidden City Dungeon",
       "localIcon": "./icons/pandora.png"
     },
     "category": "Offensive",
@@ -2762,13 +2847,14 @@
     ],
     "description": "-20% Damage inflicted. At start of turn:10% Damage inflicted per enemy hit in the previous turn.",
     "rarity": [
-      "Myth"
+      "Mythic"
     ],
     "effect": "N/A",
     "maxLevel": 2,
     "minLevel": 2,
     "step": 2,
     "obtenation": {
+      "name": "1 Agua Stele - Any lvl 200 Zinith Dungeon",
       "localIcon": "./icons/agua.png"
     },
     "category": "Offensive",
@@ -2789,14 +2875,15 @@
     "description": "When HP are at less than 50%: [X]% Block",
     "rarity": [
       "Rare",
-      "Myth",
-      "Leg"
+      "Mythic",
+      "Legendary"
     ],
     "effect": "Per additional level: +5% Block",
     "maxLevel": 6,
     "minLevel": 1,
     "step": 1,
     "obtenation": {
+      "name": "Badgwitch the Furiox - Badgerox's Lair Dungeon",
       "localIcon": "./icons/badger.png"
     },
     "category": "Defensive",
@@ -2822,14 +2909,15 @@
     "description": "At start of fight: [X]% Critical Hit (1 turn) of [X]% level as Critical Mastery (1 turn)",
     "rarity": [
       "Rare",
-      "Myth",
-      "Leg"
+      "Mythic",
+      "Legendary"
     ],
     "effect": "Per additional level: +5% for both effects",
     "maxLevel": 4,
     "minLevel": 1,
     "step": 1,
     "obtenation": {
+      "name": "Badgwitch the Furiox - Badgerox's Lair Dungeon",
       "localIcon": "./icons/badger.png"
     },
     "category": "Defensive",
@@ -2854,13 +2942,14 @@
     ],
     "description": "-15% Damage inflicted. At start of turn: 5% Damage inflicted per entity hit in the previous turn.",
     "rarity": [
-      "Myth"
+      "Mythic"
     ],
     "effect": "N/A",
     "maxLevel": 2,
     "minLevel": 2,
     "step": 2,
     "obtenation": {
+      "name": "Badgwitch the Furiox - Badgerox's Lair Dungeon",
       "localIcon": "./icons/badger.png"
     },
     "category": "Offensive",
@@ -2881,13 +2970,14 @@
     "description": "When healing an ally, if the ally has less than 15% HP: Heal Ally: [X]% of HP max of the target enemy",
     "rarity": [
       "Rare",
-      "Myth"
+      "Mythic"
     ],
     "effect": "Per additional level: Heal Ally +7% of HP Max of target",
     "maxLevel": 2,
     "minLevel": 1,
     "step": 1,
     "obtenation": {
+      "name": "2 Steles Aguabrial - Badgwitch the Furiox - Badgerox's Lair Dungeon",
       "localIcon": "./icons/badger.png"
     },
     "category": "Support",
@@ -2913,14 +3003,15 @@
     "description": "After suffering a loss of 3 AP: [X] Force of Will (3 turns)",
     "rarity": [
       "Rare",
-      "Myth",
-      "Leg"
+      "Mythic",
+      "Legendary"
     ],
     "effect": "Per additional level: +10 FoW",
     "maxLevel": 3,
     "minLevel": 1,
     "step": 1,
     "obtenation": {
+      "name": "Or'Hodruin  Dungeon",
       "localIcon": "./icons/sorhon.png"
     },
     "category": "Defensive",
@@ -2945,13 +3036,14 @@
     ],
     "description": "At end of turn: Unused AP are carried over to the next turn Max [X] AP",
     "rarity": [
-      "Myth"
+      "Mythic"
     ],
     "effect": "Per additional 2 levels: +1 AP max",
     "maxLevel": 6,
     "minLevel": 2,
     "step": 2,
     "obtenation": {
+      "name": "Or'Hodruin  Dungeon",
       "localIcon": "./icons/sorhon.png"
     },
     "category": "Stats Increase",
@@ -2977,14 +3069,15 @@
     "description": "At start of fight: All Masteries: [X]% of level. All Resistances: [Y]",
     "rarity": [
       "Rare",
-      "Myth",
-      "Leg"
+      "Mythic",
+      "Legendary"
     ],
     "effect": "Per additional level: +5% of level Masteries +3 resis",
     "maxLevel": 4,
     "minLevel": 1,
     "step": 1,
     "obtenation": {
+      "name": "Or'Hodruin  Dungeon",
       "localIcon": "./icons/sorhon.png"
     },
     "category": "Stats Increase",
@@ -3015,14 +3108,15 @@
     "description": "If there are no allies 1 to 4 cells from the bearer: [X]% Damage Inflicted",
     "rarity": [
       "Rare",
-      "Myth",
-      "Leg"
+      "Mythic",
+      "Legendary"
     ],
     "effect": "Per additional level: +2% DMG",
     "maxLevel": 4,
     "minLevel": 1,
     "step": 1,
     "obtenation": {
+      "name": "2 Steles Aguabrial - Or'Hodruin  Dungeon",
       "localIcon": "./icons/agua.png"
     },
     "category": "Offensive",
@@ -3048,14 +3142,15 @@
     "description": "After suffering a loss of 3 MP: [X] Force of Will (3 turns)",
     "rarity": [
       "Rare",
-      "Myth",
-      "Leg"
+      "Mythic",
+      "Legendary"
     ],
     "effect": "Per additional level: +10 FoW",
     "maxLevel": 3,
     "minLevel": 1,
     "step": 1,
     "obtenation": {
+      "name": "Dreggons' Sanctuary Dungeon",
       "localIcon": "./icons/egg.png"
     },
     "category": "Defensive",
@@ -3081,14 +3176,15 @@
     "description": "[X]% Armor received",
     "rarity": [
       "Rare",
-      "Myth",
-      "Leg"
+      "Mythic",
+      "Legendary"
     ],
     "effect": "Per additional level: +3% Armor received",
     "maxLevel": 6,
     "minLevel": 1,
     "step": 1,
     "obtenation": {
+      "name": "Dreggons' Sanctuary Dungeon",
       "localIcon": "./icons/egg.png"
     },
     "category": "Stats Increase",
@@ -3114,14 +3210,15 @@
     "description": "Performing a Block gives Preparation (+[X] Lvl.)",
     "rarity": [
       "Rare",
-      "Myth",
-      "Leg"
+      "Mythic",
+      "Legendary"
     ],
     "effect": "Per additional level: +1 lvl Preparation",
     "maxLevel": 6,
     "minLevel": 1,
     "step": 1,
     "obtenation": {
+      "name": "Dreggons' Sanctuary Dungeon",
       "localIcon": "./icons/egg.png"
     },
     "category": "Offensive",
@@ -3146,13 +3243,14 @@
     ],
     "description": "At start of fight: Reduces Healing Mastery to 0. 10% Heals performed",
     "rarity": [
-      "Myth"
+      "Mythic"
     ],
     "effect": "N/A",
     "maxLevel": 2,
     "minLevel": 2,
     "step": 2,
     "obtenation": {
+      "name": "2 Steles Aguabrial - Dreggons' Sanctuary Dungeon",
       "localIcon": "./icons/agua.png"
     },
     "category": "Support",
@@ -3173,14 +3271,15 @@
     "description": "At end of turn if a critical hit was performed: Heal: [X]% of HP lost of the caster",
     "rarity": [
       "Rare",
-      "Myth",
-      "Leg"
+      "Mythic",
+      "Legendary"
     ],
     "effect": "Per additional level: +2% of HP lost",
     "maxLevel": 4,
     "minLevel": 1,
     "step": 1,
     "obtenation": {
+      "name": "Iced-Over Crest Dungeon",
       "localIcon": "./icons/ashdragon.png"
     },
     "category": "Defensive",
@@ -3205,13 +3304,14 @@
     ],
     "description": "Recovers [X] AP on killing an enemy (2 activations per turn)",
     "rarity": [
-      "Myth"
+      "Mythic"
     ],
     "effect": "Per additional 2 levels: +1 AP recovered each activation",
     "maxLevel": 4,
     "minLevel": 2,
     "step": 2,
     "obtenation": {
+      "name": "Iced-Over Crest Dungeon",
       "localIcon": "./icons/ashdragon.png"
     },
     "category": "Stats Increase",
@@ -3237,14 +3337,15 @@
     "description": "When HP are above 90%: [X]% of level in Elemental Mastery",
     "rarity": [
       "Rare",
-      "Myth",
-      "Leg"
+      "Mythic",
+      "Legendary"
     ],
     "effect": "Per additional level: +15% of level in Elem Masteries",
     "maxLevel": 6,
     "minLevel": 1,
     "step": 1,
     "obtenation": {
+      "name": "Iced-Over Crest Dungeon",
       "localIcon": "./icons/ashdragon.png"
     },
     "category": "Stats Increase",
@@ -3270,13 +3371,14 @@
     "description": "At end of turn: 50% of unused MP are carried over to the next turn Max [X] MP",
     "rarity": [
       "Rare",
-      "Myth"
+      "Mythic"
     ],
     "effect": "Per additional level: +1 Max MP",
     "maxLevel": 2,
     "minLevel": 1,
     "step": 1,
     "obtenation": {
+      "name": "2 Steles Aguabrial - Iced-Over Crest Dungeon",
       "localIcon": "./icons/agua.png"
     },
     "category": "Stats Increase",
@@ -3302,14 +3404,15 @@
     "description": "When HP are at less than 50%: [X]% Critical Hit",
     "rarity": [
       "Rare",
-      "Myth",
-      "Leg"
+      "Mythic",
+      "Legendary"
     ],
     "effect": "Per additional level: +5% Crit",
     "maxLevel": 6,
     "minLevel": 1,
     "step": 1,
     "obtenation": {
+      "name": "Pandala Tomb Dungeon",
       "localIcon": "./icons/tanuki.png"
     },
     "category": "Stats Increase",
@@ -3335,14 +3438,15 @@
     "description": "[X]% health points (bonus on HP modifier)",
     "rarity": [
       "Rare",
-      "Myth",
-      "Leg"
+      "Mythic",
+      "Legendary"
     ],
     "effect": "Per additional level: +5% HP",
     "maxLevel": 6,
     "minLevel": 1,
     "step": 1,
     "obtenation": {
+      "name": "Pandala Tomb Dungeon",
       "localIcon": "./icons/tanuki.png"
     },
     "category": "Stats Increase",
@@ -3368,14 +3472,15 @@
     "description": "[X]% Damage Inflicted on targets 2 cells away (1 cell between the state bearer and the target)",
     "rarity": [
       "Rare",
-      "Myth",
-      "Leg"
+      "Mythic",
+      "Legendary"
     ],
     "effect": "Per additional level: +4% DMG",
     "maxLevel": 6,
     "minLevel": 1,
     "step": 1,
     "obtenation": {
+      "name": "Pandala Tomb Dungeon",
       "localIcon": "./icons/tanuki.png"
     },
     "category": "Offensive",
@@ -3400,13 +3505,14 @@
     ],
     "description": "At start of fight: [X]% Critical Hit [X]% Block [X] Force of Will",
     "rarity": [
-      "Myth"
+      "Mythic"
     ],
     "effect": "Per additional 2 levels: +3% Crit +3% Block +3 force of Will",
     "maxLevel": 6,
     "minLevel": 2,
     "step": 2,
     "obtenation": {
+      "name": "Blightopard Canyon Dungeon",
       "localIcon": "./icons/blighto.png"
     },
     "category": "Stats Increase",
@@ -3432,13 +3538,14 @@
     "description": "After suffering a loss of 2 AP: [X] Force of Will (3 turns)",
     "rarity": [
       "Rare",
-      "Myth"
+      "Mythic"
     ],
     "effect": "Per additional level: +5 Force of Will",
     "maxLevel": 2,
     "minLevel": 1,
     "step": 1,
     "obtenation": {
+      "name": "Blightopard Canyon Dungeon",
       "localIcon": "./icons/blighto.png"
     },
     "category": "Stats Increase",
@@ -3463,13 +3570,14 @@
     ],
     "description": "At end of turn if the state bearer has 6 or more AP:60 Elemental Resistance (2 turns)",
     "rarity": [
-      "Myth"
+      "Mythic"
     ],
     "effect": "N/A",
     "maxLevel": 2,
     "minLevel": 2,
     "step": 2,
     "obtenation": {
+      "name": "Blightopard Canyon Dungeon",
       "localIcon": "./icons/blighto.png"
     },
     "category": "Stats Increase",
@@ -3490,14 +3598,15 @@
     "description": "If the bearer has no Armor: [X]% Armor given",
     "rarity": [
       "Rare",
-      "Myth",
-      "Leg"
+      "Mythic",
+      "Legendary"
     ],
     "effect": "Per additional level: +5% Armor given",
     "maxLevel": 4,
     "minLevel": 1,
     "step": 1,
     "obtenation": {
+      "name": "Tundrazor Dungeon",
       "localIcon": "./icons/buffalo.png"
     },
     "category": "Stats Increase",
@@ -3523,14 +3632,15 @@
     "description": "[X] Critical Resistance",
     "rarity": [
       "Rare",
-      "Myth",
-      "Leg"
+      "Mythic",
+      "Legendary"
     ],
     "effect": "Per additional level: +5 Critical Resistance",
     "maxLevel": 6,
     "minLevel": 1,
     "step": 1,
     "obtenation": {
+      "name": "Tundrazor Dungeon",
       "localIcon": "./icons/buffalo.png"
     },
     "category": "Stats Increase",
@@ -3556,14 +3666,15 @@
     "description": "[X]% Block",
     "rarity": [
       "Rare",
-      "Myth",
-      "Leg"
+      "Mythic",
+      "Legendary"
     ],
     "effect": "Per additional level: +3% Block",
     "maxLevel": 6,
     "minLevel": 1,
     "step": 1,
     "obtenation": {
+      "name": "Tundrazor Dungeon",
       "localIcon": "./icons/buffalo.png"
     },
     "category": "Stats Increase",
@@ -3589,14 +3700,15 @@
     "description": "[X]% DMG inflicted on targets 5 cells or further away",
     "rarity": [
       "Rare",
-      "Myth",
-      "Leg"
+      "Mythic",
+      "Legendary"
     ],
     "effect": "Per additional level: +2% DMG",
     "maxLevel": 6,
     "minLevel": 1,
     "step": 1,
     "obtenation": {
+      "name": "Crabstacean Dungeon",
       "localIcon": "./icons/crabs.png"
     },
     "category": "Offensive",
@@ -3622,14 +3734,15 @@
     "description": "-[X]% Damage received when the bearer is not in line of sight [Y]% Damage received when the bearer is in line of sight",
     "rarity": [
       "Rare",
-      "Myth",
-      "Leg"
+      "Mythic",
+      "Legendary"
     ],
     "effect": "Per additional level: -6% dmg received outside of LoS +3% dmg received in LoS",
     "maxLevel": 4,
     "minLevel": 1,
     "step": 1,
     "obtenation": {
+      "name": "Crabstacean Dungeon",
       "localIcon": "./icons/crabs.png"
     },
     "category": "Defensive",
@@ -3660,14 +3773,15 @@
     "description": "When HP are above 90%: [X]% Critical Hit",
     "rarity": [
       "Rare",
-      "Myth",
-      "Leg"
+      "Mythic",
+      "Legendary"
     ],
     "effect": "Per additional level: +4% Crit",
     "maxLevel": 6,
     "minLevel": 1,
     "step": 1,
     "obtenation": {
+      "name": "Crabstacean Dungeon",
       "localIcon": "./icons/crabs.png"
     },
     "category": "Stats Increase",
@@ -3693,14 +3807,15 @@
     "description": "[X]% Damage inflicted on a target with armor",
     "rarity": [
       "Rare",
-      "Myth",
-      "Leg"
+      "Mythic",
+      "Legendary"
     ],
     "effect": "Per additional level: +6% DMG",
     "maxLevel": 4,
     "minLevel": 1,
     "step": 1,
     "obtenation": {
+      "name": "Sunsloth Dungeon",
       "localIcon": "./icons/sunsloth.png"
     },
     "category": "Offensive",
@@ -3725,13 +3840,14 @@
     ],
     "description": "Regains 1 AP by removing 1 AP or MP from an enemy ([X] max per turn)",
     "rarity": [
-      "Myth"
+      "Mythic"
     ],
     "effect": "Per additional level: +1 max per turn",
     "maxLevel": 6,
     "minLevel": 2,
     "step": 2,
     "obtenation": {
+      "name": "Sunsloth Dungeon",
       "localIcon": "./icons/sunsloth.png"
     },
     "category": "Stats Increase",
@@ -3757,14 +3873,15 @@
     "description": "For each penalty or loss applied to an enemy: Blood strains +[X] lvls (Blood stains: [X]% dmg received by the caster. max 40%)",
     "rarity": [
       "Rare",
-      "Myth",
-      "Leg"
+      "Mythic",
+      "Legendary"
     ],
     "effect": "Per additional level: +2 lvls of blood stains",
     "maxLevel": 4,
     "minLevel": 1,
     "step": 1,
     "obtenation": {
+      "name": "Sunsloth Dungeon",
       "localIcon": "./icons/sunsloth.png"
     },
     "category": "Offensive",
@@ -3790,14 +3907,15 @@
     "description": "When HP are above 90%: [X]% Block",
     "rarity": [
       "Rare",
-      "Myth",
-      "Leg"
+      "Mythic",
+      "Legendary"
     ],
     "effect": "Per additional level: +10% Block",
     "maxLevel": 4,
     "minLevel": 1,
     "step": 1,
     "obtenation": {
+      "name": "Vandalophrenic Dungeon",
       "localIcon": "./icons/hogin.png"
     },
     "category": "Stats Increase",
@@ -3823,14 +3941,15 @@
     "description": "Outside of your turn: -[X] FoW. During your turn: [Y] FoW",
     "rarity": [
       "Rare",
-      "Myth",
-      "Leg"
+      "Mythic",
+      "Legendary"
     ],
     "effect": "Per additional level: -4 FoW outisde of turn. +3 FoW during turn",
     "maxLevel": 6,
     "minLevel": 1,
     "step": 1,
     "obtenation": {
+      "name": "Vandalophrenic Dungeon",
       "localIcon": "./icons/hogin.png"
     },
     "category": "Defensive",
@@ -3861,14 +3980,15 @@
     "description": "If a non-critical hit is performed with an elemental spell: [X]% Critical Hit on the following turn",
     "rarity": [
       "Rare",
-      "Myth",
-      "Leg"
+      "Mythic",
+      "Legendary"
     ],
     "effect": "Per additional level: +5% Crit",
     "maxLevel": 4,
     "minLevel": 1,
     "step": 1,
     "obtenation": {
+      "name": "Vandalophrenic Dungeon",
       "localIcon": "./icons/hogin.png"
     },
     "category": "Stats Increase",
@@ -3894,14 +4014,15 @@
     "description": "As long as the bearer has no Armor: [X]% Damage inflicted",
     "rarity": [
       "Rare",
-      "Myth",
-      "Leg"
+      "Mythic",
+      "Legendary"
     ],
     "effect": "Per additional level: +3% DMG",
     "maxLevel": 6,
     "minLevel": 1,
     "step": 1,
     "obtenation": {
+      "name": "Plantiguard Dungeon",
       "localIcon": "./icons/bear.png"
     },
     "category": "Offensive",
@@ -3927,14 +4048,15 @@
     "description": "Each time a non-critical spell is case: [X]% Critical Hit. Bonus is lost on next critical spell",
     "rarity": [
       "Rare",
-      "Myth",
-      "Leg"
+      "Mythic",
+      "Legendary"
     ],
     "effect": "Per additional level: +2% Critical Hit",
     "maxLevel": 6,
     "minLevel": 1,
     "step": 1,
     "obtenation": {
+      "name": "Plantiguard Dungeon",
       "localIcon": "./icons/bear.png"
     },
     "category": "Stats Increase",
@@ -3959,13 +4081,14 @@
     ],
     "description": "After locking an enemy: [X]% of level as Armor",
     "rarity": [
-      "Myth"
+      "Mythic"
     ],
     "effect": "Per additional level: +50% of lvl as Armor",
     "maxLevel": 4,
     "minLevel": 2,
     "step": 2,
     "obtenation": {
+      "name": "Plantiguard Dungeon",
       "localIcon": "./icons/bear.png"
     },
     "category": "Stats Increase",
@@ -3990,13 +4113,14 @@
     ],
     "description": "At start of turn if HP are above 90%: 1 MP",
     "rarity": [
-      "Myth"
+      "Mythic"
     ],
     "effect": "N/A",
     "maxLevel": 2,
     "minLevel": 2,
     "step": 2,
     "obtenation": {
+      "name": "Pingwin Dungeon",
       "localIcon": "./icons/sumorse.png"
     },
     "category": "Stats Increase",
@@ -4017,14 +4141,15 @@
     "description": "When you suffer ranged direct dmg: 6% extra DMG inflicted on the attacked. 1 turn Non stackable",
     "rarity": [
       "Rare",
-      "Myth",
-      "Leg"
+      "Mythic",
+      "Legendary"
     ],
     "effect": "Per additional level: +6% DMG",
     "maxLevel": 4,
     "minLevel": 1,
     "step": 1,
     "obtenation": {
+      "name": "Pingwin Dungeon",
       "localIcon": "./icons/sumorse.png"
     },
     "category": "Offensive",
@@ -4050,14 +4175,15 @@
     "description": "At end of turn, per enemy in close combat: [X]% DMG inflicted for the following turn.",
     "rarity": [
       "Rare",
-      "Myth",
-      "Leg"
+      "Mythic",
+      "Legendary"
     ],
     "effect": "Per additional level: +1% DMG",
     "maxLevel": 6,
     "minLevel": 1,
     "step": 1,
     "obtenation": {
+      "name": "Pingwin Dungeon",
       "localIcon": "./icons/sumorse.png"
     },
     "category": "Offensive",
@@ -4083,14 +4209,15 @@
     "description": "[X] Rear Resistance",
     "rarity": [
       "Rare",
-      "Myth",
-      "Leg"
+      "Mythic",
+      "Legendary"
     ],
     "effect": "Per additional level: +5 Rear Resistance",
     "maxLevel": 6,
     "minLevel": 1,
     "step": 1,
     "obtenation": {
+      "name": "Scramshell Dungeon",
       "localIcon": "./icons/tortu.png"
     },
     "category": "Defensive",
@@ -4116,14 +4243,15 @@
     "description": "Each time a non-critical spell is cast: +[X]% Critical DMG (Stackable up to 40%). Bonus is lost on next critical spell",
     "rarity": [
       "Rare",
-      "Myth",
-      "Leg"
+      "Mythic",
+      "Legendary"
     ],
     "effect": "Per additional level: +6% Critical DMG",
     "maxLevel": 4,
     "minLevel": 1,
     "step": 1,
     "obtenation": {
+      "name": "Scramshell Dungeon",
       "localIcon": "./icons/tortu.png"
     },
     "category": "Stats Increase",
@@ -4148,13 +4276,14 @@
     ],
     "description": "At start of turn if HP are above 90%: [X] AP",
     "rarity": [
-      "Myth"
+      "Mythic"
     ],
     "effect": "N/A",
     "maxLevel": 2,
     "minLevel": 2,
     "step": 2,
     "obtenation": {
+      "name": "Scramshell Dungeon",
       "localIcon": "./icons/tortu.png"
     },
     "category": "Stats Increase",
@@ -4175,13 +4304,14 @@
     "description": "When performing a block on a direct enemy attack: [X]% damage inflicted (1 turn) -10% Block",
     "rarity": [
       "Rare",
-      "Myth"
+      "Mythic"
     ],
     "effect": "Per additional level: +2% DMG",
     "maxLevel": 2,
     "minLevel": 1,
     "step": 1,
     "obtenation": {
+      "name": "Osamosa",
       "localIcon": "./icons/rift.png"
     },
     "category": "Offensive",
@@ -4207,14 +4337,15 @@
     "description": "[X]% critical damage inflicted if the target has > 50% HP -[X]% critical damage inflicted if the target has <= 50% HP",
     "rarity": [
       "Rare",
-      "Myth",
-      "Leg"
+      "Mythic",
+      "Legendary"
     ],
     "effect": "Per additional lvl +3% crit DMG if HP>50. -3% crit DMG if HP<=50%",
     "maxLevel": 4,
     "minLevel": 1,
     "step": 1,
     "obtenation": {
+      "name": "Osamosa",
       "localIcon": "./icons/rift.png"
     },
     "category": "Stats Increase",
@@ -4240,14 +4371,15 @@
     "description": "At the start of the first turn if secondary masteries are <= 0: [X]% damage inflicted",
     "rarity": [
       "Rare",
-      "Myth",
-      "Leg"
+      "Mythic",
+      "Legendary"
     ],
     "effect": "Per additional level: +8% DMG",
     "maxLevel": 4,
     "minLevel": 1,
     "step": 1,
     "obtenation": {
+      "name": "Osamosa",
       "localIcon": "./icons/rift.png"
     },
     "category": "Offensive",
@@ -4273,14 +4405,15 @@
     "description": "At the start of the first turn if secondary masteries are <= 0: [X]% Block",
     "rarity": [
       "Rare",
-      "Myth",
-      "Leg"
+      "Mythic",
+      "Legendary"
     ],
     "effect": "Per additional level: +5% Block",
     "maxLevel": 6,
     "minLevel": 1,
     "step": 1,
     "obtenation": {
+      "name": "Osamosa",
       "localIcon": "./icons/rift.png"
     },
     "category": "Defensive",
@@ -4306,14 +4439,15 @@
     "description": "When the bearer starts their turn below 20% HP: [X]% Damage inflicted (1 turn) [Y]% of level as armor",
     "rarity": [
       "Rare",
-      "Myth",
-      "Leg"
+      "Mythic",
+      "Legendary"
     ],
     "effect": "Per additional level: +3% DI +50% of lvl as Armor",
     "maxLevel": 6,
     "minLevel": 1,
     "step": 1,
     "obtenation": {
+      "name": "Mount Zinit (Ultimate)",
       "localIcon": "./icons/rift.png"
     },
     "category": "Defensive",
@@ -4344,14 +4478,15 @@
     "description": "Ending a turn adjacent to an enemy applies -[X]% Heals performed to it (1 turn)",
     "rarity": [
       "Rare",
-      "Myth",
-      "Leg"
+      "Mythic",
+      "Legendary"
     ],
     "effect": "Per additional level: -5% Heals",
     "maxLevel": 4,
     "minLevel": 1,
     "step": 1,
     "obtenation": {
+      "name": "Mount Zinit (Ultimate)",
       "localIcon": "./icons/rift.png"
     },
     "category": "Support",
@@ -4377,14 +4512,15 @@
     "description": "If there are two or more allies 1 to 4 cells from the bearer: [X]% Damage Inflicted",
     "rarity": [
       "Rare",
-      "Myth",
-      "Leg"
+      "Mythic",
+      "Legendary"
     ],
     "effect": "Per additional level: +2% DMG",
     "maxLevel": 4,
     "minLevel": 1,
     "step": 1,
     "obtenation": {
+      "name": "Mount Zinit (Ultimate)",
       "localIcon": "./icons/rift.png"
     },
     "category": "Offensive",
@@ -4410,14 +4546,15 @@
     "description": "At start of fight: -[X] max WP. For each WP spent during the turn: [Y]% damage inflicted (1 turn) (max 30)",
     "rarity": [
       "Rare",
-      "Myth",
-      "Leg"
+      "Mythic",
+      "Legendary"
     ],
     "effect": "Per additional level: -1 max WP +2% DMG",
     "maxLevel": 4,
     "minLevel": 1,
     "step": 1,
     "obtenation": {
+      "name": "Mount Zinit (Ultimate)",
       "localIcon": "./icons/rift.png"
     },
     "category": "Offensive",
@@ -4448,14 +4585,15 @@
     "description": "At the start of the first turn if secondary masteries are <= 0: [X]% Critical Hit",
     "rarity": [
       "Rare",
-      "Myth",
-      "Leg"
+      "Mythic",
+      "Legendary"
     ],
     "effect": "Per additional level: +5% Crit",
     "maxLevel": 6,
     "minLevel": 1,
     "step": 1,
     "obtenation": {
+      "name": "Shustuft Crust",
       "localIcon": "./icons/rift.png"
     },
     "category": "Stats Increase",
@@ -4481,13 +4619,14 @@
     "description": "-1 Range +[X]% of level as Lock and Dodge",
     "rarity": [
       "Rare",
-      "Myth"
+      "Mythic"
     ],
     "effect": "Per additional level: +50% of level as Lock and Dodge",
     "maxLevel": 2,
     "minLevel": 1,
     "step": 1,
     "obtenation": {
+      "name": "Shustuft Crust",
       "localIcon": "./icons/rift.png"
     },
     "category": "Stats Increase",
@@ -4513,14 +4652,15 @@
     "description": "Each time a critical hit is performed (5 activations per turn): Preparation (+[X] Lvl.)",
     "rarity": [
       "Rare",
-      "Myth",
-      "Leg"
+      "Mythic",
+      "Legendary"
     ],
     "effect": "Per additional level: +2 lvl Preparation",
     "maxLevel": 4,
     "minLevel": 1,
     "step": 1,
     "obtenation": {
+      "name": "Shustuft Crust",
       "localIcon": "./icons/rift.png"
     },
     "category": "Offensive",
@@ -4546,14 +4686,15 @@
     "description": "[X]% Damage inflicted on targets without line of sight 3 or more cells away from the state bearer",
     "rarity": [
       "Rare",
-      "Myth",
-      "Leg"
+      "Mythic",
+      "Legendary"
     ],
     "effect": "Per additional level: +4% DMG",
     "maxLevel": 6,
     "minLevel": 1,
     "step": 1,
     "obtenation": {
+      "name": "Shustuft Crust",
       "localIcon": "./icons/rift.png"
     },
     "category": "Offensive",
@@ -4579,14 +4720,15 @@
     "description": "At start of turn if no WP were used during the previous turn: [X]% Damage inflicted [X]% Heals performed",
     "rarity": [
       "Rare",
-      "Myth",
-      "Leg"
+      "Mythic",
+      "Legendary"
     ],
     "effect": "Per additional level: +4% DMG +4% Heals",
     "maxLevel": 4,
     "minLevel": 1,
     "step": 1,
     "obtenation": {
+      "name": "Shustuft Crust (Ultimate)",
       "localIcon": "./icons/rift.png"
     },
     "category": "Offensive",
@@ -4612,13 +4754,14 @@
     "description": "[X] max AP 75 Elemental Resistance",
     "rarity": [
       "Rare",
-      "Myth"
+      "Mythic"
     ],
     "effect": "Per additional level: +1 AP",
     "maxLevel": 2,
     "minLevel": 1,
     "step": 1,
     "obtenation": {
+      "name": "Shustuft Crust (Ultimate)",
       "localIcon": "./icons/rift.png"
     },
     "category": "Defensive",
@@ -4644,13 +4787,14 @@
     "description": "-1 max MP [X]% Damage inflicted",
     "rarity": [
       "Rare",
-      "Myth"
+      "Mythic"
     ],
     "effect": "Per additional level: +5% DMG",
     "maxLevel": 2,
     "minLevel": 1,
     "step": 1,
     "obtenation": {
+      "name": "Shustuft Crust (Ultimate)",
       "localIcon": "./icons/rift.png"
     },
     "category": "Offensive",
@@ -4676,14 +4820,15 @@
     "description": "At the start of combat per MP above 4: [X]% Damage inflicted (maximum 24)",
     "rarity": [
       "Rare",
-      "Myth",
-      "Leg"
+      "Mythic",
+      "Legendary"
     ],
     "effect": "Per additional level: +2% DI per MP",
     "maxLevel": 4,
     "minLevel": 1,
     "step": 1,
     "obtenation": {
+      "name": "Shustuft Crust (Ultimate)",
       "localIcon": "./icons/rift.png"
     },
     "category": "Offensive",
@@ -4713,6 +4858,7 @@
     "minLevel": 1,
     "step": 1,
     "obtenation": {
+      "name": "Adventure Stone",
       "localIcon": "./index/4_rooms.png"
     },
     "category": "Support",
@@ -4737,6 +4883,7 @@
     "minLevel": 1,
     "step": 1,
     "obtenation": {
+      "name": "Ultimate Stone",
       "localIcon": "./index/ub.png"
     },
     "category": "Offensive",
@@ -4761,6 +4908,7 @@
     "minLevel": 1,
     "step": 1,
     "obtenation": {
+      "name": "Adventure Stone",
       "localIcon": "./index/4_rooms.png"
     },
     "category": "Offensive",
@@ -4785,6 +4933,7 @@
     "minLevel": 1,
     "step": 1,
     "obtenation": {
+      "name": "Balance Stone",
       "localIcon": "./index/3_rooms.png"
     },
     "category": "Offensive",
@@ -4809,6 +4958,7 @@
     "minLevel": 1,
     "step": 1,
     "obtenation": {
+      "name": "Companionship Stone",
       "localIcon": "./index/3_characters.png"
     },
     "category": "Stats Increase",
@@ -4833,6 +4983,7 @@
     "minLevel": 1,
     "step": 1,
     "obtenation": {
+      "name": "Vandalphrenic Meat",
       "localIcon": "./index/craft.png"
     },
     "category": "Offensive",
@@ -4857,6 +5008,7 @@
     "minLevel": 1,
     "step": 1,
     "obtenation": {
+      "name": "Adventure Stone",
       "localIcon": "./index/4_rooms.png"
     },
     "category": "Offensive",
@@ -4881,6 +5033,7 @@
     "minLevel": 1,
     "step": 1,
     "obtenation": {
+      "name": "Ultimate Stone",
       "localIcon": "./index/ub.png"
     },
     "category": "Offensive",
@@ -4905,6 +5058,7 @@
     "minLevel": 1,
     "step": 1,
     "obtenation": {
+      "name": "Ultimate Stone",
       "localIcon": "./index/ub.png"
     },
     "category": "Offensive",
@@ -4929,6 +5083,7 @@
     "minLevel": 1,
     "step": 1,
     "obtenation": {
+      "name": "Adventure Stone",
       "localIcon": "./index/4_rooms.png"
     },
     "category": "Support",
@@ -4953,6 +5108,7 @@
     "minLevel": 1,
     "step": 1,
     "obtenation": {
+      "name": "Speed Stone",
       "localIcon": "./index/2_rooms.png"
     },
     "category": "Support",
@@ -4977,6 +5133,7 @@
     "minLevel": 1,
     "step": 1,
     "obtenation": {
+      "name": "Balance Stone",
       "localIcon": "./index/3_rooms.png"
     },
     "category": "Offensive",
@@ -5001,6 +5158,7 @@
     "minLevel": 1,
     "step": 1,
     "obtenation": {
+      "name": "Companionship Stone",
       "localIcon": "./index/3_characters.png"
     },
     "category": "Offensive",
@@ -5025,6 +5183,7 @@
     "minLevel": 1,
     "step": 1,
     "obtenation": {
+      "name": "Balance Stone",
       "localIcon": "./index/3_rooms.png"
     },
     "category": "Stats Increase",
@@ -5049,6 +5208,7 @@
     "minLevel": 1,
     "step": 1,
     "obtenation": {
+      "name": "Balance Stone",
       "localIcon": "./index/3_rooms.png"
     },
     "category": "Offensive",
@@ -5073,6 +5233,7 @@
     "minLevel": 1,
     "step": 1,
     "obtenation": {
+      "name": "Companionship Stone",
       "localIcon": "./index/3_characters.png"
     },
     "category": "Stats Increase",
@@ -5097,6 +5258,7 @@
     "minLevel": 1,
     "step": 1,
     "obtenation": {
+      "name": "Speed Stone",
       "localIcon": "./index/2_rooms.png"
     },
     "category": "Offensive",
@@ -5121,6 +5283,7 @@
     "minLevel": 1,
     "step": 1,
     "obtenation": {
+      "name": "Sunsloth Meat",
       "localIcon": "./index/craft.png"
     },
     "category": "Offensive",
@@ -5145,6 +5308,7 @@
     "minLevel": 1,
     "step": 1,
     "obtenation": {
+      "name": "Crabstacean Meat",
       "localIcon": "./index/craft.png"
     },
     "category": "Offensive",
@@ -5169,6 +5333,7 @@
     "minLevel": 1,
     "step": 1,
     "obtenation": {
+      "name": "Tundrazor Meat",
       "localIcon": "./index/craft.png"
     },
     "category": "Defensive",
@@ -5193,6 +5358,7 @@
     "minLevel": 1,
     "step": 1,
     "obtenation": {
+      "name": "Adventure Stone",
       "localIcon": "./index/4_rooms.png"
     },
     "category": "Support",
@@ -5217,6 +5383,7 @@
     "minLevel": 1,
     "step": 1,
     "obtenation": {
+      "name": "Companionship Stone",
       "localIcon": "./index/3_characters.png"
     },
     "category": "Defensive",
@@ -5241,6 +5408,7 @@
     "minLevel": 1,
     "step": 1,
     "obtenation": {
+      "name": "Balance Stone",
       "localIcon": "./index/3_rooms.png"
     },
     "category": "Offensive",
@@ -5265,6 +5433,7 @@
     "minLevel": 1,
     "step": 1,
     "obtenation": {
+      "name": "Speed Stone",
       "localIcon": "./index/2_rooms.png"
     },
     "category": "Offensive",
@@ -5289,6 +5458,7 @@
     "minLevel": 1,
     "step": 1,
     "obtenation": {
+      "name": "Companionship Stone",
       "localIcon": "./index/3_characters.png"
     },
     "category": "Support",
@@ -5313,6 +5483,7 @@
     "minLevel": 1,
     "step": 1,
     "obtenation": {
+      "name": "Balance Stone",
       "localIcon": "./index/3_rooms.png"
     },
     "category": "Stats Increase",
@@ -5337,6 +5508,7 @@
     "minLevel": 1,
     "step": 1,
     "obtenation": {
+      "name": "Balance Stone",
       "localIcon": "./index/3_rooms.png"
     },
     "category": "Defensive",
@@ -5361,6 +5533,7 @@
     "minLevel": 1,
     "step": 1,
     "obtenation": {
+      "name": "Companionship Stone",
       "localIcon": "./index/3_characters.png"
     },
     "category": "Offensive",
@@ -5385,6 +5558,7 @@
     "minLevel": 1,
     "step": 1,
     "obtenation": {
+      "name": "Adventure Stone",
       "localIcon": "./index/4_rooms.png"
     },
     "category": "Stats Increase",
@@ -5409,6 +5583,7 @@
     "minLevel": 1,
     "step": 1,
     "obtenation": {
+      "name": "Ultimate Stone",
       "localIcon": "./index/ub.png"
     },
     "category": "Defensive",
@@ -5433,6 +5608,7 @@
     "minLevel": 1,
     "step": 1,
     "obtenation": {
+      "name": "Companionship Stone",
       "localIcon": "./index/3_characters.png"
     },
     "category": "Stats Increase",
@@ -5457,6 +5633,7 @@
     "minLevel": 1,
     "step": 1,
     "obtenation": {
+      "name": "Adventure Stone",
       "localIcon": "./index/4_rooms.png"
     },
     "category": "Offensive",
@@ -5481,6 +5658,7 @@
     "minLevel": 1,
     "step": 1,
     "obtenation": {
+      "name": "Balance Stone",
       "localIcon": "./index/3_rooms.png"
     },
     "category": "Offensive",
@@ -5505,6 +5683,7 @@
     "minLevel": 1,
     "step": 1,
     "obtenation": {
+      "name": "Plantiguard Meat",
       "localIcon": "./index/craft.png"
     },
     "category": "Offensive",
@@ -5529,6 +5708,7 @@
     "minLevel": 1,
     "step": 1,
     "obtenation": {
+      "name": "Adventure Stone",
       "localIcon": "./index/4_rooms.png"
     },
     "category": "Offensive",
@@ -5553,6 +5733,7 @@
     "minLevel": 1,
     "step": 1,
     "obtenation": {
+      "name": "Adventure Stone",
       "localIcon": "./index/4_rooms.png"
     },
     "category": "Defensive",
@@ -5577,6 +5758,7 @@
     "minLevel": 1,
     "step": 1,
     "obtenation": {
+      "name": "Balance Stone",
       "localIcon": "./index/3_rooms.png"
     },
     "category": "Offensive",
@@ -5601,6 +5783,7 @@
     "minLevel": 1,
     "step": 1,
     "obtenation": {
+      "name": "Adventure Stone",
       "localIcon": "./index/4_rooms.png"
     },
     "category": "Offensive",
@@ -5625,6 +5808,7 @@
     "minLevel": 1,
     "step": 1,
     "obtenation": {
+      "name": "Speed Stone",
       "localIcon": "./index/2_rooms.png"
     },
     "category": "Offensive",
@@ -5649,6 +5833,7 @@
     "minLevel": 1,
     "step": 1,
     "obtenation": {
+      "name": "Adventure Stone",
       "localIcon": "./index/4_rooms.png"
     },
     "category": "Offensive",
@@ -5673,6 +5858,7 @@
     "minLevel": 1,
     "step": 1,
     "obtenation": {
+      "name": "Companionship Stone",
       "localIcon": "./index/3_characters.png"
     },
     "category": "Offensive",
@@ -5697,6 +5883,7 @@
     "minLevel": 1,
     "step": 1,
     "obtenation": {
+      "name": "Speed Stone",
       "localIcon": "./index/2_rooms.png"
     },
     "category": "Defensive",
@@ -5721,6 +5908,7 @@
     "minLevel": 1,
     "step": 1,
     "obtenation": {
+      "name": "Speed Stone",
       "localIcon": "./index/2_rooms.png"
     },
     "category": "Support",
@@ -5745,6 +5933,7 @@
     "minLevel": 1,
     "step": 1,
     "obtenation": {
+      "name": "Companionship Stone",
       "localIcon": "./index/3_characters.png"
     },
     "category": "Support",
@@ -5769,6 +5958,7 @@
     "minLevel": 1,
     "step": 1,
     "obtenation": {
+      "name": "Balance Stone",
       "localIcon": "./index/3_rooms.png"
     },
     "category": "Stats Increase",
@@ -5793,6 +5983,7 @@
     "minLevel": 1,
     "step": 1,
     "obtenation": {
+      "name": "Speed Stone",
       "localIcon": "./index/2_rooms.png"
     },
     "category": "Offensive",
@@ -5817,6 +6008,7 @@
     "minLevel": 1,
     "step": 1,
     "obtenation": {
+      "name": "Speed Stone",
       "localIcon": "./index/2_rooms.png"
     },
     "category": "Offensive",
@@ -5841,6 +6033,7 @@
     "minLevel": 1,
     "step": 1,
     "obtenation": {
+      "name": "Ultimate Stone",
       "localIcon": "./index/ub.png"
     },
     "category": "Defensive",
@@ -5865,6 +6058,7 @@
     "minLevel": 1,
     "step": 1,
     "obtenation": {
+      "name": "Companionship Stone",
       "localIcon": "./index/3_characters.png"
     },
     "category": "Offensive",
@@ -5889,6 +6083,7 @@
     "minLevel": 1,
     "step": 1,
     "obtenation": {
+      "name": "Companionship Stone",
       "localIcon": "./index/3_characters.png"
     },
     "category": "Offensive",
@@ -5913,6 +6108,7 @@
     "minLevel": 1,
     "step": 1,
     "obtenation": {
+      "name": "Ultimate Stone",
       "localIcon": "./index/ub.png"
     },
     "category": "Defensive",
@@ -5937,6 +6133,7 @@
     "minLevel": 1,
     "step": 1,
     "obtenation": {
+      "name": "Ultimate Stone",
       "localIcon": "./index/ub.png"
     },
     "category": "Stats Increase",
@@ -5961,6 +6158,7 @@
     "minLevel": 1,
     "step": 1,
     "obtenation": {
+      "name": "Speed Stone",
       "localIcon": "./index/2_rooms.png"
     },
     "category": "Offensive",
@@ -5985,6 +6183,7 @@
     "minLevel": 1,
     "step": 1,
     "obtenation": {
+      "name": "Speed Stone",
       "localIcon": "./index/2_rooms.png"
     },
     "category": "Defensive",
@@ -6009,6 +6208,7 @@
     "minLevel": 1,
     "step": 1,
     "obtenation": {
+      "name": "Speed Stone",
       "localIcon": "./index/2_rooms.png"
     },
     "category": "Offensive",
@@ -6033,6 +6233,7 @@
     "minLevel": 1,
     "step": 1,
     "obtenation": {
+      "name": "Companionship Stone",
       "localIcon": "./index/3_characters.png"
     },
     "category": "Support",
@@ -6057,6 +6258,7 @@
     "minLevel": 1,
     "step": 1,
     "obtenation": {
+      "name": "Scramshell Meat",
       "localIcon": "./index/craft.png"
     },
     "category": "Defensive",
@@ -6081,6 +6283,7 @@
     "minLevel": 1,
     "step": 1,
     "obtenation": {
+      "name": "Balance Stone",
       "localIcon": "./index/3_rooms.png"
     },
     "category": "Offensive",
@@ -6105,6 +6308,7 @@
     "minLevel": 1,
     "step": 1,
     "obtenation": {
+      "name": "Companionship Stone",
       "localIcon": "./index/3_characters.png"
     },
     "category": "Offensive",
@@ -6129,6 +6333,7 @@
     "minLevel": 1,
     "step": 1,
     "obtenation": {
+      "name": "Speed Stone",
       "localIcon": "./index/2_rooms.png"
     },
     "category": "Defensive",
@@ -6153,6 +6358,7 @@
     "minLevel": 1,
     "step": 1,
     "obtenation": {
+      "name": "Adventure Stone",
       "localIcon": "./index/4_rooms.png"
     },
     "category": "Defensive",
@@ -6177,6 +6383,7 @@
     "minLevel": 1,
     "step": 1,
     "obtenation": {
+      "name": "Thirster Scalp",
       "localIcon": "./index/craft.png"
     },
     "category": "Defensive",
@@ -6201,6 +6408,7 @@
     "minLevel": 1,
     "step": 1,
     "obtenation": {
+      "name": "Pingwin Meat",
       "localIcon": "./index/craft.png"
     },
     "category": "Offensive",
@@ -6225,6 +6433,7 @@
     "minLevel": 1,
     "step": 1,
     "obtenation": {
+      "name": "Speed Stone",
       "localIcon": "./index/2_rooms.png"
     },
     "category": "Defensive",
@@ -6249,6 +6458,7 @@
     "minLevel": 1,
     "step": 1,
     "obtenation": {
+      "name": "Ultimate Stone",
       "localIcon": "./index/ub.png"
     },
     "category": "Offensive",
@@ -6273,6 +6483,7 @@
     "minLevel": 1,
     "step": 1,
     "obtenation": {
+      "name": "Balance Stone",
       "localIcon": "./index/3_rooms.png"
     },
     "category": "Support",
@@ -6297,6 +6508,7 @@
     "minLevel": 1,
     "step": 1,
     "obtenation": {
+      "name": "Balance Stone",
       "localIcon": "./index/3_rooms.png"
     },
     "category": "Support",
@@ -6321,6 +6533,7 @@
     "minLevel": 1,
     "step": 1,
     "obtenation": {
+      "name": "Adventure Stone",
       "localIcon": "./index/4_rooms.png"
     },
     "category": "Support",
@@ -6345,6 +6558,7 @@
     "minLevel": 1,
     "step": 1,
     "obtenation": {
+      "name": "Ultimate Stone",
       "localIcon": "./index/ub.png"
     },
     "category": "Offensive",
@@ -6369,6 +6583,7 @@
     "minLevel": 1,
     "step": 1,
     "obtenation": {
+      "name": "Companionship Stone",
       "localIcon": "./index/3_characters.png"
     },
     "category": "Offensive",
@@ -6393,6 +6608,7 @@
     "minLevel": 1,
     "step": 1,
     "obtenation": {
+      "name": "Ultimate Stone",
       "localIcon": "./index/ub.png"
     },
     "category": "Stats Increase",
@@ -6417,6 +6633,7 @@
     "minLevel": 1,
     "step": 1,
     "obtenation": {
+      "name": "Ultimate Stone",
       "localIcon": "./index/ub.png"
     },
     "category": "Defensive",
@@ -6441,6 +6658,7 @@
     "minLevel": 1,
     "step": 1,
     "obtenation": {
+      "name": "Ultimate Stone",
       "localIcon": "./index/ub.png"
     },
     "category": "Support",
@@ -6465,6 +6683,7 @@
     "minLevel": 1,
     "step": 1,
     "obtenation": {
+      "name": "Ultimate Stone",
       "localIcon": "./index/ub.png"
     },
     "category": "Stats Increase",
