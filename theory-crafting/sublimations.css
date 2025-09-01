@@ -1,7 +1,7 @@
 /* Sublimation-specific styles */
 .container {
     max-width: 2800px;
-    margin: 2rem auto;
+    margin: 1.5rem auto; /* Reduced from 2rem */
     padding: 0 1rem;
     transform-origin: top center;
 }
@@ -10,125 +10,86 @@
 .controls {
     display: flex;
     flex-wrap: wrap;
-    gap: 20px;
-    margin-bottom: 30px;
-    padding: 20px;
+    gap: 16px; /* Reduced from 20px */
+    margin-bottom: 24px; /* Reduced from 30px */
+    padding: 16px; /* Reduced from 20px */
     background: rgba(52, 76, 100, 0.6);
-    border-radius: 12px;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    border-radius: 10px; /* Reduced from 12px */
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2); /* Reduced */
     border: 1px solid rgba(87, 123, 141, 0.3);
     backdrop-filter: blur(5px);
 }
 
-.search-box {
-    flex: 1;
-    min-width: 250px;
-    display: flex;
-}
-
 .search-box input {
     flex: 1;
-    padding: 12px 20px;
+    padding: 10px 16px; /* Reduced from 12px 20px */
     border: 2px solid #344C64;
-    border-radius: 8px 0 0 8px;
+    border-radius: 6px 0 0 6px; /* Reduced from 8px */
     background: rgba(36, 7, 80, 0.4);
     color: #e0e0e0;
-    font-size: 1rem;
+    font-size: 0.9rem; /* Reduced from 1rem */
     transition: all 0.3s ease;
 }
 
-.search-box input:focus {
-    border-color: #57A6A1;
-    outline: none;
-    box-shadow: 0 0 0 3px rgba(87, 166, 161, 0.2);
-}
-
-.search-box input::placeholder {
-    color: #577B8D;
-}
-
 .search-btn {
-    padding: 12px 20px;
+    padding: 10px 16px; /* Reduced from 12px 20px */
     background: #57A6A1;
     color: white;
     border: none;
-    border-radius: 0 8px 8px 0;
+    border-radius: 0 6px 6px 0; /* Reduced from 8px */
     cursor: pointer;
     transition: background 0.3s;
-}
-
-.search-btn:hover {
-    background: #4a8f8a;
 }
 
 .category-filter {
     display: flex;
     flex-wrap: wrap;
-    gap: 10px;
-    margin-bottom: 20px;
-    padding: 10px;
+    gap: 8px; /* Reduced from 10px */
+    margin-bottom: 16px; /* Reduced from 20px */
+    padding: 8px; /* Reduced from 10px */
     background: rgba(52, 76, 100, 0.6);
-    border-radius: 12px;
+    border-radius: 10px; /* Reduced from 12px */
 }
 
 .category-tab {
-    padding: 8px 16px;
+    padding: 6px 12px; /* Reduced from 8px 16px */
     background: rgba(36, 7, 80, 0.4);
-    border-radius: 6px;
+    border-radius: 5px; /* Reduced from 6px */
     cursor: pointer;
     transition: all 0.3s;
     border: 1px solid rgba(87, 123, 141, 0.3);
-}
-
-.category-tab.active {
-    background: #57A6A1;
-    font-weight: bold;
-}
-
-.category-tab:hover {
-    background: rgba(36, 7, 80, 0.6);
+    font-size: 0.9rem; /* Added font size reduction */
 }
 
 /* ===== RUNES GRID ===== */
 .runes-grid {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
-    gap: 25px;
+    gap: 20px; /* Reduced from 25px */
 }
 
 .rune-card {
     background: rgba(52, 76, 100, 0.6);
-    border-radius: 6px;
+    border-radius: 5px; /* Reduced from 6px */
     overflow: hidden;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2); /* Reduced */
     transition: all 0.3s;
     display: flex;
     flex-direction: column;
     border: 1px solid rgba(87, 123, 141, 0.3);
     backdrop-filter: blur(5px);
-    padding: 10px;
-}
-
-.rune-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+    padding: 8px; /* Reduced from 10px */
 }
 
 .rune-header {
     display: flex;
     justify-content: space-between;
     align-items: flex-start;
-    margin-bottom: 0px;
-}
-
-.rune-name-container {
-    flex: 1;
-    display: flex;
-    align-items: center;
+    margin-bottom: 12px; /* Reduced from 15px */
 }
 
 .rune-name {
-    font-size: 1.8rem;
+    font-size: 1.5rem; /* Reduced from 1.8rem */
     font-weight: bold;
     color: #6fd6d0;
     margin-bottom: 0;
@@ -141,140 +102,101 @@
     padding: 2px 0;
 }
 
-.rune-name.relic-name {
-    color: #9b59b6;
-    text-shadow: 
-        -1px -1px 0 rgba(0, 0, 0, 0.5),
-        1px -1px 0 rgba(0, 0, 0, 0.5),
-        -1px 1px 0 rgba(0, 0, 0, 0.5),
-        1px 1px 0 rgba(0, 0, 0, 0.5);
-}
-
-.rune-name.epic-name {
-    color: #ff00cc;
-    text-shadow: 
-        -1px -1px 0 rgba(0, 0, 0, 0.5),
-        1px -1px 0 rgba(0, 0, 0, 0.5),
-        -1px 1px 0 rgba(0, 0, 0, 0.5),
-       1px 1px 0 rgba(0, 0, 0, 0.5);
-}
-
 .rune-level {
-    font-size: 1rem;
+    font-size: 0.9rem; /* Reduced from 1rem */
     color: #577B8D;
-    margin-left: 10px;
+    margin-left: 8px; /* Reduced from 10px */
 }
 
 .rune-colors {
     display: flex;
-    gap: 8px;
-    margin-top: 5px;
+    gap: 6px; /* Reduced from 8px */
+    margin-top: 4px; /* Reduced from 5px */
 }
 
 .rune-color {
-    width: 32px;
-    height: 32px;
+    width: 28px; /* Reduced from 32px */
+    height: 28px; /* Reduced from 32px */
     display: flex;
     justify-content: center;
     align-items: center;
-    border-radius: 6px;
+    border-radius: 5px; /* Reduced from 6px */
     border: 0px solid rgba(255, 255, 255, 0.2);
     background: transparent !important;
 }
 
 .color-icon {
-    width: 32px;
-    height: 32px;
+    width: 28px; /* Reduced from 32px */
+    height: 28px; /* Reduced from 32px */
 }
 
 .special-color {
-    width: 64px;
-    height: 32px;
+    width: 56px; /* Reduced from 64px */
+    height: 28px; /* Reduced from 32px */
     display: flex;
     justify-content: center;
     align-items: center;
-    border-radius: 6px;
+    border-radius: 5px; /* Reduced from 6px */
     font-weight: bold;
-    font-size: 0.8rem;
+    font-size: 0.7rem; /* Reduced from 0.8rem */
     text-align: center;
-}
-
-.special-color.epic {
-    background: linear-gradient(45deg, #ff00cc, #ff0066);
-    color: white;
-}
-
-.special-color.relic {
-    background: linear-gradient(45deg, #9b59b6, #8e44ad);
-    color: white;
 }
 
 .divider {
     height: 1px;
     background: rgba(87, 123, 141, 0.3);
-    margin: 4px 0;
+    margin: 12px 0; /* Reduced from 15px */
 }
 
 .rune-meta {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin-bottom: 15px;
-}
-
-.obtenation {
-    display: flex;
-    align-items: center;
-    gap: 8px;
+    margin-bottom: 12px; /* Reduced from 15px */
 }
 
 .obtenation-icon {
-    width: 50px;
-    height: 50px;
+    width: 45px; /* Reduced from 50px */
+    height: 45px; /* Reduced from 50px */
     border-radius: 4px;
     border: 0px solid rgba(255, 255, 255, 0.2);
     object-fit: contain;
 }
 
-.rarity {
-    display: flex;
-    gap: 5px;
-}
-
 .rarity-icon {
-    width: 40px;
-    height: 40px;
+    width: 36px; /* Reduced from 40px */
+    height: 36px; /* Reduced from 40px */
     filter: drop-shadow(0 0 2px rgba(0, 0, 0, 0.7));
 }
 
 .special-rarity-icon {
-    width: 50px;
-    height: 50px;
+    width: 45px; /* Reduced from 50px */
+    height: 45px; /* Reduced from 50px */
 }
 
 .rune-description {
     background: rgba(36, 7, 80, 0.4);
-    padding: 15px;
-    border-radius: 8px;
-    margin-bottom: 10px;
-    font-size: 1.1rem;
+    padding: 12px; /* Reduced from 15px */
+    border-radius: 6px; /* Reduced from 8px */
+    margin-bottom: 8px; /* Reduced from 10px */
+    font-size: 1rem; /* Reduced from 1.1rem */
     border: 1px solid rgba(87, 123, 141, 0.3);
-    min-height: 80px;
+    min-height: 70px; /* Reduced from 80px */
 }
 
 .level-controls {
     display: flex;
     align-items: center;
-    gap: 15px;
-    margin-top: 5px;
+    gap: 12px; /* Reduced from 15px */
+    margin-top: 4px; /* Reduced from 5px */
 }
 
 .level-slider {
     flex: 1;
     -webkit-appearance: none;
     appearance: none;
-    height: 8px;
-    border-radius: 4px;
+    height: 6px; /* Reduced from 8px */
+    border-radius: 3px; /* Reduced from 4px */
     background: rgba(36, 7, 80, 0.4);
     outline: none;
 }
@@ -282,8 +204,8 @@
 .level-slider::-webkit-slider-thumb {
     -webkit-appearance: none;
     appearance: none;
-    width: 20px;
-    height: 20px;
+    width: 18px; /* Reduced from 20px */
+    height: 18px; /* Reduced from 20px */
     border-radius: 50%;
     background: #57A6A1;
     cursor: pointer;
@@ -291,8 +213,8 @@
 }
 
 .level-slider::-moz-range-thumb {
-    width: 20px;
-    height: 20px;
+    width: 18px; /* Reduced from 20px */
+    height: 18px; /* Reduced from 20px */
     border-radius: 50%;
     background: #57A6A1;
     cursor: pointer;
@@ -300,26 +222,27 @@
 }
 
 .level-display {
-    width: 40px;
-    height: 40px;
+    width: 36px; /* Reduced from 40px */
+    height: 36px; /* Reduced from 40px */
     display: flex;
     justify-content: center;
     align-items: center;
     background: rgba(36, 7, 80, 0.4);
-    border-radius: 8px;
+    border-radius: 6px; /* Reduced from 8px */
     font-weight: bold;
     color: #57A6A1;
     border: 1px solid rgba(87, 123, 141, 0.3);
+    font-size: 0.9rem; /* Added font size reduction */
 }
 
 .no-results {
     text-align: center;
-    padding: 40px;
-    font-size: 1.2rem;
+    padding: 32px; /* Reduced from 40px */
+    font-size: 1.1rem; /* Reduced from 1.2rem */
     color: #577B8D;
     grid-column: 1 / -1;
     background: rgba(52, 76, 100, 0.6);
-    border-radius: 12px;
+    border-radius: 10px; /* Reduced from 12px */
     border: 1px solid rgba(87, 123, 141, 0.3);
 }
 
@@ -331,27 +254,27 @@
 .level-slider.fixed-level::-webkit-slider-thumb {
     margin-left: auto;
     margin-right: 0;
-    top: -6px;
+    top: -5px; /* Adjusted from -6px */
 }
 
 .level-slider.fixed-level::-moz-range-thumb {
     margin-left: auto;
     margin-right: 0;
-    top: -6px;
+    top: -5px; /* Adjusted from -6px */
 }
 
 /* For Firefox */
 .level-slider.fixed-level::-moz-range-progress {
     background-color: #57A6A1;
-    height: 8px;
-    border-radius: 4px;
+    height: 6px; /* Reduced from 8px */
+    border-radius: 3px; /* Reduced from 4px */
 }
 
 /* For Chrome/Safari */
 .level-slider.fixed-level::-webkit-slider-runnable-track {
     background: linear-gradient(to right, rgba(36, 7, 80, 0.4) 0%, rgba(36, 7, 80, 0.4) 99%, #57A6A1 1%, #57A6A1 100%);
-    height: 8px;
-    border-radius: 4px;
+    height: 6px; /* Reduced from 8px */
+    border-radius: 3px; /* Reduced from 4px */
 }
 
 /* ===== RESPONSIVE DESIGN ===== */
@@ -374,7 +297,7 @@
     
     .rune-header {
         flex-direction: column;
-        gap: 15px;
+        gap: 12px; /* Reduced from 15px */
     }
     
     .level-controls {
@@ -394,12 +317,12 @@
 
 @media (max-width: 576px) {
     .rune-name {
-        font-size: 1.5rem;
+        font-size: 1.3rem; /* Reduced from 1.5rem */
     }
     
     .rune-meta {
         flex-direction: column;
         align-items: flex-start;
-        gap: 10px;
+        gap: 8px; /* Reduced from 10px */
     }
 }
