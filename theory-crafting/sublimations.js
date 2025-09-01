@@ -102,6 +102,26 @@ async function loadRuneData() {
                         "placeholder": "X"
                     }
                 ]
+            },
+            {
+                "name": "Yeah",
+                "colors": ["Relic"],
+                "description": "Even Turn: \nAfter using a WP-based spell, the state bearer regains 2 AP (max of 1/turn). \n\nOdd Turn: \nAfter using a WP-based spell, the state bearer loses 2 AP (max 1/turn).",
+                "rarity": ["Relic"],
+                "effect": "",
+                "maxLevel": 1,
+                "minLevel": 1,
+                "step": 1,
+                "obtenation": {
+                    "name": "Ultimate Stone"
+                },
+                "category": "Stats Increase",
+                "values": [
+                    {
+                        "base": null,
+                        "increment": null
+                    }
+                ]
             }
         ];
     }
@@ -114,6 +134,13 @@ function loadLocalImage(src, alt, className) {
     img.alt = alt;
     if (className) img.className = className;
     return Promise.resolve(img);
+}
+
+// Function to generate icon path from obtenation name
+function getObtenationIconPath(obtenationName) {
+    // Convert to lowercase, replace spaces with underscores, and add .png
+    const iconName = obtenationName.toLowerCase().replace(/\s+/g, '_') + '.png';
+    return `./icons/${iconName}`;
 }
 
 // Initialize the application
@@ -237,7 +264,18 @@ function initializePage() {
             const rarityIcons = [];
             for (const rarity of rune.rarity) {
                 let rarityElement;
-                if (rarity === 'Rare') {
+                
+                // Special handling for Epic and Relic runes - use obtenation icon instead
+                if ((rarity === 'Epic' || rarity === 'Relic') && rune.obtenation && rune.obtenation.name) {
+                    const iconPath = getObtenationIconPath(rune.obtenation.name);
+                    rarityElement = await loadLocalImage(
+                        iconPath,
+                        rune.obtenation.name,
+                        "rarity-icon special-rarity-icon"
+                    );
+                    rarityElement = rarityElement.outerHTML;
+                } 
+                else if (rarity === 'Rare') {
                     rarityElement = await loadLocalImage(
                         localIcons.rare,
                         "Rare",
@@ -258,20 +296,6 @@ function initializePage() {
                         "rarity-icon"
                     );
                     rarityElement = rarityElement.outerHTML;
-                } else if (rarity === 'Epic') {
-                    rarityElement = await loadLocalImage(
-                        localIcons.epic,
-                        "Epic",
-                        "rarity-icon"
-                    );
-                    rarityElement = rarityElement.outerHTML;
-                } else if (rarity === 'Relic') {
-                    rarityElement = await loadLocalImage(
-                        localIcons.relic,
-                        "Relic",
-                        "rarity-icon"
-                    );
-                    rarityElement = rarityElement.outerHTML;
                 }
                 
                 if (rarityElement) {
@@ -281,9 +305,10 @@ function initializePage() {
             
             // Load obtenation icon with local icon
             let obtenationIcon = '';
-            if (rune.obtenation.localIcon) {
+            if (rune.obtenation && rune.obtenation.name) {
+                const iconPath = rune.obtenation.localIcon || getObtenationIconPath(rune.obtenation.name);
                 const obtenationElement = await loadLocalImage(
-                    rune.obtenation.localIcon,
+                    iconPath,
                     rune.obtenation.name,
                     "obtenation-icon"
                 );
