@@ -4289,8 +4289,9 @@
     "category": "Stats Increase",
     "values": [
       {
-        "base": null,
-        "increment": null
+        "base": 1,
+        "increment": 1,
+        "placeholder": "X"
       }
     ]
   },
