@@ -15,11 +15,13 @@ Latest Posts
 ---
 To do:
 
-- reverify the json file
-
 - Update categories
+
+- Add subcategories
 
 - Fix descriptions with many of same X
 
 - Download Icons 
+
+- Add runes filter
 

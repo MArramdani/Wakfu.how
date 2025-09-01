@@ -164,12 +164,14 @@ function initializePage() {
         for (const rune of runesToRender) {
             const currentLevel = currentLevels[rune.name] || rune.minLevel;
             
-            // Generate description with current values
+            // Generate description with current values - FIXED: Replace all occurrences
             let description = rune.description;
             if (rune.values && rune.values.length > 0) {
                 rune.values.forEach(value => {
                     const calculatedValue = value.base + (value.increment * (currentLevel - rune.minLevel));
-                    description = description.replace(`[${value.placeholder}]`, calculatedValue);
+                    // Use global regex to replace ALL occurrences
+                    const regex = new RegExp(`\\[${value.placeholder}\\]`, 'g');
+                    description = description.replace(regex, calculatedValue);
                 });
             }
             
@@ -268,6 +270,9 @@ function initializePage() {
             // Check if this is a Relic or Epic rune (no slider needed)
             const isSpecialRune = rune.colors.includes('Relic') || rune.colors.includes('Epic');
             
+            // Check if min equals max for slider positioning
+            const isFixedLevel = rune.minLevel === rune.maxLevel;
+            
             const card = document.createElement('div');
             card.className = 'rune-card';
             card.innerHTML = `
@@ -304,7 +309,7 @@ function initializePage() {
                 
                 <div class="level-controls">
                     <input type="range" 
-                           class="level-slider" 
+                           class="level-slider ${isFixedLevel ? 'fixed-level' : ''}" 
                            min="${rune.minLevel}" 
                            max="${rune.maxLevel}" 
                            step="${rune.step}" 
@@ -325,12 +330,14 @@ function initializePage() {
                     levelDisplay.textContent = level;
                     currentLevels[rune.name] = level;
                     
-                    // Update description with new values
+                    // Update description with new values - FIXED: Replace all occurrences
                     let updatedDescription = rune.description;
                     if (rune.values && rune.values.length > 0) {
                         rune.values.forEach(value => {
                             const calculatedValue = value.base + (value.increment * (level - rune.minLevel) / rune.step);
-                            updatedDescription = updatedDescription.replace(`[${value.placeholder}]`, calculatedValue);
+                            // Use global regex to replace ALL occurrences
+                            const regex = new RegExp(`\\[${value.placeholder}\\]`, 'g');
+                            updatedDescription = updatedDescription.replace(regex, calculatedValue);
                         });
                     }
                     

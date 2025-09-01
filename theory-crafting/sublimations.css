@@ -362,3 +362,32 @@
         gap: 10px;
     }
 }
+
+/* Fix for slider when min equals max */
+.level-slider.fixed-level {
+    background: linear-gradient(to right, rgba(36, 7, 80, 0.4) 0%, rgba(36, 7, 80, 0.4) 99%, #57A6A1 1%, #57A6A1 100%);
+}
+
+.level-slider.fixed-level::-webkit-slider-thumb {
+    margin-left: auto;
+    margin-right: 0;
+}
+
+.level-slider.fixed-level::-moz-range-thumb {
+    margin-left: auto;
+    margin-right: 0;
+}
+
+/* For Firefox */
+.level-slider.fixed-level::-moz-range-progress {
+    background-color: #57A6A1;
+    height: 8px;
+    border-radius: 4px;
+}
+
+/* For Chrome/Safari */
+.level-slider.fixed-level::-webkit-slider-runnable-track {
+    background: linear-gradient(to right, rgba(36, 7, 80, 0.4) 0%, rgba(36, 7, 80, 0.4) 99%, #57A6A1 1%, #57A6A1 100%);
+    height: 8px;
+    border-radius: 4px;
+}
