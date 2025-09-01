@@ -130,14 +130,20 @@
     font-weight: bold;
     color: #6fd6d0;
     margin-bottom: 5px;
+    border: 2px solid rgba(87, 166, 161, 0.3);
+    padding: 5px 10px;
+    border-radius: 6px;
+    display: inline-block;
 }
 
 .rune-name.relic-name {
     color: #9b59b6;
+    border-color: rgba(155, 89, 182, 0.3);
 }
 
 .rune-name.epic-name {
     color: #ff00cc;
+    border-color: rgba(255, 0, 204, 0.3);
 }
 
 .rune-level {
@@ -148,7 +154,7 @@
 .rune-colors {
     display: flex;
     gap: 8px;
-    margin-top: 5px; /* Move RGB colors lower */
+    margin-top: 5px;
 }
 
 .rune-color {
@@ -189,14 +195,6 @@
     color: white;
 }
 
-.color-green,
-.color-red,
-.color-blue,
-.color-epic,
-.color-relic {
-    background: transparent !important;
-}
-
 .divider {
     height: 1px;
     background: rgba(87, 123, 141, 0.3);
@@ -217,8 +215,8 @@
 }
 
 .obtenation-icon {
-    width: 50px; /* Increased from 40px */
-    height: 50px; /* Increased from 40px */
+    width: 50px;
+    height: 50px;
     border-radius: 4px;
     border: 1px solid rgba(255, 255, 255, 0.2);
 }
@@ -235,8 +233,8 @@
 }
 
 .special-rarity-icon {
-    width: 50px; /* Larger for special rarity icons */
-    height: 50px; /* Larger for special rarity icons */
+    width: 50px;
+    height: 50px;
 }
 
 .rune-description {
@@ -274,6 +272,7 @@
     border-radius: 50%;
     background: #57A6A1;
     cursor: pointer;
+    position: relative;
 }
 
 .level-slider::-moz-range-thumb {
@@ -282,6 +281,7 @@
     border-radius: 50%;
     background: #57A6A1;
     cursor: pointer;
+    position: relative;
 }
 
 .level-display {
@@ -308,29 +308,35 @@
     border: 1px solid rgba(87, 123, 141, 0.3);
 }
 
-/* Color indicators for runes */
-.color-green {
-    background-color: #4CAF50;
+/* Fix for slider when min equals max */
+.level-slider.fixed-level {
+    background: linear-gradient(to right, rgba(36, 7, 80, 0.4) 0%, rgba(36, 7, 80, 0.4) 99%, #57A6A1 1%, #57A6A1 100%);
 }
 
-.color-red {
-    background-color: #F44336;
+.level-slider.fixed-level::-webkit-slider-thumb {
+    margin-left: auto;
+    margin-right: 0;
+    top: -6px;
 }
 
-.color-blue {
-    background-color: #2196F3;
+.level-slider.fixed-level::-moz-range-thumb {
+    margin-left: auto;
+    margin-right: 0;
+    top: -6px;
 }
 
-.color-epic {
-    background: linear-gradient(45deg, #ff00cc, #ff0066);
-    color: white;
-    font-weight: bold;
+/* For Firefox */
+.level-slider.fixed-level::-moz-range-progress {
+    background-color: #57A6A1;
+    height: 8px;
+    border-radius: 4px;
 }
 
-.color-relic {
-    background: linear-gradient(45deg, #9b59b6, #8e44ad);
-    color: white;
-    font-weight: bold;
+/* For Chrome/Safari */
+.level-slider.fixed-level::-webkit-slider-runnable-track {
+    background: linear-gradient(to right, rgba(36, 7, 80, 0.4) 0%, rgba(36, 7, 80, 0.4) 99%, #57A6A1 1%, #57A6A1 100%);
+    height: 8px;
+    border-radius: 4px;
 }
 
 /* ===== RESPONSIVE DESIGN ===== */
@@ -381,33 +387,4 @@
         align-items: flex-start;
         gap: 10px;
     }
-}
-
-/* Fix for slider when min equals max */
-.level-slider.fixed-level {
-    background: linear-gradient(to right, rgba(36, 7, 80, 0.4) 0%, rgba(36, 7, 80, 0.4) 99%, #57A6A1 1%, #57A6A1 100%);
-}
-
-.level-slider.fixed-level::-webkit-slider-thumb {
-    margin-left: auto;
-    margin-right: 0;
-}
-
-.level-slider.fixed-level::-moz-range-thumb {
-    margin-left: auto;
-    margin-right: 0;
-}
-
-/* For Firefox */
-.level-slider.fixed-level::-moz-range-progress {
-    background-color: #57A6A1;
-    height: 8px;
-    border-radius: 4px;
-}
-
-/* For Chrome/Safari */
-.level-slider.fixed-level::-webkit-slider-runnable-track {
-    background: linear-gradient(to right, rgba(36, 7, 80, 0.4) 0%, rgba(36, 7, 80, 0.4) 99%, #57A6A1 1%, #57A6A1 100%);
-    height: 8px;
-    border-radius: 4px;
 }
