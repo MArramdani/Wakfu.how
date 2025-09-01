@@ -118,30 +118,28 @@
     display: flex;
     justify-content: space-between;
     align-items: flex-start;
-    margin-bottom: 15px;
+    margin-bottom: 0px;
 }
 
 .rune-name-container {
     flex: 1;
-    isplay: flex; /* Add this */
-    justify-content: space-between; /* Add this */
-    align-items: center; /* Add this */
+    display: flex;
+    align-items: center;
 }
 
 .rune-name {
     font-size: 1.8rem;
     font-weight: bold;
     color: #6fd6d0;
-    margin-bottom: 0px;
+    margin-bottom: 0;
     text-shadow: 
         -1px -1px 0 rgba(0, 0, 0, 0.5),
         1px -1px 0 rgba(0, 0, 0, 0.5),
         -1px 1px 0 rgba(0, 0, 0, 0.5),
         1px 1px 0 rgba(0, 0, 0, 0.5);
     display: inline-block;
-    padding: 2px 0; /* Minimal padding for better appearance */
+    padding: 2px 0;
 }
-
 
 .rune-name.relic-name {
     color: #9b59b6;
@@ -158,7 +156,7 @@
         -1px -1px 0 rgba(0, 0, 0, 0.5),
         1px -1px 0 rgba(0, 0, 0, 0.5),
         -1px 1px 0 rgba(0, 0, 0, 0.5),
-        1px 1px 0 rgba(0, 0, 0, 0.5);
+       1px 1px 0 rgba(0, 0, 0, 0.5);
 }
 
 .rune-level {
@@ -214,7 +212,7 @@
 .divider {
     height: 1px;
     background: rgba(87, 123, 141, 0.3);
-    margin: 15px 0;
+    margin: 2px 0;
 }
 
 .rune-meta {
