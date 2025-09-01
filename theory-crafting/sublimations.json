@@ -4449,7 +4449,7 @@
     "step": 1,
     "obtenation": {
       "name": "Mount Zinit (Ultimate)",
-      "localIcon": "./icons/rift.png"
+      "localIcon": "./icons/rift_ulti.png"
     },
     "category": "Defensive",
     "values": [
@@ -4488,7 +4488,7 @@
     "step": 1,
     "obtenation": {
       "name": "Mount Zinit (Ultimate)",
-      "localIcon": "./icons/rift.png"
+      "localIcon": "./icons/rift_ulti.png"
     },
     "category": "Support",
     "values": [
@@ -4522,7 +4522,7 @@
     "step": 1,
     "obtenation": {
       "name": "Mount Zinit (Ultimate)",
-      "localIcon": "./icons/rift.png"
+      "localIcon": "./icons/rift_ulti.png"
     },
     "category": "Offensive",
     "values": [
@@ -4556,7 +4556,7 @@
     "step": 1,
     "obtenation": {
       "name": "Mount Zinit (Ultimate)",
-      "localIcon": "./icons/rift.png"
+      "localIcon": "./icons/rift_ulti.png"
     },
     "category": "Offensive",
     "values": [
@@ -4730,7 +4730,7 @@
     "step": 1,
     "obtenation": {
       "name": "Shustuft Crust (Ultimate)",
-      "localIcon": "./icons/rift.png"
+      "localIcon": "./icons/rift_ulti.png"
     },
     "category": "Offensive",
     "values": [
@@ -4763,7 +4763,7 @@
     "step": 1,
     "obtenation": {
       "name": "Shustuft Crust (Ultimate)",
-      "localIcon": "./icons/rift.png"
+      "localIcon": "./icons/rift_ulti.png"
     },
     "category": "Defensive",
     "values": [
@@ -4796,7 +4796,7 @@
     "step": 1,
     "obtenation": {
       "name": "Shustuft Crust (Ultimate)",
-      "localIcon": "./icons/rift.png"
+      "localIcon": "./icons/rift_ulti.png"
     },
     "category": "Offensive",
     "values": [
@@ -4830,7 +4830,7 @@
     "step": 1,
     "obtenation": {
       "name": "Shustuft Crust (Ultimate)",
-      "localIcon": "./icons/rift.png"
+      "localIcon": "./icons/rift_ulti.png"
     },
     "category": "Offensive",
     "values": [
@@ -4860,7 +4860,7 @@
     "step": 1,
     "obtenation": {
       "name": "Adventure Stone",
-      "localIcon": "./index/4_rooms.png"
+      "localIcon": "./icons/4_rooms.png"
     },
     "category": "Support",
     "values": [
@@ -4885,7 +4885,7 @@
     "step": 1,
     "obtenation": {
       "name": "Ultimate Stone",
-      "localIcon": "./index/ub.png"
+      "localIcon": "./icons/ub.png"
     },
     "category": "Offensive",
     "values": [
@@ -4910,7 +4910,7 @@
     "step": 1,
     "obtenation": {
       "name": "Adventure Stone",
-      "localIcon": "./index/4_rooms.png"
+      "localIcon": "./icons/4_rooms.png"
     },
     "category": "Offensive",
     "values": [
@@ -4935,7 +4935,7 @@
     "step": 1,
     "obtenation": {
       "name": "Balance Stone",
-      "localIcon": "./index/3_rooms.png"
+      "localIcon": "./icons/3_rooms.png"
     },
     "category": "Offensive",
     "values": [
@@ -4960,7 +4960,7 @@
     "step": 1,
     "obtenation": {
       "name": "Companionship Stone",
-      "localIcon": "./index/3_characters.png"
+      "localIcon": "./icons/3_characters.png"
     },
     "category": "Stats Increase",
     "values": [
@@ -4985,7 +4985,7 @@
     "step": 1,
     "obtenation": {
       "name": "Vandalphrenic Meat",
-      "localIcon": "./index/craft.png"
+      "localIcon": "./icons/craft.png"
     },
     "category": "Offensive",
     "values": [
@@ -5010,7 +5010,7 @@
     "step": 1,
     "obtenation": {
       "name": "Adventure Stone",
-      "localIcon": "./index/4_rooms.png"
+      "localIcon": "./icons/4_rooms.png"
     },
     "category": "Offensive",
     "values": [
@@ -5035,7 +5035,7 @@
     "step": 1,
     "obtenation": {
       "name": "Ultimate Stone",
-      "localIcon": "./index/ub.png"
+      "localIcon": "./icons/ub.png"
     },
     "category": "Offensive",
     "values": [
@@ -5060,7 +5060,7 @@
     "step": 1,
     "obtenation": {
       "name": "Ultimate Stone",
-      "localIcon": "./index/ub.png"
+      "localIcon": "./icons/ub.png"
     },
     "category": "Offensive",
     "values": [
@@ -5085,7 +5085,7 @@
     "step": 1,
     "obtenation": {
       "name": "Adventure Stone",
-      "localIcon": "./index/4_rooms.png"
+      "localIcon": "./icons/4_rooms.png"
     },
     "category": "Support",
     "values": [
@@ -5110,7 +5110,7 @@
     "step": 1,
     "obtenation": {
       "name": "Speed Stone",
-      "localIcon": "./index/2_rooms.png"
+      "localIcon": "./icons/2_rooms.png"
     },
     "category": "Support",
     "values": [
@@ -5135,7 +5135,7 @@
     "step": 1,
     "obtenation": {
       "name": "Balance Stone",
-      "localIcon": "./index/3_rooms.png"
+      "localIcon": "./icons/3_rooms.png"
     },
     "category": "Offensive",
     "values": [
@@ -5160,7 +5160,7 @@
     "step": 1,
     "obtenation": {
       "name": "Companionship Stone",
-      "localIcon": "./index/3_characters.png"
+      "localIcon": "./icons/3_characters.png"
     },
     "category": "Offensive",
     "values": [
@@ -5185,7 +5185,7 @@
     "step": 1,
     "obtenation": {
       "name": "Balance Stone",
-      "localIcon": "./index/3_rooms.png"
+      "localIcon": "./icons/3_rooms.png"
     },
     "category": "Stats Increase",
     "values": [
@@ -5210,7 +5210,7 @@
     "step": 1,
     "obtenation": {
       "name": "Balance Stone",
-      "localIcon": "./index/3_rooms.png"
+      "localIcon": "./icons/3_rooms.png"
     },
     "category": "Offensive",
     "values": [
@@ -5235,7 +5235,7 @@
     "step": 1,
     "obtenation": {
       "name": "Companionship Stone",
-      "localIcon": "./index/3_characters.png"
+      "localIcon": "./icons/3_characters.png"
     },
     "category": "Stats Increase",
     "values": [
@@ -5260,7 +5260,7 @@
     "step": 1,
     "obtenation": {
       "name": "Speed Stone",
-      "localIcon": "./index/2_rooms.png"
+      "localIcon": "./icons/2_rooms.png"
     },
     "category": "Offensive",
     "values": [
@@ -5285,7 +5285,7 @@
     "step": 1,
     "obtenation": {
       "name": "Sunsloth Meat",
-      "localIcon": "./index/craft.png"
+      "localIcon": "./icons/craft.png"
     },
     "category": "Offensive",
     "values": [
@@ -5310,7 +5310,7 @@
     "step": 1,
     "obtenation": {
       "name": "Crabstacean Meat",
-      "localIcon": "./index/craft.png"
+      "localIcon": "./icons/craft.png"
     },
     "category": "Offensive",
     "values": [
@@ -5335,7 +5335,7 @@
     "step": 1,
     "obtenation": {
       "name": "Tundrazor Meat",
-      "localIcon": "./index/craft.png"
+      "localIcon": "./icons/craft.png"
     },
     "category": "Defensive",
     "values": [
@@ -5360,7 +5360,7 @@
     "step": 1,
     "obtenation": {
       "name": "Adventure Stone",
-      "localIcon": "./index/4_rooms.png"
+      "localIcon": "./icons/4_rooms.png"
     },
     "category": "Support",
     "values": [
@@ -5385,7 +5385,7 @@
     "step": 1,
     "obtenation": {
       "name": "Companionship Stone",
-      "localIcon": "./index/3_characters.png"
+      "localIcon": "./icons/3_characters.png"
     },
     "category": "Defensive",
     "values": [
@@ -5410,7 +5410,7 @@
     "step": 1,
     "obtenation": {
       "name": "Balance Stone",
-      "localIcon": "./index/3_rooms.png"
+      "localIcon": "./icons/3_rooms.png"
     },
     "category": "Offensive",
     "values": [
@@ -5435,7 +5435,7 @@
     "step": 1,
     "obtenation": {
       "name": "Speed Stone",
-      "localIcon": "./index/2_rooms.png"
+      "localIcon": "./icons/2_rooms.png"
     },
     "category": "Offensive",
     "values": [
@@ -5460,7 +5460,7 @@
     "step": 1,
     "obtenation": {
       "name": "Companionship Stone",
-      "localIcon": "./index/3_characters.png"
+      "localIcon": "./icons/3_characters.png"
     },
     "category": "Support",
     "values": [
@@ -5485,7 +5485,7 @@
     "step": 1,
     "obtenation": {
       "name": "Balance Stone",
-      "localIcon": "./index/3_rooms.png"
+      "localIcon": "./icons/3_rooms.png"
     },
     "category": "Stats Increase",
     "values": [
@@ -5510,7 +5510,7 @@
     "step": 1,
     "obtenation": {
       "name": "Balance Stone",
-      "localIcon": "./index/3_rooms.png"
+      "localIcon": "./icons/3_rooms.png"
     },
     "category": "Defensive",
     "values": [
@@ -5535,7 +5535,7 @@
     "step": 1,
     "obtenation": {
       "name": "Companionship Stone",
-      "localIcon": "./index/3_characters.png"
+      "localIcon": "./icons/3_characters.png"
     },
     "category": "Offensive",
     "values": [
@@ -5560,7 +5560,7 @@
     "step": 1,
     "obtenation": {
       "name": "Adventure Stone",
-      "localIcon": "./index/4_rooms.png"
+      "localIcon": "./icons/4_rooms.png"
     },
     "category": "Stats Increase",
     "values": [
@@ -5585,7 +5585,7 @@
     "step": 1,
     "obtenation": {
       "name": "Ultimate Stone",
-      "localIcon": "./index/ub.png"
+      "localIcon": "./icons/ub.png"
     },
     "category": "Defensive",
     "values": [
@@ -5610,7 +5610,7 @@
     "step": 1,
     "obtenation": {
       "name": "Companionship Stone",
-      "localIcon": "./index/3_characters.png"
+      "localIcon": "./icons/3_characters.png"
     },
     "category": "Stats Increase",
     "values": [
@@ -5635,7 +5635,7 @@
     "step": 1,
     "obtenation": {
       "name": "Adventure Stone",
-      "localIcon": "./index/4_rooms.png"
+      "localIcon": "./icons/4_rooms.png"
     },
     "category": "Offensive",
     "values": [
@@ -5660,7 +5660,7 @@
     "step": 1,
     "obtenation": {
       "name": "Balance Stone",
-      "localIcon": "./index/3_rooms.png"
+      "localIcon": "./icons/3_rooms.png"
     },
     "category": "Offensive",
     "values": [
@@ -5685,7 +5685,7 @@
     "step": 1,
     "obtenation": {
       "name": "Plantiguard Meat",
-      "localIcon": "./index/craft.png"
+      "localIcon": "./icons/craft.png"
     },
     "category": "Offensive",
     "values": [
@@ -5710,7 +5710,7 @@
     "step": 1,
     "obtenation": {
       "name": "Adventure Stone",
-      "localIcon": "./index/4_rooms.png"
+      "localIcon": "./icons/4_rooms.png"
     },
     "category": "Offensive",
     "values": [
@@ -5735,7 +5735,7 @@
     "step": 1,
     "obtenation": {
       "name": "Adventure Stone",
-      "localIcon": "./index/4_rooms.png"
+      "localIcon": "./icons/4_rooms.png"
     },
     "category": "Defensive",
     "values": [
@@ -5760,7 +5760,7 @@
     "step": 1,
     "obtenation": {
       "name": "Balance Stone",
-      "localIcon": "./index/3_rooms.png"
+      "localIcon": "./icons/3_rooms.png"
     },
     "category": "Offensive",
     "values": [
@@ -5785,7 +5785,7 @@
     "step": 1,
     "obtenation": {
       "name": "Adventure Stone",
-      "localIcon": "./index/4_rooms.png"
+      "localIcon": "./icons/4_rooms.png"
     },
     "category": "Offensive",
     "values": [
@@ -5810,7 +5810,7 @@
     "step": 1,
     "obtenation": {
       "name": "Speed Stone",
-      "localIcon": "./index/2_rooms.png"
+      "localIcon": "./icons/2_rooms.png"
     },
     "category": "Offensive",
     "values": [
@@ -5835,7 +5835,7 @@
     "step": 1,
     "obtenation": {
       "name": "Adventure Stone",
-      "localIcon": "./index/4_rooms.png"
+      "localIcon": "./icons/4_rooms.png"
     },
     "category": "Offensive",
     "values": [
@@ -5860,7 +5860,7 @@
     "step": 1,
     "obtenation": {
       "name": "Companionship Stone",
-      "localIcon": "./index/3_characters.png"
+      "localIcon": "./icons/3_characters.png"
     },
     "category": "Offensive",
     "values": [
@@ -5885,7 +5885,7 @@
     "step": 1,
     "obtenation": {
       "name": "Speed Stone",
-      "localIcon": "./index/2_rooms.png"
+      "localIcon": "./icons/2_rooms.png"
     },
     "category": "Defensive",
     "values": [
@@ -5910,7 +5910,7 @@
     "step": 1,
     "obtenation": {
       "name": "Speed Stone",
-      "localIcon": "./index/2_rooms.png"
+      "localIcon": "./icons/2_rooms.png"
     },
     "category": "Support",
     "values": [
@@ -5935,7 +5935,7 @@
     "step": 1,
     "obtenation": {
       "name": "Companionship Stone",
-      "localIcon": "./index/3_characters.png"
+      "localIcon": "./icons/3_characters.png"
     },
     "category": "Support",
     "values": [
@@ -5960,7 +5960,7 @@
     "step": 1,
     "obtenation": {
       "name": "Balance Stone",
-      "localIcon": "./index/3_rooms.png"
+      "localIcon": "./icons/3_rooms.png"
     },
     "category": "Stats Increase",
     "values": [
@@ -5985,7 +5985,7 @@
     "step": 1,
     "obtenation": {
       "name": "Speed Stone",
-      "localIcon": "./index/2_rooms.png"
+      "localIcon": "./icons/2_rooms.png"
     },
     "category": "Offensive",
     "values": [
@@ -6010,7 +6010,7 @@
     "step": 1,
     "obtenation": {
       "name": "Speed Stone",
-      "localIcon": "./index/2_rooms.png"
+      "localIcon": "./icons/2_rooms.png"
     },
     "category": "Offensive",
     "values": [
@@ -6035,7 +6035,7 @@
     "step": 1,
     "obtenation": {
       "name": "Ultimate Stone",
-      "localIcon": "./index/ub.png"
+      "localIcon": "./icons/ub.png"
     },
     "category": "Defensive",
     "values": [
@@ -6060,7 +6060,7 @@
     "step": 1,
     "obtenation": {
       "name": "Companionship Stone",
-      "localIcon": "./index/3_characters.png"
+      "localIcon": "./icons/3_characters.png"
     },
     "category": "Offensive",
     "values": [
@@ -6085,7 +6085,7 @@
     "step": 1,
     "obtenation": {
       "name": "Companionship Stone",
-      "localIcon": "./index/3_characters.png"
+      "localIcon": "./icons/3_characters.png"
     },
     "category": "Offensive",
     "values": [
@@ -6110,7 +6110,7 @@
     "step": 1,
     "obtenation": {
       "name": "Ultimate Stone",
-      "localIcon": "./index/ub.png"
+      "localIcon": "./icons/ub.png"
     },
     "category": "Defensive",
     "values": [
@@ -6135,7 +6135,7 @@
     "step": 1,
     "obtenation": {
       "name": "Ultimate Stone",
-      "localIcon": "./index/ub.png"
+      "localIcon": "./icons/ub.png"
     },
     "category": "Stats Increase",
     "values": [
@@ -6160,7 +6160,7 @@
     "step": 1,
     "obtenation": {
       "name": "Speed Stone",
-      "localIcon": "./index/2_rooms.png"
+      "localIcon": "./icons/2_rooms.png"
     },
     "category": "Offensive",
     "values": [
@@ -6185,7 +6185,7 @@
     "step": 1,
     "obtenation": {
       "name": "Speed Stone",
-      "localIcon": "./index/2_rooms.png"
+      "localIcon": "./icons/2_rooms.png"
     },
     "category": "Defensive",
     "values": [
@@ -6210,7 +6210,7 @@
     "step": 1,
     "obtenation": {
       "name": "Speed Stone",
-      "localIcon": "./index/2_rooms.png"
+      "localIcon": "./icons/2_rooms.png"
     },
     "category": "Offensive",
     "values": [
@@ -6235,7 +6235,7 @@
     "step": 1,
     "obtenation": {
       "name": "Companionship Stone",
-      "localIcon": "./index/3_characters.png"
+      "localIcon": "./icons/3_characters.png"
     },
     "category": "Support",
     "values": [
@@ -6260,7 +6260,7 @@
     "step": 1,
     "obtenation": {
       "name": "Scramshell Meat",
-      "localIcon": "./index/craft.png"
+      "localIcon": "./icons/craft.png"
     },
     "category": "Defensive",
     "values": [
@@ -6285,7 +6285,7 @@
     "step": 1,
     "obtenation": {
       "name": "Balance Stone",
-      "localIcon": "./index/3_rooms.png"
+      "localIcon": "./icons/3_rooms.png"
     },
     "category": "Offensive",
     "values": [
@@ -6310,7 +6310,7 @@
     "step": 1,
     "obtenation": {
       "name": "Companionship Stone",
-      "localIcon": "./index/3_characters.png"
+      "localIcon": "./icons/3_characters.png"
     },
     "category": "Offensive",
     "values": [
@@ -6335,7 +6335,7 @@
     "step": 1,
     "obtenation": {
       "name": "Speed Stone",
-      "localIcon": "./index/2_rooms.png"
+      "localIcon": "./icons/2_rooms.png"
     },
     "category": "Defensive",
     "values": [
@@ -6360,7 +6360,7 @@
     "step": 1,
     "obtenation": {
       "name": "Adventure Stone",
-      "localIcon": "./index/4_rooms.png"
+      "localIcon": "./icons/4_rooms.png"
     },
     "category": "Defensive",
     "values": [
@@ -6385,7 +6385,7 @@
     "step": 1,
     "obtenation": {
       "name": "Thirster Scalp",
-      "localIcon": "./index/craft.png"
+      "localIcon": "./icons/craft.png"
     },
     "category": "Defensive",
     "values": [
@@ -6410,7 +6410,7 @@
     "step": 1,
     "obtenation": {
       "name": "Pingwin Meat",
-      "localIcon": "./index/craft.png"
+      "localIcon": "./icons/craft.png"
     },
     "category": "Offensive",
     "values": [
@@ -6435,7 +6435,7 @@
     "step": 1,
     "obtenation": {
       "name": "Speed Stone",
-      "localIcon": "./index/2_rooms.png"
+      "localIcon": "./icons/2_rooms.png"
     },
     "category": "Defensive",
     "values": [
@@ -6460,7 +6460,7 @@
     "step": 1,
     "obtenation": {
       "name": "Ultimate Stone",
-      "localIcon": "./index/ub.png"
+      "localIcon": "./icons/ub.png"
     },
     "category": "Offensive",
     "values": [
@@ -6485,7 +6485,7 @@
     "step": 1,
     "obtenation": {
       "name": "Balance Stone",
-      "localIcon": "./index/3_rooms.png"
+      "localIcon": "./icons/3_rooms.png"
     },
     "category": "Support",
     "values": [
@@ -6510,7 +6510,7 @@
     "step": 1,
     "obtenation": {
       "name": "Balance Stone",
-      "localIcon": "./index/3_rooms.png"
+      "localIcon": "./icons/3_rooms.png"
     },
     "category": "Support",
     "values": [
@@ -6535,7 +6535,7 @@
     "step": 1,
     "obtenation": {
       "name": "Adventure Stone",
-      "localIcon": "./index/4_rooms.png"
+      "localIcon": "./icons/4_rooms.png"
     },
     "category": "Support",
     "values": [
@@ -6560,7 +6560,7 @@
     "step": 1,
     "obtenation": {
       "name": "Ultimate Stone",
-      "localIcon": "./index/ub.png"
+      "localIcon": "./icons/ub.png"
     },
     "category": "Offensive",
     "values": [
@@ -6585,7 +6585,7 @@
     "step": 1,
     "obtenation": {
       "name": "Companionship Stone",
-      "localIcon": "./index/3_characters.png"
+      "localIcon": "./icons/3_characters.png"
     },
     "category": "Offensive",
     "values": [
@@ -6610,7 +6610,7 @@
     "step": 1,
     "obtenation": {
       "name": "Ultimate Stone",
-      "localIcon": "./index/ub.png"
+      "localIcon": "./icons/ub.png"
     },
     "category": "Stats Increase",
     "values": [
@@ -6635,7 +6635,7 @@
     "step": 1,
     "obtenation": {
       "name": "Ultimate Stone",
-      "localIcon": "./index/ub.png"
+      "localIcon": "./icons/ub.png"
     },
     "category": "Defensive",
     "values": [
@@ -6660,7 +6660,7 @@
     "step": 1,
     "obtenation": {
       "name": "Ultimate Stone",
-      "localIcon": "./index/ub.png"
+      "localIcon": "./icons/ub.png"
     },
     "category": "Support",
     "values": [
@@ -6685,7 +6685,7 @@
     "step": 1,
     "obtenation": {
       "name": "Ultimate Stone",
-      "localIcon": "./index/ub.png"
+      "localIcon": "./icons/ub.png"
     },
     "category": "Stats Increase",
     "values": [
