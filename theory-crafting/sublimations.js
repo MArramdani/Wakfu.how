@@ -337,9 +337,9 @@ function initializePage() {
                         ${colorElements.join('')}
                     </div>
                 </div>
-                
+    
                 <div class="divider"></div>
-                
+    
                 <div class="rune-meta">
                     <div class="obtenation">
                         ${obtenationIcon}
@@ -349,20 +349,20 @@ function initializePage() {
                         ${rarityIcons.join('')}
                     </div>
                 </div>
-                
+    
                 <div class="rune-description">
                     ${description}
                 </div>
-                
+    
                 ${!isSpecialRune ? `
                 <div class="level-controls">
                     <input type="range" 
-                           class="level-slider ${isFixedLevel ? 'fixed-level' : ''}" 
-                           min="${rune.minLevel}" 
-                           max="${rune.maxLevel}" 
-                           step="${rune.step}" 
-                           value="${currentLevel}"
-                           data-rune="${rune.name}">
+                        class="level-slider ${isFixedLevel ? 'fixed-level' : ''}" 
+                        min="${rune.minLevel}" 
+                        max="${rune.maxLevel}" 
+                        step="${rune.step}" 
+                        value="${currentLevel}"
+                        data-rune="${rune.name}">
                     <div class="level-display">${currentLevel}</div>
                 </div>
                 ` : ''}
@@ -377,7 +377,7 @@ function initializePage() {
                     const level = parseInt(this.value);
                     levelDisplay.textContent = level;
                     currentLevels[rune.name] = level;
-                    
+    
                     // Update description with new values - FIXED: Replace all occurrences
                     let updatedDescription = rune.description;
                     if (rune.values && rune.values.length > 0) {
@@ -390,9 +390,9 @@ function initializePage() {
                             updatedDescription = updatedDescription.replace(regex, calculatedValue);
                         });
                     }
-                    
+    
                     card.querySelector('.rune-description').textContent = updatedDescription;
-                    card.querySelector('.rune-level').textContent = `Lvl. ${level}`;
+                    card.querySelector('.rune-level').textContent = `Lvl. ${level}`; // Update this line
                 });
             }
             
