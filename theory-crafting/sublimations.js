@@ -296,12 +296,16 @@ function initializePage() {
             // Check if min equals max for slider positioning
             const isFixedLevel = rune.minLevel === rune.maxLevel;
             
+            // Add special class for relic and epic names
+            const nameClass = rune.colors.includes('Relic') ? 'relic-name' : 
+                             rune.colors.includes('Epic') ? 'epic-name' : '';
+            
             const card = document.createElement('div');
             card.className = 'rune-card';
             card.innerHTML = `
                 <div class="rune-header">
                     <div class="rune-name-container">
-                        <div class="rune-name">${rune.name}</div>
+                        <div class="rune-name ${nameClass}">${rune.name}</div>
                         ${!isSpecialRune ? `<div class="rune-level">Lvl. ${currentLevel}</div>` : ''}
                     </div>
                     <div class="rune-colors">
@@ -321,15 +325,11 @@ function initializePage() {
                     </div>
                 </div>
                 
-                <div class="divider"></div>
-                
                 <div class="rune-description">
                     ${description}
                 </div>
                 
                 ${!isSpecialRune ? `
-                <div class="divider"></div>
-                
                 <div class="level-controls">
                     <input type="range" 
                            class="level-slider ${isFixedLevel ? 'fixed-level' : ''}" 
