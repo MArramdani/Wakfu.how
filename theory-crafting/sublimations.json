@@ -348,7 +348,7 @@
       "Mythic"
     ],
     "effect": "Per additional level: +10% Critical Hit",
-    "maxLevel": 6,
+    "maxLevel": 2,
     "minLevel": 1,
     "step": 1,
     "obtenation": {
