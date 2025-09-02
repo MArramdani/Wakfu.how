@@ -2884,7 +2884,7 @@
     "minLevel": 1,
     "step": 1,
     "obtenation": {
-      "name": "Badgwitch the Furiox - Badgerox's Lair Dungeon",
+      "name": "Badgerox's Lair Dungeon",
       "localIcon": "./icons/badger.png"
     },
     "category": "Defensive",
@@ -2918,7 +2918,7 @@
     "minLevel": 1,
     "step": 1,
     "obtenation": {
-      "name": "Badgwitch the Furiox - Badgerox's Lair Dungeon",
+      "name": "Badgerox's Lair Dungeon",
       "localIcon": "./icons/badger.png"
     },
     "category": "Defensive",
@@ -2950,7 +2950,7 @@
     "minLevel": 2,
     "step": 2,
     "obtenation": {
-      "name": "Badgwitch the Furiox - Badgerox's Lair Dungeon",
+      "name": "Badgerox's Lair Dungeon",
       "localIcon": "./icons/badger.png"
     },
     "category": "Offensive",
@@ -2978,7 +2978,7 @@
     "minLevel": 1,
     "step": 1,
     "obtenation": {
-      "name": "2 Steles Aguabrial - Badgwitch the Furiox - Badgerox's Lair Dungeon",
+      "name": "2 Steles Aguabrial - Badgerox's Lair Dungeon",
       "localIcon": "./icons/badger.png"
     },
     "category": "Support",
