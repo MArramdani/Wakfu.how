@@ -270,11 +270,13 @@
     width: 36px;
     height: 36px;
     filter: drop-shadow(0 0 2px rgba(0, 0, 0, 0.7));
+    object-fit: contain;
 }
 
 .special-rarity-icon {
     width: 45px;
     height: 45px;
+    object-fit: contain;
 }
 
 .rune-description {
