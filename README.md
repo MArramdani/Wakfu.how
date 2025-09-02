@@ -19,9 +19,6 @@ To do:
 
 - Add subcategories
 
-- Fix descriptions with many of same X
+- Add runes filter by sockets
 
-- Download Icons 
-
-- Add runes filter
-
+- Add filter by classes
