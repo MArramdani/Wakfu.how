@@ -245,6 +245,7 @@
 
 .obtenation span {
     white-space: nowrap;
+    display: flex;
 }
 
 .obtenation-icon {
