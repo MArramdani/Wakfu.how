@@ -15,7 +15,7 @@ Latest Posts
 ---
 To do:
 
-- Update categories
+- Update categories: Damage, Defense, stats gains, support, , misc
 
 - Add subcategories
 
