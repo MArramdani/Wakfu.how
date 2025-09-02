@@ -234,6 +234,7 @@
     align-items: center;
     margin-bottom: 12px;
     min-height: 45px;
+    gap: 4px;
 }
 
 .obtenation {
@@ -241,11 +242,14 @@
     align-items: center;
     gap: 8px;
     min-height: 45px;
+    flex: 1; /* Allow obtenation to take available space */
+    min-width: 0; /* Allow text to wrap */
 }
 
 .obtenation span {
-    white-space: nowrap;
-    display: flex;
+    white-space: normal; /* Changed from nowrap to normal */
+    word-wrap: break-word; /* Allow long words to break */
+    overflow-wrap: break-word; /* Modern alternative */
 }
 
 .obtenation-icon {
@@ -260,6 +264,7 @@
     display: flex;
     gap: 5px;
     align-items: center;
+    flex-shrink: 0; /* Prevent rarity from shrinking */
 }
 
 .rarity-icon {
