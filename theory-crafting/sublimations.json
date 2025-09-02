@@ -530,7 +530,7 @@
     "step": 1,
     "obtenation": {
       "name": "Frigost",
-      "localIcon": "./icons/rift.png"
+      "localIcon": "./icons/rift_ulti.png"
     },
     "category": "Stats Increase",
     "values": [
