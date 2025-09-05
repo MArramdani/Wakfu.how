@@ -431,3 +431,32 @@
         gap: 8px;
     }
 }
+
+/* ===== LOGO STYLES ===== */
+.logo-image {
+    max-width: 180px;
+    height: auto;
+    display: block;
+    margin: 0 auto;
+}
+
+/* Adjust for collapsed sidebar */
+.sidebar.collapsed .logo-image {
+    max-width: 45px;
+}
+
+/* Adjust logo container for image */
+.logo-container {
+    padding: 15px 10px;
+}
+
+/* Mobile adjustments */
+@media (max-width: 992px) {
+    .logo-image {
+        max-width: 45px;
+    }
+    
+    .logo-subtitle {
+        display: none;
+    }
+}
