@@ -20,7 +20,7 @@
       "name": "Runic Mimic",
       "localIcon": "./icons/runic.png"
     },
-    "category": "Stats Increase",
+    "category": "Offensive",
     "values": [
       {
         "base": 3,
@@ -154,7 +154,7 @@
       "name": "Tainela",
       "localIcon": "./icons/rift.png"
     },
-    "category": "Support",
+    "category": "Utility",
     "values": [
       {
         "base": 5,
@@ -221,7 +221,7 @@
       "name": "Tainela",
       "localIcon": "./icons/rift.png"
     },
-    "category": "Support",
+    "category": "Utility",
     "values": [
       {
         "base": 15,
@@ -254,7 +254,7 @@
       "name": "Sufokia",
       "localIcon": "./icons/rift.png"
     },
-    "category": "Support",
+    "category": "Defensive",
     "values": [
       {
         "base": 5,
@@ -322,7 +322,7 @@
       "name": "Sufokia",
       "localIcon": "./icons/rift.png"
     },
-    "category": "Support",
+    "category": "Defensive",
     "values": [
       {
         "base": 2,
@@ -355,7 +355,7 @@
       "name": "Sufokia",
       "localIcon": "./icons/rift.png"
     },
-    "category": "Stats Increase",
+    "category": "Offensive",
     "values": [
       {
         "base": 10,
@@ -389,7 +389,7 @@
       "name": "Amakna",
       "localIcon": "./icons/rift.png"
     },
-    "category": "Support",
+    "category": "Defensive",
     "values": [
       {
         "base": 4,
@@ -409,7 +409,7 @@
       "G",
       "B"
     ],
-    "description": "The first critical hit in the turn inflicts [X]% additional damage. The following ones inflict -[Y]% less damage",
+    "description": "The first critical hit in the turn inflicts [X]% additional damageThe following ones inflict -[Y]% less damage",
     "rarity": [
       "Rare",
       "Mythic"
@@ -493,7 +493,7 @@
       "name": "Amakna",
       "localIcon": "./icons/rift.png"
     },
-    "category": "Stats Increase",
+    "category": "Utility",
     "values": [
       {
         "base": 1,
@@ -532,7 +532,7 @@
       "name": "Frigost",
       "localIcon": "./icons/rift_ulti.png"
     },
-    "category": "Stats Increase",
+    "category": "Offensive",
     "values": [
       {
         "base": 2,
@@ -566,7 +566,7 @@
       "name": "Frigost",
       "localIcon": "./icons/rift_ulti.png"
     },
-    "category": "Stats Increase",
+    "category": "Offensive",
     "values": [
       {
         "base": 3,
@@ -605,7 +605,7 @@
       "name": "Frigost",
       "localIcon": "./icons/rift_ulti.png"
     },
-    "category": "Stats Increase",
+    "category": "Offensive",
     "values": [
       {
         "base": 25,
@@ -705,7 +705,7 @@
       "name": "Blackspore Dungeon",
       "localIcon": "./icons/sugnuf.png"
     },
-    "category": "Stats Increase",
+    "category": "Defensive",
     "values": [
       {
         "base": 50,
@@ -773,7 +773,7 @@
       "name": "Dirty Trouffe Estate Dungeon",
       "localIcon": "./icons/rascal.png"
     },
-    "category": "Stats Increase",
+    "category": "Utility",
     "values": [
       {
         "base": 50,
@@ -1020,6 +1020,10 @@
         "base": 4,
         "increment": 4,
         "placeholder": "Y"
+      },
+      {
+        "base": null,
+        "increment": null
       }
     ]
   },
@@ -4290,9 +4294,8 @@
     "category": "Stats Increase",
     "values": [
       {
-        "base": 1,
-        "increment": 1,
-        "placeholder": "X"
+        "base": null,
+        "increment": null
       }
     ]
   },
@@ -4832,6 +4835,174 @@
     "obtenation": {
       "name": "Shustuft Crust (Ultimate)",
       "localIcon": "./icons/rift_ulti.png"
+    },
+    "category": "Offensive",
+    "values": [
+      {
+        "base": 2,
+        "increment": 2,
+        "placeholder": "X"
+      },
+      {
+        "base": null,
+        "increment": null
+      }
+    ]
+  },
+  {
+    "name": "Critical Save",
+    "colors": [
+      "B",
+      "R",
+      "B"
+    ],
+    "description": "At end of turn: Unused AP is carried over to the next turn as Critical Hit: 10% Critical Hit por AP (max [X] AP)",
+    "rarity": [
+      "Mythic"
+    ],
+    "effect": "",
+    "maxLevel": 6,
+    "minLevel": 2,
+    "step": 2,
+    "obtenation": {
+      "name": "Nox",
+      "localIcon": "./icons/nox.png"
+    },
+    "category": "Stat gains",
+    "values": [
+      {
+        "base": 1,
+        "increment": 1,
+        "placeholder": "X"
+      },
+      {
+        "base": null,
+        "increment": null
+      }
+    ]
+  },
+  {
+    "name": "Surge",
+    "colors": [
+      "G",
+      "R",
+      "G"
+    ],
+    "description": "If the bearer uses a spell to move: Preparation + [X] lvl ([X]% damage inflicted on next damage)",
+    "rarity": [
+      "Rare",
+      "Mythic",
+      "Legendary"
+    ],
+    "effect": "",
+    "maxLevel": 6,
+    "minLevel": 1,
+    "step": 1,
+    "obtenation": {
+      "name": "Nox",
+      "localIcon": "./icons/nox.png"
+    },
+    "category": "Offensive",
+    "values": [
+      {
+        "base": 5,
+        "increment": 5,
+        "placeholder": "X"
+      },
+      {
+        "base": null,
+        "increment": null
+      }
+    ]
+  },
+  {
+    "name": "Judgment",
+    "colors": [
+      "R",
+      "R",
+      "B"
+    ],
+    "description": "When inflicting single-target damage on an enemy: [X] extra damage infliced on this target on the next turn",
+    "rarity": [
+      "Rare",
+      "Mythic",
+      "Legendary"
+    ],
+    "effect": "",
+    "maxLevel": 6,
+    "minLevel": 1,
+    "step": 1,
+    "obtenation": {
+      "name": "Nox",
+      "localIcon": "./icons/nox.png"
+    },
+    "category": "Offensive",
+    "values": [
+      {
+        "base": 3,
+        "increment": 3,
+        "placeholder": "X"
+      },
+      {
+        "base": null,
+        "increment": null
+      }
+    ]
+  },
+  {
+    "name": "Diagnosis",
+    "colors": [
+      "G",
+      "B",
+      "G"
+    ],
+    "description": "When single-target healing an ally: [X] extra heals performed on this target on the next turn",
+    "rarity": [
+      "Rare",
+      "Mythic",
+      "Legendary"
+    ],
+    "effect": "",
+    "maxLevel": 6,
+    "minLevel": 1,
+    "step": 1,
+    "obtenation": {
+      "name": "Nox",
+      "localIcon": "./icons/nox.png"
+    },
+    "category": "Defensive",
+    "values": [
+      {
+        "base": 2,
+        "increment": 2,
+        "placeholder": "X"
+      },
+      {
+        "base": null,
+        "increment": null
+      }
+    ]
+  },
+  {
+    "name": "Secondary Embellishment",
+    "colors": [
+      "B",
+      "R",
+      "B"
+    ],
+    "description": "At end of turn, if an enemy is adjacent: [X]% of damage inflicted for the following turn",
+    "rarity": [
+      "Rare",
+      "Mythic",
+      "Legendary"
+    ],
+    "effect": "",
+    "maxLevel": 6,
+    "minLevel": 1,
+    "step": 1,
+    "obtenation": {
+      "name": "Nox",
+      "localIcon": "./icons/nox.png"
     },
     "category": "Offensive",
     "values": [
@@ -6488,7 +6659,7 @@
       "name": "Balance Stone",
       "localIcon": "./icons/3_rooms.png"
     },
-    "category": "Support",
+    "category": "",
     "values": [
       {
         "base": null,
@@ -6689,6 +6860,131 @@
       "localIcon": "./icons/ub.png"
     },
     "category": "Stats Increase",
+    "values": [
+      {
+        "base": null,
+        "increment": null
+      }
+    ]
+  },
+  {
+    "name": "Wakfu Seal",
+    "colors": [
+      "Relic"
+    ],
+    "description": "The state bearer increases their heals performed by 2% per turn (Permanent, max 20%)",
+    "rarity": [
+      "Relic"
+    ],
+    "effect": "",
+    "maxLevel": 1,
+    "minLevel": 1,
+    "step": 1,
+    "obtenation": {
+      "name": "Speed Stone",
+      "localIcon": "./icons/2_rooms.png"
+    },
+    "category": "Defensive",
+    "values": [
+      {
+        "base": null,
+        "increment": null
+      }
+    ]
+  },
+  {
+    "name": "Punishment",
+    "colors": [
+      "Relic"
+    ],
+    "description": "At start of turn if there are at least 2 enemies in melee: +1MP +1AP",
+    "rarity": [
+      "Relic"
+    ],
+    "effect": "",
+    "maxLevel": 1,
+    "minLevel": 1,
+    "step": 1,
+    "obtenation": {
+      "name": "Balance Stone",
+      "localIcon": "./icons/3_rooms.png"
+    },
+    "category": "Stat gains",
+    "values": [
+      {
+        "base": null,
+        "increment": null
+      }
+    ]
+  },
+  {
+    "name": "Abolution",
+    "colors": [
+      "Relic"
+    ],
+    "description": "At start of turn if there are at least 2 allies in melee: +1MP +1AP",
+    "rarity": [
+      "Relic"
+    ],
+    "effect": "",
+    "maxLevel": 1,
+    "minLevel": 1,
+    "step": 1,
+    "obtenation": {
+      "name": "Adventure Stone",
+      "localIcon": "./icons/4_rooms.png"
+    },
+    "category": "Stat gains",
+    "values": [
+      {
+        "base": null,
+        "increment": null
+      }
+    ]
+  },
+  {
+    "name": "Single Block",
+    "colors": [
+      "Relic"
+    ],
+    "description": "When performing a Block: -30% extra damage recieved -100% block",
+    "rarity": [
+      "Relic"
+    ],
+    "effect": "",
+    "maxLevel": 1,
+    "minLevel": 1,
+    "step": 1,
+    "obtenation": {
+      "name": "Companionship Stone",
+      "localIcon": "./icons/3_characters.png"
+    },
+    "category": "Defensive",
+    "values": [
+      {
+        "base": null,
+        "increment": null
+      }
+    ]
+  },
+  {
+    "name": "Critical Secret",
+    "colors": [
+      "Epic"
+    ],
+    "description": "At the start of combat, if Critical Mastery is less than or equal to 0: 30% critical hit",
+    "rarity": [
+      "Epic"
+    ],
+    "effect": "",
+    "maxLevel": 1,
+    "minLevel": 1,
+    "step": 1,
+    "obtenation": {
+      "name": "Ultimate Stone",
+      "localIcon": "./icons/ub.png"
+    },
+    "category": "Stat gains",
     "values": [
       {
         "base": null,
