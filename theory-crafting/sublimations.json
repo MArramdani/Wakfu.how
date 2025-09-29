@@ -4865,7 +4865,7 @@
     "minLevel": 2,
     "step": 2,
     "obtenation": {
-      "name": "Nox",
+      "name": "Heart of Nox's Clock",
       "localIcon": "./icons/nox.png"
     },
     "category": "Stat gains",
@@ -4899,7 +4899,7 @@
     "minLevel": 1,
     "step": 1,
     "obtenation": {
-      "name": "Nox",
+      "name": "Heart of Nox's Clock",
       "localIcon": "./icons/nox.png"
     },
     "category": "Offensive",
@@ -4933,7 +4933,7 @@
     "minLevel": 1,
     "step": 1,
     "obtenation": {
-      "name": "Nox",
+      "name": "Heart of Nox's Clock",
       "localIcon": "./icons/nox.png"
     },
     "category": "Offensive",
@@ -4967,7 +4967,7 @@
     "minLevel": 1,
     "step": 1,
     "obtenation": {
-      "name": "Nox",
+      "name": "Heart of Nox's Clock",
       "localIcon": "./icons/nox.png"
     },
     "category": "Defensive",
