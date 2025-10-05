@@ -135,9 +135,9 @@
 
 .rune-name-container {
     display: flex;
-    align-items: baseline;
-    flex-wrap: wrap;
-    gap: 8px;
+    flex-direction: column; /* Stack name and level vertically */
+    align-items: flex-start;
+    gap: 4px;
     flex: 1; /* Allow name container to take available space */
     min-width: 0; /* Prevent overflow */
 }
@@ -183,9 +183,9 @@
 .rune-colors {
     display: flex;
     gap: 6px;
-    margin-top: 4px;
     flex-shrink: 0; /* Prevent colors from shrinking */
     align-items: center; /* Ensure vertical alignment */
+    margin-top: 0; /* Remove top margin since we're using flex layout */
 }
 
 .rune-color {
