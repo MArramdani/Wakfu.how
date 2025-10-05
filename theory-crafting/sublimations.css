@@ -129,8 +129,10 @@
 .rune-header {
     display: flex;
     justify-content: space-between;
-    align-items: flex-start;
+    align-items: flex-start; /* Keep flex-start for proper vertical alignment */
     margin-bottom: 12px;
+    gap: 12px;
+    flex-wrap: nowrap; /* Prevent wrapping */
 }
 
 .rune-name-container {
