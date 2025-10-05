@@ -129,7 +129,7 @@
 .rune-header {
     display: flex;
     justify-content: space-between;
-    align-items: center;
+    align-items: flex-start;
     margin-bottom: 12px;
 }
 
@@ -138,6 +138,8 @@
     align-items: baseline;
     flex-wrap: wrap;
     gap: 8px;
+    flex: 1; /* Allow name container to take available space */
+    min-width: 0; /* Prevent overflow */
 }
 
 .rune-name {
@@ -182,6 +184,8 @@
     display: flex;
     gap: 6px;
     margin-top: 4px;
+    flex-shrink: 0; /* Prevent colors from shrinking */
+    align-items: center; /* Ensure vertical alignment */
 }
 
 .rune-color {
@@ -193,11 +197,13 @@
     border-radius: 5px;
     border: 0px solid rgba(255, 255, 255, 0.2);
     background: transparent !important;
+    flex-shrink: 0; /* Prevent color icons from shrinking */
 }
 
 .color-icon {
     width: 28px;
     height: 28px;
+    display: block; /* Ensure proper block display */
 }
 
 .special-color {
@@ -210,6 +216,7 @@
     font-weight: bold;
     font-size: 0.7rem;
     text-align: center;
+    flex-shrink: 0; /* Prevent special colors from shrinking */
 }
 
 .special-color.epic {
