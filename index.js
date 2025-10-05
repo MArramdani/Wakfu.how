@@ -116,7 +116,7 @@ document.addEventListener('DOMContentLoaded', function() {
         updateContentForHash(window.location.hash);
     });
     
-    // Sidebar toggle functionality
+    // Sidebar toggle functionality - FIXED VERSION
     if (sidebar && toggleButton) {
         // Check if we have a saved state in localStorage
         const isCollapsed = localStorage.getItem('sidebarCollapsed') === 'true';
@@ -135,17 +135,39 @@ document.addEventListener('DOMContentLoaded', function() {
             localStorage.setItem('sidebarCollapsed', isNowCollapsed);
         });
         
-        // Close sidebar when clicking outside on mobile
-        document.addEventListener('click', function(event) {
-            if (window.innerWidth <= 992 && 
-                !sidebar.contains(event.target) && 
-                !toggleButton.contains(event.target) &&
-                !sidebar.classList.contains('collapsed')) {
-                sidebar.classList.add('collapsed');
-                localStorage.setItem('sidebarCollapsed', 'true');
-            }
-        });
+        // Remove the problematic outside click handler that might cause issues
+        // Only keep this if absolutely necessary for mobile
+        if (window.innerWidth <= 992) {
+            document.addEventListener('click', function(event) {
+                if (!sidebar.contains(event.target) && 
+                    !toggleButton.contains(event.target) &&
+                    !sidebar.classList.contains('collapsed')) {
+                    sidebar.classList.add('collapsed');
+                    localStorage.setItem('sidebarCollapsed', 'true');
+                }
+            });
+        }
     }
+    
+    // Fix sidebar height calculation
+    function fixSidebarHeight() {
+        const sidebar = document.querySelector('.sidebar');
+        const navMenu = document.querySelector('.nav-menu');
+        
+        if (sidebar && navMenu) {
+            // Calculate available height for nav menu
+            const logoHeight = document.querySelector('.logo-container').offsetHeight;
+            const availableHeight = window.innerHeight - logoHeight - 20; // 20px padding buffer
+            
+            // Set the nav menu height
+            navMenu.style.height = availableHeight + 'px';
+            navMenu.style.overflowY = 'auto';
+        }
+    }
+    
+    // Call on load and resize
+    fixSidebarHeight();
+    window.addEventListener('resize', fixSidebarHeight);
 });
 
 // Handle actual page navigation (for when users click on real page links)

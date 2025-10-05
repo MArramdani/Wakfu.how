@@ -1,0 +1,110 @@
+/* ===== CHANGELOG SPECIFIC STYLES ===== */
+
+.changelog-list {
+    margin-top: 25px;
+}
+
+.changelog-item {
+    display: flex;
+    align-items: flex-start;
+    padding: 20px;
+    margin-bottom: 15px;
+    background: rgba(36, 7, 80, 0.3);
+    border-radius: 10px;
+    border-left: 4px solid #57A6A1;
+    transition: all 0.3s ease;
+    position: relative;
+}
+
+.changelog-item:hover {
+    background: rgba(36, 7, 80, 0.4);
+    transform: translateX(5px);
+}
+
+/* Remove or comment out this section to remove the bullet point */
+/*
+.changelog-item::before {
+    content: '•';
+    color: #57A6A1;
+    font-size: 24px;
+    font-weight: bold;
+    position: absolute;
+    left: 10px;
+    top: 18px;
+}
+*/
+
+.changelog-date {
+    min-width: 150px;
+    color: #57A6A1;
+    font-weight: 600;
+    font-size: 0.95rem;
+    margin-right: 20px;
+    flex-shrink: 0;
+}
+
+.changelog-content {
+    flex: 1;
+}
+
+.changelog-content p {
+    color: #d0d0d0;
+    margin: 0;
+    line-height: 1.6;
+}
+
+/* Highlight the most recent entry */
+.changelog-item:first-child {
+    background: rgba(87, 166, 161, 0.1);
+    border-left: 4px solid #FFD700;
+}
+
+/* Remove this too since it references the bullet point */
+/*
+.changelog-item:first-child::before {
+    color: #FFD700;
+}
+*/
+
+.changelog-item:first-child .changelog-date {
+    color: #FFD700;
+    font-weight: 700;
+}
+
+/* ===== RESPONSIVE DESIGN ===== */
+@media (max-width: 768px) {
+    .changelog-item {
+        flex-direction: column;
+        padding: 15px;
+    }
+    
+    .changelog-date {
+        min-width: auto;
+        margin-right: 0;
+        margin-bottom: 8px;
+        font-size: 0.9rem;
+    }
+    
+    /* Remove this responsive adjustment too */
+    /*
+    .changelog-item::before {
+        left: 8px;
+        top: 15px;
+    }
+    */
+}
+
+@media (max-width: 576px) {
+    .changelog-item {
+        padding: 12px;
+        margin-bottom: 12px;
+    }
+    
+    .changelog-date {
+        font-size: 0.85rem;
+    }
+    
+    .changelog-content p {
+        font-size: 0.9rem;
+    }
+}

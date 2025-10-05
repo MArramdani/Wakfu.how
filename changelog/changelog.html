@@ -3,9 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dungeons - Wakfu.How</title>
+    <title>Changelog - Wakfu.How</title>
     <link rel="stylesheet" href="../index.css">
-    <link rel="stylesheet" href="dungeons.css">
+    <link rel="stylesheet" href="changelog.css">
     <link rel="icon" type="image/png" href="../assets/logo_white_simplified.png">
 </head>
 <body>
@@ -34,7 +34,7 @@
                 </a>
             </li>
             <li class="nav-item">
-                <a href="dungeons.html" class="nav-link active">
+                <a href="../guides/dungeons.html" class="nav-link">
                     <span class="nav-icon">🗺️</span>
                     <span class="nav-text">Strategy Guides</span>
                 </a>
@@ -46,7 +46,7 @@
                 </a>
             </li>
             <li class="nav-item">
-                <a href="../index.html#community" class="nav-link">
+                <a href="changelog.html" class="nav-link active">
                     <span class="nav-icon">📢</span>
                     <span class="nav-text">Changelog</span>
                 </a>
@@ -56,27 +56,61 @@
 
     <!-- Main Content -->
     <main class="main-content" id="main-content">
-        <div class="page-header">
-            <h1 class="page-title">Wakfu Dungeons Directory</h1>
-            <p class="page-description">Explore all dungeons of the World of Twelve</p>
-        </div>
-        
-        <div class="container">
-            <div class="search-box">
-                <input type="text" id="dungeonSearch" placeholder="Search for a dungeon...">
+        <!-- Page Header -->
+        <section class="hero-section">
+            <div class="hero-content">
+                <h1>Changelog</h1>
+                <p class="hero-subtitle">Latest updates, improvements, and changes to Wakfu.How</p>
+                <p class="hero-description">Stay informed about new features, content additions, and site improvements.</p>
             </div>
+        </section>
+        
+        <!-- Changelog Content -->
+        <div class="content-card">
+            <h2>Website Updates</h2>
+            <p>Here you'll find a chronological list of all significant changes made to the website.</p>
             
-            <div class="brackets-container" id="bracketsContainer">
-                <!-- Brackets will be inserted here by JavaScript -->
+            <div class="changelog-list">
+
+                <div class="changelog-item">
+                    <div class="changelog-date">[October 5, 2025]</div>
+                    <div class="changelog-content">
+                        <p>Added and populated the Changelog.</p>
+                    </div>
+                </div>
+                
+
+                <div class="changelog-item">
+                    <div class="changelog-date">[September 29, 2025]</div>
+                    <div class="changelog-content">
+                        <p>Updated Sublimations list with 1.89 Nox sublimations.</p>
+                    </div>
+                </div>
+                
+
+                <div class="changelog-item">
+                    <div class="changelog-date">[September 02, 2025]</div>
+                    <div class="changelog-content">
+                        <p>Add sublimations page to the Theory Crafting section as a new.</p>
+                    </div>
+                </div>
+
+                <div class="changelog-item">
+                    <div class="changelog-date">[August 24, 2025]</div>
+                    <div class="changelog-content">
+                        <p>Created Wakfu.how!</p>
+                    </div>
+                </div>
+                
             </div>
         </div>
     </main>
 
+    <script src="../index.js"></script>
+    <script src="changelog.js"></script>
+
     <footer>
         <p>Wakfu.how is a non-official website and is not affiliated with Ankama. <a href="http://wakfu.com/">Wakfu</a> is an MMORPG published by Ankama. All rights reserved.</p>
     </footer>
-
-    <script src="../index.js"></script>
-    <script src="dungeons.js"></script>
 </body>
 </html>
