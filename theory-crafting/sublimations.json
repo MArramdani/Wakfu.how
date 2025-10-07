@@ -6659,7 +6659,7 @@
       "name": "Balance Stone",
       "localIcon": "./icons/3_rooms.png"
     },
-    "category": "",
+    "category": "Defensive",
     "values": [
       {
         "base": null,
