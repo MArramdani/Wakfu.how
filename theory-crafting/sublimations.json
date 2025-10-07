@@ -5931,8 +5931,8 @@
     "minLevel": 1,
     "step": 1,
     "obtenation": {
-      "name": "Balance Stone",
-      "localIcon": "./icons/3_rooms.png"
+      "name": "Companionship Stone",
+      "localIcon": "./icons/3_characters.png"
     },
     "category": "Offensive",
     "values": [
