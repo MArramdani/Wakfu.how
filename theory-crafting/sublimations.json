@@ -961,7 +961,7 @@
       "G",
       "G"
     ],
-    "description": "Each time indirect dmg inflicted: -[X]% Indirect dmg +[X]% Indirect DMG (Max 40%)",
+    "description": "Each time indirect dmg inflicted: -[X]% Direct dmg +[X]% Indirect DMG (Max 40%)",
     "rarity": [
       "Rare",
       "Mythic",
