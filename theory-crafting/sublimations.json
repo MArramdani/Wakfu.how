@@ -117,7 +117,7 @@
     "minLevel": 1,
     "step": 1,
     "obtenation": {
-      "name": "Tainela",
+      "name": "Tainela Rift",
       "localIcon": "./icons/rift.png"
     },
     "category": "Defensive",
@@ -151,7 +151,7 @@
     "minLevel": 1,
     "step": 1,
     "obtenation": {
-      "name": "Tainela",
+      "name": "Tainela Rift",
       "localIcon": "./icons/rift.png"
     },
     "category": "Utility",
@@ -184,7 +184,7 @@
     "minLevel": 1,
     "step": 1,
     "obtenation": {
-      "name": "Tainela",
+      "name": "Tainela Rift",
       "localIcon": "./icons/rift.png"
     },
     "category": "Defensive",
@@ -218,7 +218,7 @@
     "minLevel": 1,
     "step": 1,
     "obtenation": {
-      "name": "Tainela",
+      "name": "Tainela Rift",
       "localIcon": "./icons/rift.png"
     },
     "category": "Utility",
@@ -251,7 +251,7 @@
     "minLevel": 1,
     "step": 1,
     "obtenation": {
-      "name": "Sufokia",
+      "name": "Sufokia Rift",
       "localIcon": "./icons/rift.png"
     },
     "category": "Defensive",
@@ -285,7 +285,7 @@
     "minLevel": 1,
     "step": 1,
     "obtenation": {
-      "name": "Sufokia",
+      "name": "Sufokia Rift",
       "localIcon": "./icons/rift.png"
     },
     "category": "Offensive",
@@ -319,7 +319,7 @@
     "minLevel": 1,
     "step": 1,
     "obtenation": {
-      "name": "Sufokia",
+      "name": "Sufokia Rift",
       "localIcon": "./icons/rift.png"
     },
     "category": "Defensive",
@@ -352,7 +352,7 @@
     "minLevel": 1,
     "step": 1,
     "obtenation": {
-      "name": "Sufokia",
+      "name": "Sufokia Rift",
       "localIcon": "./icons/rift.png"
     },
     "category": "Offensive",
@@ -386,7 +386,7 @@
     "minLevel": 1,
     "step": 1,
     "obtenation": {
-      "name": "Amakna",
+      "name": "Amakna Rift",
       "localIcon": "./icons/rift.png"
     },
     "category": "Defensive",
@@ -419,7 +419,7 @@
     "minLevel": 1,
     "step": 1,
     "obtenation": {
-      "name": "Amakna",
+      "name": "Amakna Rift",
       "localIcon": "./icons/rift.png"
     },
     "category": "Offensive",
@@ -458,7 +458,7 @@
     "minLevel": 1,
     "step": 1,
     "obtenation": {
-      "name": "Amakna",
+      "name": "Amakna Rift",
       "localIcon": "./icons/rift.png"
     },
     "category": "Defensive",
@@ -490,7 +490,7 @@
     "minLevel": 2,
     "step": 2,
     "obtenation": {
-      "name": "Amakna",
+      "name": "Amakna Rift",
       "localIcon": "./icons/rift.png"
     },
     "category": "Utility",
@@ -529,7 +529,7 @@
     "minLevel": 1,
     "step": 1,
     "obtenation": {
-      "name": "Frigost",
+      "name": "Frigost Rift",
       "localIcon": "./icons/rift_ulti.png"
     },
     "category": "Offensive",
@@ -563,7 +563,7 @@
     "minLevel": 1,
     "step": 1,
     "obtenation": {
-      "name": "Frigost",
+      "name": "Frigost Rift",
       "localIcon": "./icons/rift_ulti.png"
     },
     "category": "Offensive",
@@ -602,7 +602,7 @@
     "minLevel": 1,
     "step": 1,
     "obtenation": {
-      "name": "Frigost",
+      "name": "Frigost Rift",
       "localIcon": "./icons/rift_ulti.png"
     },
     "category": "Offensive",
@@ -639,7 +639,7 @@
     "minLevel": 2,
     "step": 2,
     "obtenation": {
-      "name": "Frigost",
+      "name": "Frigost Rift",
       "localIcon": "./icons/rift_ulti.png"
     },
     "category": "Defensive",
@@ -1238,7 +1238,7 @@
     "minLevel": 1,
     "step": 1,
     "obtenation": {
-      "name": "Bonta",
+      "name": "Bonta Rift",
       "localIcon": "./icons/rift.png"
     },
     "category": "Offensive",
@@ -1277,7 +1277,7 @@
     "minLevel": 1,
     "step": 1,
     "obtenation": {
-      "name": "Bonta",
+      "name": "Bonta Rift",
       "localIcon": "./icons/rift.png"
     },
     "category": "Support",
@@ -1310,7 +1310,7 @@
     "minLevel": 1,
     "step": 1,
     "obtenation": {
-      "name": "Bonta",
+      "name": "Bonta Rift",
       "localIcon": "./icons/rift.png"
     },
     "category": "Offensive",
@@ -1344,7 +1344,7 @@
     "minLevel": 1,
     "step": 1,
     "obtenation": {
-      "name": "Bonta",
+      "name": "Bonta Rift",
       "localIcon": "./icons/rift.png"
     },
     "category": "Support",
@@ -2231,7 +2231,7 @@
     "minLevel": 1,
     "step": 1,
     "obtenation": {
-      "name": "Moon",
+      "name": "Moon Rift",
       "localIcon": "./icons/rift.png"
     },
     "category": "Support",
@@ -2265,7 +2265,7 @@
     "minLevel": 1,
     "step": 1,
     "obtenation": {
-      "name": "Moon",
+      "name": "Moon Rift",
       "localIcon": "./icons/rift.png"
     },
     "category": "Offensive",
@@ -2299,7 +2299,7 @@
     "minLevel": 1,
     "step": 1,
     "obtenation": {
-      "name": "Moon",
+      "name": "Moon Rift",
       "localIcon": "./icons/rift.png"
     },
     "category": "Offensive",
@@ -2338,7 +2338,7 @@
     "minLevel": 1,
     "step": 1,
     "obtenation": {
-      "name": "Moon",
+      "name": "Moon Rift",
       "localIcon": "./icons/rift.png"
     },
     "category": "Offensive",
@@ -4316,7 +4316,7 @@
     "minLevel": 1,
     "step": 1,
     "obtenation": {
-      "name": "Osamosa",
+      "name": "Osamosa Rift",
       "localIcon": "./icons/rift.png"
     },
     "category": "Offensive",
@@ -4350,7 +4350,7 @@
     "minLevel": 1,
     "step": 1,
     "obtenation": {
-      "name": "Osamosa",
+      "name": "Osamosa Rift",
       "localIcon": "./icons/rift.png"
     },
     "category": "Stats Increase",
@@ -4384,7 +4384,7 @@
     "minLevel": 1,
     "step": 1,
     "obtenation": {
-      "name": "Osamosa",
+      "name": "Osamosa Rift",
       "localIcon": "./icons/rift.png"
     },
     "category": "Offensive",
@@ -4418,7 +4418,7 @@
     "minLevel": 1,
     "step": 1,
     "obtenation": {
-      "name": "Osamosa",
+      "name": "Osamosa Rift",
       "localIcon": "./icons/rift.png"
     },
     "category": "Defensive",
@@ -4452,7 +4452,7 @@
     "minLevel": 1,
     "step": 1,
     "obtenation": {
-      "name": "Mount Zinit (Ultimate)",
+      "name": "Mount Zinit Ultimate Rift",
       "localIcon": "./icons/rift_ulti.png"
     },
     "category": "Defensive",
@@ -4491,7 +4491,7 @@
     "minLevel": 1,
     "step": 1,
     "obtenation": {
-      "name": "Mount Zinit (Ultimate)",
+      "name": "Mount Zinit Ultimate Rift",
       "localIcon": "./icons/rift_ulti.png"
     },
     "category": "Support",
@@ -4525,7 +4525,7 @@
     "minLevel": 1,
     "step": 1,
     "obtenation": {
-      "name": "Mount Zinit (Ultimate)",
+      "name": "Mount Zinit Ultimate Rift",
       "localIcon": "./icons/rift_ulti.png"
     },
     "category": "Offensive",
@@ -4559,7 +4559,7 @@
     "minLevel": 1,
     "step": 1,
     "obtenation": {
-      "name": "Mount Zinit (Ultimate)",
+      "name": "Mount Zinit Ultimate Rift",
       "localIcon": "./icons/rift_ulti.png"
     },
     "category": "Offensive",
@@ -4598,7 +4598,7 @@
     "minLevel": 1,
     "step": 1,
     "obtenation": {
-      "name": "Shustuft Crust",
+      "name": "Shustuft Crust Rift",
       "localIcon": "./icons/rift.png"
     },
     "category": "Stats Increase",
@@ -4631,7 +4631,7 @@
     "minLevel": 1,
     "step": 1,
     "obtenation": {
-      "name": "Shustuft Crust",
+      "name": "Shustuft Crust Rift",
       "localIcon": "./icons/rift.png"
     },
     "category": "Stats Increase",
@@ -4665,7 +4665,7 @@
     "minLevel": 1,
     "step": 1,
     "obtenation": {
-      "name": "Shustuft Crust",
+      "name": "Shustuft Crust Rift",
       "localIcon": "./icons/rift.png"
     },
     "category": "Offensive",
@@ -4699,7 +4699,7 @@
     "minLevel": 1,
     "step": 1,
     "obtenation": {
-      "name": "Shustuft Crust",
+      "name": "Shustuft Crust Rift",
       "localIcon": "./icons/rift.png"
     },
     "category": "Offensive",
@@ -4733,7 +4733,7 @@
     "minLevel": 1,
     "step": 1,
     "obtenation": {
-      "name": "Shustuft Crust (Ultimate)",
+      "name": "Shustuft Crust Ultimate Rift",
       "localIcon": "./icons/rift_ulti.png"
     },
     "category": "Offensive",
@@ -4766,7 +4766,7 @@
     "minLevel": 1,
     "step": 1,
     "obtenation": {
-      "name": "Shustuft Crust (Ultimate)",
+      "name": "Shustuft Crust Ultimate Rift",
       "localIcon": "./icons/rift_ulti.png"
     },
     "category": "Defensive",
@@ -4799,7 +4799,7 @@
     "minLevel": 1,
     "step": 1,
     "obtenation": {
-      "name": "Shustuft Crust (Ultimate)",
+      "name": "Shustuft Crust Ultimate Rift",
       "localIcon": "./icons/rift_ulti.png"
     },
     "category": "Offensive",
@@ -4833,7 +4833,7 @@
     "minLevel": 1,
     "step": 1,
     "obtenation": {
-      "name": "Shustuft Crust (Ultimate)",
+      "name": "Shustuft Crust Ultimate Rift",
       "localIcon": "./icons/rift_ulti.png"
     },
     "category": "Offensive",
