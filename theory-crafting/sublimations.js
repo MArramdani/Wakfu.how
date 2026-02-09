@@ -130,35 +130,17 @@ async function loadRuneData() {
 
 // Try multiple candidate paths to locate items.json (robust for different hosting setups)
 async function fetchItemsJson() {
-    const candidatePaths = [
-        'items.json',
-        'sublis-data/items.json',
-        '../sublis-data/items.json',
-        '/sublis-data/items.json',
-        window.location.origin + '/sublis-data/items.json',
-        window.location.pathname.replace(/\/$/, '') + '/items.json',
-        // Fallback to raw GitHub so Pages-specific 404s don't block the app
-        'https://raw.githubusercontent.com/MArramdani/Wakfu.how/main/theory-crafting/sublis-data/items.json',
-        'https://raw.githubusercontent.com/MArramdani/Wakfu.how/main/theory-crafting/items.json'
-    ];
-
-    for (const path of candidatePaths) {
-        try {
-            const url = new URL(path, window.location.href).href;
-            console.log(`Trying items.json path: ${path} -> ${url}`);
-            const res = await fetch(path);
-            if (res.ok) {
-                console.log(`Found items.json at ${path}`);
-                return await res.json();
-            } else {
-                console.log(`Not found (status ${res.status}) at ${path}`);
-            }
-        } catch (err) {
-            console.log(`Error fetching ${path}: ${err.message}`);
-        }
+    // Always use the canonical raw GitHub path for items.json to avoid Pages 404s
+    const rawUrl = 'https://raw.githubusercontent.com/MArramdani/Wakfu.how/main/theory-crafting/sublis-data/items.json';
+    console.log(`Fetching items.json from raw GitHub: ${rawUrl}`);
+    try {
+        const res = await fetch(rawUrl);
+        if (!res.ok) throw new Error(`Raw GitHub returned ${res.status}`);
+        return await res.json();
+    } catch (err) {
+        console.error(`Failed to load items.json from raw GitHub: ${err.message}`);
+        throw new Error('Could not load items.json from raw GitHub.');
     }
-
-    throw new Error('Could not locate items.json in any known path. Use window.debugItemsPath() in the console to inspect candidates.');
 }
 
 // Function to load local image
