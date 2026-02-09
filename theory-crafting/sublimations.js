@@ -342,9 +342,6 @@ function initializePage() {
             // Find the ID in itemsData - handle case where itemsData might be empty
             let itemId = null;
             let runeUrl = '#';
-            // Inside the for (const rune of runesToRender) loop
-            let itemId = null;
-            let runeUrl = '#';
 
             if (itemsData && itemsData.length > 0) {
                 // Find the item where the English title matches the rune name
