@@ -150,7 +150,7 @@ async function initApp() {
         // Fetch both JSON files simultaneously
         const [runeData, itemsResponse] = await Promise.all([
             loadRuneData(),
-            fetch('sublis_data/items.json').then(res => res.ok ? res.json() : []) // Add error handling
+            fetch('./sublis_data/items.json').then(res => res.ok ? res.json() : []) // Add error handling
         ]);
         
         runes = runeData;
