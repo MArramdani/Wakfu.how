@@ -478,8 +478,9 @@
 
 .rarity-filters {
     display: flex;
-    gap: 15px;
-    align-items: center;
+    flex-direction: column; /* This stacks the items vertically */
+    gap: 8px;               /* Reduced gap for vertical layout */
+    justify-content: center;
     margin-left: 20px;
 }
 
