@@ -350,7 +350,23 @@ function initializePage() {
             let itemId = null;
             let runeUrl = '#';
             if (itemsData && itemsData.length > 0) {
-                const matchingItem = itemsData.find(title => title.en === rune.name);
+                // Debug: log what we're looking for
+                console.log(`Looking for rune: "${rune.name}" in itemsData`);
+                
+                const matchingItem = itemsData.find(item => {
+                    // Check if item has title and title has en property
+                    return item && item.title && item.title.en && item.title.en === rune.name;
+                });
+                
+                // Debug: log if we found something
+                if (matchingItem) {
+                    console.log(`Found match: "${matchingItem.title.en}" with ID: ${matchingItem.definition.item.id}`);
+                } else {
+                    console.log(`No match found for "${rune.name}"`);
+                    // Debug: show first few item names to see what's available
+                    console.log('First 5 item names in itemsData:', 
+                        itemsData.slice(0, 5).map(item => item.title?.en || 'No title'));
+                }
                 itemId = matchingItem ? matchingItem.definition.item.id : null;
                 if (itemId) {
                     runeUrl = `https://www.wakfu.com/en/mmorpg/encyclopedia/resources/${itemId}`;
