@@ -220,28 +220,7 @@ function initializePage() {
         for (const rune of runesToRender) {
             const currentLevel = currentLevels[rune.name] || rune.minLevel;
             
-            // 1. Find the item ID from itemsData
-            const itemMatch = itemsData.find(i => i.title && i.title.en === rune.name);
-            const itemId = itemMatch ? itemMatch.definition.item.id : null;
-            const encyclopediaUrl = `https://www.wakfu.com/en/mmorpg/encyclopedia/resources/${itemId}`;
 
-            // 2. Identify if it's a Special Rune
-            const isSpecial = rune.colors.includes('Relic') || rune.colors.includes('Epic');
-
-            // 3. Wrap the header in an <a> tag if it's special and has an ID
-            card.innerHTML = `
-                ${(isSpecial && itemId) ? `<a href="${encyclopediaUrl}" target="_blank" class="rune-link">` : ''}
-                <div class="rune-header ${isSpecial ? 'clickable' : ''}">
-                    <div class="rune-name-container">
-                        <div class="rune-name ${isSpecial ? rune.colors[0].toLowerCase() + '-name' : ''}">${rune.name}</div>
-                        ${!isSpecial ? `<div class="rune-level">Lvl. ${currentLevel}</div>` : ''}
-                    </div>
-                    <div class="rune-colors">${colorElements.join('')}</div>
-                </div>
-                ${(isSpecial && itemId) ? `</a>` : ''}
-                
-                <div class="divider"></div>
-                `;
 
             // Generate description with current values - FIXED: Replace all occurrences
             let description = rune.description;
