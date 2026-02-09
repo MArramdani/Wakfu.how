@@ -161,7 +161,7 @@ async function initApp() {
         // Try to load items.json with better debugging
         try {
             console.log('Attempting to fetch items.json...');
-            const response = await fetch('./sublis_data/items.json');
+            const response = await fetch('/theory-crafting/sublis_data/items.json');
             
             console.log('Response status:', response.status);
             console.log('Response URL:', response.url);
@@ -368,6 +368,21 @@ function initializePage() {
                         
                         return (isSpecialRune && (isRelicItem || isEpicItem));
                     });
+                }
+
+                if (isSpecialRune && !itemId) {
+                    // For testing, use a hardcoded ID for known runes
+                    const testIds = {
+                        "Yeah": 31003,      // Example ID for "Farsighted"
+                        "Influence": 12345, // Example ID
+                        // Add more as needed
+                    };
+                    
+                    if (testIds[rune.name]) {
+                        itemId = testIds[rune.name];
+                        runeUrl = `https://www.wakfu.com/en/mmorpg/encyclopedia/resources/${itemId}`;
+                        console.log(`Using test ID for ${rune.name}: ${itemId}`);
+                    }
                 }
                 
                 if (matchingItem) {
