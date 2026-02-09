@@ -5,7 +5,7 @@ import os
 # Configuration
 CONFIG_URL = "https://wakfu.cdn.ankama.com/gamedata/config.json"
 BASE_URL = "https://wakfu.cdn.ankama.com/gamedata"
-OUTPUT_FILE = "data/items.json"
+OUTPUT_FILE = "thoery-crafting/sublis_data/items.json"
 
 def update_data():
     try:
