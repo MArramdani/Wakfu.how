@@ -350,7 +350,7 @@ function initializePage() {
             let itemId = null;
             let runeUrl = '#';
             if (itemsData && itemsData.length > 0) {
-                const matchingItem = itemsData.find(item => item.title.en === rune.name);
+                const matchingItem = itemsData.find(definition => definition.title.en === rune.name);
                 itemId = matchingItem ? matchingItem.definition.item.id : null;
                 if (itemId) {
                     runeUrl = `https://www.wakfu.com/en/mmorpg/encyclopedia/resources/${itemId}`;
