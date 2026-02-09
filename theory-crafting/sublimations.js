@@ -1,7 +1,7 @@
 // Load rune data from external JSON file
 let runes = [];
 let currentLevels = {}; // Store current level for each rune
-let itemsData = 'https://raw.githubusercontent.com/YOUR_USERNAME/YOUR_REPO/BRANCH/theory-crafting/sublis_data/items.json'; // Store the encyclopedia data
+let itemsData = []; // Just an empty array
 
 // Local icon paths
 const localIcons = {
@@ -146,55 +146,43 @@ function getObtenationIconPath(obtenationName) {
 
 // Initialize the application
 async function initApp() {
-        try {
-            // Fetch both JSON files simultaneously
-            const [runeData, itemsResponse] = await Promise.all([
-                loadRuneData(),
-                fetch('./sublis_data/items.json').then(res => {
-                    if (!res.ok) {
-                        console.warn(`Failed to load items.json: ${res.status} ${res.statusText}`);
-                        return [];
-                    }
-                    return res.json();
-                })
-            ]);
-            
-            runes = runeData;
-            itemsData = itemsResponse || []; // Ensure itemsData is always an array
-
-            console.log(`Loaded ${runes.length} runes and ${itemsData.length} items`);
-            
-            // Initialize current levels for each rune
-            runes.forEach(rune => {
-                currentLevels[rune.name] = rune.minLevel;
-            });
-            
-            initializePage();
-        } catch (error) {
-            console.error('Error initializing application:', error);
-        // Initialize itemsData as empty array if fetch fails
-        itemsData = [];
+    try {
+        console.log('Starting app initialization...');
         
-        // Try to load runes anyway (use fallback data)
+        // Load rune data first
+        runes = await loadRuneData();
+        console.log(`Loaded ${runes.length} runes`);
+        
+        // Initialize current levels
+        runes.forEach(rune => {
+            currentLevels[rune.name] = rune.minLevel;
+        });
+        
+        // Try to load items.json with better debugging
         try {
-            runes = await loadRuneData();
-            runes.forEach(rune => {
-                currentLevels[rune.name] = rune.minLevel;
-            });
-            initializePage();
-        } catch (innerError) {
-            console.error('Failed to load any data:', innerError);
-            const runesContainer = document.getElementById('runesContainer');
-            if (runesContainer) {
-                runesContainer.innerHTML = `
-                    <div class="no-results">
-                        <h3>Error Loading Data</h3>
-                        <p>Could not load sublimation data. Please try again later.</p>
-                        <p>Error: ${error.message}</p>
-                    </div>
-                `;
+            console.log('Attempting to fetch items.json...');
+            const response = await fetch('./sublis_data/items.json');
+            
+            console.log('Response status:', response.status);
+            console.log('Response URL:', response.url);
+            
+            if (!response.ok) {
+                throw new Error(`HTTP ${response.status}: ${response.statusText}`);
             }
+            
+            itemsData = await response.json();
+            console.log(`Successfully loaded ${itemsData.length} items from items.json`);
+        } catch (itemsError) {
+            console.error('Failed to load items.json:', itemsError);
+            console.log('Continuing without items data...');
+            itemsData = [];
         }
+        
+        initializePage();
+        
+    } catch (error) {
+        console.error('Error initializing application:', error);
+        // Show error in UI
     }
 }
 
@@ -358,26 +346,36 @@ function initializePage() {
             let itemId = null;
             let runeUrl = '#';
             if (itemsData && itemsData.length > 0) {
-                // Debug: log what we're looking for
-                console.log(`Looking for rune: "${rune.name}" in itemsData`);
+                console.log(`Looking for rune: "${rune.name}" in ${itemsData.length} items`);
                 
-                const matchingItem = itemsData.find(item => {
-                    // Check if item has title and title has en property
-                    return item && item.title && item.title.en && item.title.en === rune.name;
-                });
+                // Try exact match first
+                let matchingItem = itemsData.find(item => 
+                    item && item.title && item.title.en && 
+                    item.title.en.toLowerCase() === rune.name.toLowerCase()
+                );
                 
-                // Debug: log if we found something
-                if (matchingItem) {
-                    console.log(`Found match: "${matchingItem.title.en}" with ID: ${matchingItem.definition.item.id}`);
-                } else {
-                    console.log(`No match found for "${rune.name}"`);
-                    // Debug: show first few item names to see what's available
-                    console.log('First 5 item names in itemsData:', 
-                        itemsData.slice(0, 5).map(item => item.title?.en || 'No title'));
+                // If no exact match, try partial match for relic/epic runes
+                if (!matchingItem && isSpecialRune) {
+                    matchingItem = itemsData.find(item => {
+                        if (!item || !item.title || !item.title.en) return false;
+                        
+                        // Try to match by keywords in description for special runes
+                        const itemDesc = item.description?.en || '';
+                        const isRelicItem = itemDesc.toLowerCase().includes('relic') || 
+                                        item.definition?.item?.sublimationParameters?.isRelic;
+                        const isEpicItem = itemDesc.toLowerCase().includes('epic') ||
+                                        item.definition?.item?.sublimationParameters?.isEpic;
+                        
+                        return (isSpecialRune && (isRelicItem || isEpicItem));
+                    });
                 }
-                itemId = matchingItem ? matchingItem.definition.item.id : null;
-                if (itemId) {
+                
+                if (matchingItem) {
+                    itemId = matchingItem.definition.item.id;
                     runeUrl = `https://www.wakfu.com/en/mmorpg/encyclopedia/resources/${itemId}`;
+                    console.log(`✓ Found match for "${rune.name}": "${matchingItem.title.en}" (ID: ${itemId})`);
+                } else {
+                    console.log(`✗ No match found for "${rune.name}"`);
                 }
             }
             
@@ -475,6 +473,44 @@ function initializePage() {
             container.appendChild(card);
         }
     }
+        // Add this function for debugging
+    async function testItemsJsonPath() {
+        const testPaths = [
+            './sublis_data/items.json',
+            'sublis_data/items.json',
+            '../sublis_data/items.json',
+            '/sublis_data/items.json',
+            window.location.origin + '/sublis_data/items.json'
+        ];
+        
+        console.log('=== Testing items.json paths ===');
+        console.log('Current page URL:', window.location.href);
+        
+        for (const path of testPaths) {
+            try {
+                const fullUrl = new URL(path, window.location.href).href;
+                console.log(`\nTesting: ${path}`);
+                console.log(`Full URL: ${fullUrl}`);
+                
+                const response = await fetch(path, { method: 'HEAD' });
+                console.log(`Status: ${response.status} ${response.statusText}`);
+                console.log(`OK: ${response.ok}`);
+                
+                if (response.ok) {
+                    console.log('✅ WORKING PATH FOUND!');
+                    return path;
+                }
+            } catch (error) {
+                console.log(`❌ Error: ${error.message}`);
+            }
+        }
+        
+        console.log('\n❌ No working path found');
+        return null;
+    }
+
+    // Call this in your console to debug
+    window.debugItemsPath = testItemsJsonPath;
     
     // Function to filter runes based on criteria
     function filterRunes() {
@@ -487,6 +523,7 @@ function initializePage() {
         if (!searchInput || !activeCategoryTab) {
             return runes;
         }
+    
     
     const searchTerm = searchInput.value.toLowerCase();
     const activeCategory = activeCategoryTab.getAttribute('data-category');
