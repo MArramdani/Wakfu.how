@@ -342,20 +342,16 @@ function initializePage() {
             
             const card = document.createElement('div');
             card.className = 'rune-card';
-            card.innerHTML = `
-            
-                ${(isSpecialRune && itemId) ? `<a href="${runeUrl}" target="_blank" class="special-rune-link">` : ''}
-                <div class="rune-header ${isSpecialRune ? 'clickable-header' : ''}">
-                    <div class="rune-name-container">
-                        <div class="rune-name ${nameClass}">${rune.name}</div>
-                        ${!isSpecialRune ? `<div class="rune-level">Lvl. ${currentLevel}</div>` : ''}
-                    </div>
-                    <div class="rune-colors">
-                        ${colorElements.join('')}
-                    </div>
-                </div>
-                ${(isSpecialRune && itemId) ? `</a>` : ''}
+            // Build the card content
+            let cardContent = '';
 
+            // Special rune link wrapper
+            if (isSpecialRune && itemId) {
+                cardContent += `<a href="${runeUrl}" target="_blank" class="special-rune-link">`;
+            }
+
+            // Rune header
+            cardContent += `
                 <div class="rune-header ${isSpecialRune ? 'clickable-header' : ''}">
                     <div class="rune-name-container">
                         <div class="rune-name ${nameClass}">${rune.name}</div>
@@ -365,9 +361,17 @@ function initializePage() {
                         ${colorElements.join('')}
                     </div>
                 </div>
-        
+            `;
+
+            // Close the anchor tag for special runes
+            if (isSpecialRune && itemId) {
+                cardContent += `</a>`;
+            }
+
+            // Rest of the card content
+            cardContent += `
                 <div class="divider"></div>
-    
+
                 <div class="rune-meta">
                     <div class="obtenation">
                         ${obtenationIcon}
@@ -377,11 +381,11 @@ function initializePage() {
                         ${rarityIcons.join('')}
                     </div>
                 </div>
-    
+
                 <div class="rune-description">
                     ${description}
                 </div>
-    
+
                 ${!isSpecialRune ? `
                 <div class="level-controls">
                     <input type="range" 
@@ -395,6 +399,8 @@ function initializePage() {
                 </div>
                 ` : ''}
             `;
+
+            card.innerHTML = cardContent;
             
             // Add event listener to the slider if it's not a special rune
             if (!isSpecialRune) {
