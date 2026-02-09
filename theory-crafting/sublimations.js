@@ -136,7 +136,10 @@ async function fetchItemsJson() {
         '../sublis-data/items.json',
         '/sublis-data/items.json',
         window.location.origin + '/sublis-data/items.json',
-        window.location.pathname.replace(/\/$/, '') + '/items.json'
+        window.location.pathname.replace(/\/$/, '') + '/items.json',
+        // Fallback to raw GitHub so Pages-specific 404s don't block the app
+        'https://raw.githubusercontent.com/MArramdani/Wakfu.how/main/theory-crafting/sublis-data/items.json',
+        'https://raw.githubusercontent.com/MArramdani/Wakfu.how/main/theory-crafting/items.json'
     ];
 
     for (const path of candidatePaths) {
