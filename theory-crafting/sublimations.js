@@ -154,7 +154,6 @@ async function initApp() {
         
         runes = runeData;
         itemsData = itemsResponse; // Store the encyclopedia data
-        runes = await loadRuneData();
         
         // Initialize current levels for each rune
         runes.forEach(rune => {
