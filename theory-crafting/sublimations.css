@@ -506,3 +506,25 @@
     gap: 15px;
     margin-bottom: 20px;
 }
+
+/* Remove default link styling */
+.rune-link {
+    text-decoration: none;
+    color: inherit;
+    display: block; /* Makes the entire header area clickable */
+}
+
+/* Visual feedback on hover */
+.rune-header.clickable {
+    cursor: pointer;
+    transition: background 0.2s ease;
+}
+
+.rune-header.clickable:hover {
+    background: rgba(255, 255, 255, 0.1);
+}
+
+/* Optional: add an external link icon or underline to the name */
+.relic-name, .epic-name {
+    text-decoration: underline dotted rgba(255, 255, 255, 0.3);
+}
