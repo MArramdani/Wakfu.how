@@ -149,11 +149,11 @@ async function initApp() {
     try {
         console.log("Attempting to load data...");
         
-        // Use the new path: sublis_data/items.json
+        // Use the new path: sublis-data/items.json
         const [runeData, itemsResponse] = await Promise.all([
             loadRuneData(),
-            fetch('./sublis-data/items.json').then(res => {
-                if (!res.ok) throw new Error(`Could not find items.json at ./sublis-data/items.json (Status: ${res.status})`);
+            fetch('items.json').then(res => {
+                if (!res.ok) throw new Error(`Could not find items.json at ./items.json (Status: ${res.status})`);
                 return res.json();
             })
         ]);
@@ -450,7 +450,7 @@ function initializePage() {
         // Add this function for debugging
     async function testItemsJsonPath() {
         const testPaths = [
-            './sublis-data/items.json',
+            'items.json',
             'sublis-data/items.json',
             '../sublis-data/items.json',
             '/sublis-data/items.json',
