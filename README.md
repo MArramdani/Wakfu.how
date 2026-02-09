@@ -1,5 +1,7 @@
 # Wakfu.how
 
+This is a fan website, incomplete, but better something than nothing :D
+
 Get Started
     - classes
     - Quests
@@ -15,6 +17,8 @@ Latest Posts
 
 ---
 To do:
+
+- make sublimations cards clickable and open to game encyclopedia online
 
 - Update categories: Damage, Defense, stats gains, support, , misc
 
