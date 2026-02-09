@@ -1,6 +1,7 @@
 // Load rune data from external JSON file
 let runes = [];
 let currentLevels = {}; // Store current level for each rune
+let itemsData = []; // Store the encyclopedia data
 
 // Local icon paths
 const localIcons = {
@@ -149,11 +150,11 @@ async function initApp() {
         // Fetch both JSON files simultaneously
         const [runeData, itemsResponse] = await Promise.all([
             loadRuneData(),
-            fetch('../data/items.json').then(res => res.json()) // Adjust path if in 'data/' folder
+            fetch('../data/items.json').then(res => res.ok ? res.json() : []) // Add error handling
         ]);
         
         runes = runeData;
-        itemsData = itemsResponse; // Store the encyclopedia data
+        itemsData = itemsResponse || []; // Ensure itemsData is always an array
         
         // Initialize current levels for each rune
         runes.forEach(rune => {
@@ -163,15 +164,28 @@ async function initApp() {
         initializePage();
     } catch (error) {
         console.error('Error initializing application:', error);
-        const runesContainer = document.getElementById('runesContainer');
-        if (runesContainer) {
-            runesContainer.innerHTML = `
-                <div class="no-results">
-                    <h3>Error Loading Data</h3>
-                    <p>Could not load sublimation data. Please try again later.</p>
-                    <p>Error: ${error.message}</p>
-                </div>
-            `;
+        // Initialize itemsData as empty array if fetch fails
+        itemsData = [];
+        
+        // Try to load runes anyway (use fallback data)
+        try {
+            runes = await loadRuneData();
+            runes.forEach(rune => {
+                currentLevels[rune.name] = rune.minLevel;
+            });
+            initializePage();
+        } catch (innerError) {
+            console.error('Failed to load any data:', innerError);
+            const runesContainer = document.getElementById('runesContainer');
+            if (runesContainer) {
+                runesContainer.innerHTML = `
+                    <div class="no-results">
+                        <h3>Error Loading Data</h3>
+                        <p>Could not load sublimation data. Please try again later.</p>
+                        <p>Error: ${error.message}</p>
+                    </div>
+                `;
+            }
         }
     }
 }
