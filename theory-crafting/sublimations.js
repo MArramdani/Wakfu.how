@@ -146,32 +146,32 @@ function getObtenationIconPath(obtenationName) {
 
 // Initialize the application
 async function initApp() {
-    try {
-        // Fetch both JSON files simultaneously
-        const [runeData, itemsResponse] = await Promise.all([
-            loadRuneData(),
-            fetch('./sublis_data/items.json').then(res => {
-                if (!res.ok) {
-                    console.warn(`Failed to load items.json: ${res.status} ${res.statusText}`);
-                    return [];
-                }
-                return res.json();
-            })
-        ]);
-        
-        runes = runeData;
-        itemsData = itemsResponse || []; // Ensure itemsData is always an array
+        try {
+            // Fetch both JSON files simultaneously
+            const [runeData, itemsResponse] = await Promise.all([
+                loadRuneData(),
+                fetch('./sublis_data/items.json').then(res => {
+                    if (!res.ok) {
+                        console.warn(`Failed to load items.json: ${res.status} ${res.statusText}`);
+                        return [];
+                    }
+                    return res.json();
+                })
+            ]);
+            
+            runes = runeData;
+            itemsData = itemsResponse || []; // Ensure itemsData is always an array
 
-        console.log(`Loaded ${runes.length} runes and ${itemsData.length} items`);
-        
-        // Initialize current levels for each rune
-        runes.forEach(rune => {
-            currentLevels[rune.name] = rune.minLevel;
-        });
-        
-        initializePage();
-    } catch (error) {
-        console.error('Error initializing application:', error);
+            console.log(`Loaded ${runes.length} runes and ${itemsData.length} items`);
+            
+            // Initialize current levels for each rune
+            runes.forEach(rune => {
+                currentLevels[rune.name] = rune.minLevel;
+            });
+            
+            initializePage();
+        } catch (error) {
+            console.error('Error initializing application:', error);
         // Initialize itemsData as empty array if fetch fails
         itemsData = [];
         
