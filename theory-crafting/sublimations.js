@@ -355,6 +355,16 @@ function initializePage() {
                     </div>
                 </div>
                 ${(isSpecialRune && itemId) ? `</a>` : ''}
+
+                <div class="rune-header ${isSpecialRune ? 'clickable-header' : ''}">
+                    <div class="rune-name-container">
+                        <div class="rune-name ${nameClass}">${rune.name}</div>
+                        ${!isSpecialRune ? `<div class="rune-level">Lvl. ${currentLevel}</div>` : ''}
+                    </div>
+                    <div class="rune-colors">
+                        ${colorElements.join('')}
+                    </div>
+                </div>
         
                 <div class="divider"></div>
     
