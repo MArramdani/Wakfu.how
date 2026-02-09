@@ -353,22 +353,7 @@ function initializePage() {
                     item && item.title && item.title.en && 
                     item.title.en.toLowerCase() === rune.name.toLowerCase()
                 );
-                
-                // If no exact match, try partial match for relic/epic runes
-                if (!matchingItem && isSpecialRune) {
-                    matchingItem = itemsData.find(item => {
-                        if (!item || !item.title || !item.title.en) return false;
-                        
-                        // Try to match by keywords in description for special runes
-                        const itemDesc = item.description?.en || '';
-                        const isRelicItem = itemDesc.toLowerCase().includes('relic') || 
-                                        item.definition?.item?.sublimationParameters?.isRelic;
-                        const isEpicItem = itemDesc.toLowerCase().includes('epic') ||
-                                        item.definition?.item?.sublimationParameters?.isEpic;
-                        
-                        return (isSpecialRune && (isRelicItem || isEpicItem));
-                    });
-                }
+
 
                 if (isSpecialRune && !itemId) {
                     // For testing, use a hardcoded ID for known runes
