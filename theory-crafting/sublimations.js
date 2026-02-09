@@ -1,7 +1,7 @@
 // Load rune data from external JSON file
 let runes = [];
 let currentLevels = {}; // Store current level for each rune
-let itemsData = []; // Store the encyclopedia data
+let itemsData = 'https://raw.githubusercontent.com/YOUR_USERNAME/YOUR_REPO/BRANCH/theory-crafting/sublis_data/items.json'; // Store the encyclopedia data
 
 // Local icon paths
 const localIcons = {
