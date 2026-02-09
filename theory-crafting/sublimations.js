@@ -128,6 +128,36 @@ async function loadRuneData() {
     }
 }
 
+// Try multiple candidate paths to locate items.json (robust for different hosting setups)
+async function fetchItemsJson() {
+    const candidatePaths = [
+        'items.json',
+        'sublis-data/items.json',
+        '../sublis-data/items.json',
+        '/sublis-data/items.json',
+        window.location.origin + '/sublis-data/items.json',
+        window.location.pathname.replace(/\/$/, '') + '/items.json'
+    ];
+
+    for (const path of candidatePaths) {
+        try {
+            const url = new URL(path, window.location.href).href;
+            console.log(`Trying items.json path: ${path} -> ${url}`);
+            const res = await fetch(path);
+            if (res.ok) {
+                console.log(`Found items.json at ${path}`);
+                return await res.json();
+            } else {
+                console.log(`Not found (status ${res.status}) at ${path}`);
+            }
+        } catch (err) {
+            console.log(`Error fetching ${path}: ${err.message}`);
+        }
+    }
+
+    throw new Error('Could not locate items.json in any known path. Use window.debugItemsPath() in the console to inspect candidates.');
+}
+
 // Function to load local image
 function loadLocalImage(src, alt, className) {
     const img = new Image();
@@ -149,13 +179,10 @@ async function initApp() {
     try {
         console.log("Attempting to load data...");
         
-        // Use the new path: sublis-data/items.json
+        // Load rune data and items.json (try multiple locations for items.json)
         const [runeData, itemsResponse] = await Promise.all([
             loadRuneData(),
-            fetch('./items.json').then(res => {
-                if (!res.ok) throw new Error(`Could not find items.json at ./items.json (Status: ${res.status})`);
-                return res.json();
-            })
+            fetchItemsJson()
         ]);
         
         runes = runeData;
