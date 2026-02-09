@@ -152,8 +152,8 @@ async function initApp() {
         // Use the new path: sublis_data/items.json
         const [runeData, itemsResponse] = await Promise.all([
             loadRuneData(),
-            fetch('./sublis_data/items.json').then(res => {
-                if (!res.ok) throw new Error(`Could not find items.json at ./sublis_data/items.json (Status: ${res.status})`);
+            fetch('./sublis-data/items.json').then(res => {
+                if (!res.ok) throw new Error(`Could not find items.json at ./sublis-data/items.json (Status: ${res.status})`);
                 return res.json();
             })
         ]);
@@ -177,7 +177,7 @@ async function initApp() {
                 <div class="no-results">
                     <h3>Data Load Error</h3>
                     <p>${error.message}</p>
-                    <p>Make sure the folder <strong>sublis_data</strong> exists and contains <strong>items.json</strong>.</p>
+                    <p>Make sure the folder <strong>sublis-data</strong> exists and contains <strong>items.json</strong>.</p>
                 </div>`;
         }
     }
@@ -450,11 +450,11 @@ function initializePage() {
         // Add this function for debugging
     async function testItemsJsonPath() {
         const testPaths = [
-            './sublis_data/items.json',
-            'sublis_data/items.json',
-            '../sublis_data/items.json',
-            '/sublis_data/items.json',
-            window.location.origin + '/sublis_data/items.json'
+            './sublis-data/items.json',
+            'sublis-data/items.json',
+            '../sublis-data/items.json',
+            '/sublis-data/items.json',
+            window.location.origin + '/sublis-data/items.json'
         ];
         
         console.log('=== Testing items.json paths ===');
