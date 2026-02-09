@@ -152,7 +152,7 @@ async function initApp() {
         // Use the new path: sublis-data/items.json
         const [runeData, itemsResponse] = await Promise.all([
             loadRuneData(),
-            fetch('items.json').then(res => {
+            fetch('./items.json').then(res => {
                 if (!res.ok) throw new Error(`Could not find items.json at ./items.json (Status: ${res.status})`);
                 return res.json();
             })
