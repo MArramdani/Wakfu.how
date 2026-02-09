@@ -404,27 +404,40 @@ function initializePage() {
     function filterRunes() {
         const searchInput = document.getElementById('searchInput');
         const activeCategoryTab = document.querySelector('.category-tab.active');
-        
+        // Get checkbox states
+        const epicChecked = document.getElementById('epicFilter').checked;
+        const relicChecked = document.getElementById('relicFilter').checked;
+    
         if (!searchInput || !activeCategoryTab) {
             return runes;
         }
-        
-        const searchTerm = searchInput.value.toLowerCase();
-        const activeCategory = activeCategoryTab.getAttribute('data-category');
-        
+    
+    const searchTerm = searchInput.value.toLowerCase();
+    const activeCategory = activeCategoryTab.getAttribute('data-category');
         return runes.filter(rune => {
-            // Search filter
+            // 1. Search filter
             if (searchTerm && !rune.name.toLowerCase().includes(searchTerm) && 
                 !rune.description.toLowerCase().includes(searchTerm) && 
                 !rune.obtenation.name.toLowerCase().includes(searchTerm)) {
                 return false;
             }
-            
-            // Category filter
+        
+            // 2. Category filter
             if (activeCategory !== 'all' && rune.category !== activeCategory) {
                 return false;
             }
-            
+
+            // 3. Rarity filter logic
+            const hasEpic = rune.rarity.includes('Epic');
+            const hasRelic = rune.rarity.includes('Relic');
+
+            // If any rarity filter is active, only show matching items
+            if (epicChecked || relicChecked) {
+                const matchesEpic = epicChecked && hasEpic;
+                const matchesRelic = relicChecked && hasRelic;
+                if (!matchesEpic && !matchesRelic) return false;
+            }
+        
             return true;
         });
     }
@@ -459,7 +472,22 @@ function initializePage() {
             renderRunes(filteredRunes);
         });
     }
-    
+    // Add rarity filter event listeners
+    const epicFilter = document.getElementById('epicFilter');
+    const relicFilter = document.getElementById('relicFilter');
+
+    if (epicFilter) {
+        epicFilter.addEventListener('change', () => {
+            renderRunes(filterRunes());
+        });
+    }
+
+    if (relicFilter) {
+        relicFilter.addEventListener('change', () => {
+        renderRunes(filterRunes());
+        });
+    }
+            
     // Initial render
     renderRunes(runes);
 }
