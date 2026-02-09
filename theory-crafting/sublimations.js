@@ -233,9 +233,7 @@ function initializePage() {
         for (const rune of runesToRender) {
             const currentLevel = currentLevels[rune.name] || rune.minLevel;
             
-
-
-            // Generate description with current values - FIXED: Replace all occurrences
+            // Generate description with current values
             let description = rune.description;
             if (rune.values && rune.values.length > 0) {
                 rune.values.forEach(value => {
@@ -248,32 +246,31 @@ function initializePage() {
                 });
             }
 
-
             // Generate color elements with local icons
             const colorElements = [];
             for (const color of rune.colors) {
                 let colorElement;
                 if (color === 'R') {
-                    colorElement = await loadLocalImage(
+                    const img = await loadLocalImage(
                         localIcons.red,
                         "Red Slot",
                         "color-icon"
                     );
-                    colorElement = colorElement.outerHTML;
+                    colorElement = img.outerHTML;
                 } else if (color === 'G') {
-                    colorElement = await loadLocalImage(
+                    const img = await loadLocalImage(
                         localIcons.green,
                         "Green Slot",
                         "color-icon"
                     );
-                    colorElement = colorElement.outerHTML;
+                    colorElement = img.outerHTML;
                 } else if (color === 'B') {
-                    colorElement = await loadLocalImage(
+                    const img = await loadLocalImage(
                         localIcons.blue,
                         "Blue Slot",
                         "color-icon"
                     );
-                    colorElement = colorElement.outerHTML;
+                    colorElement = img.outerHTML;
                 } else if (color === 'Epic' || color === 'Relic') {
                     // For Epic and Relic, just show text without icon
                     colorElement = `<div class="special-color ${color.toLowerCase()}">${color}</div>`;
@@ -292,34 +289,34 @@ function initializePage() {
                 // Special handling for Epic and Relic runes - use obtenation icon instead
                 if ((rarity === 'Epic' || rarity === 'Relic') && rune.obtenation && rune.obtenation.name) {
                     const iconPath = getObtenationIconPath(rune.obtenation.name);
-                    rarityElement = await loadLocalImage(
+                    const img = await loadLocalImage(
                         iconPath,
                         rune.obtenation.name,
                         "rarity-icon special-rarity-icon"
                     );
-                    rarityElement = rarityElement.outerHTML;
+                    rarityElement = img.outerHTML;
                 } 
                 else if (rarity === 'Rare') {
-                    rarityElement = await loadLocalImage(
+                    const img = await loadLocalImage(
                         localIcons.rare,
                         "Rare",
                         "rarity-icon"
                     );
-                    rarityElement = rarityElement.outerHTML;
+                    rarityElement = img.outerHTML;
                 } else if (rarity === 'Mythic') {
-                    rarityElement = await loadLocalImage(
+                    const img = await loadLocalImage(
                         localIcons.mythic,
                         "Mythic",
                         "rarity-icon"
                     );
-                    rarityElement = rarityElement.outerHTML;
+                    rarityElement = img.outerHTML;
                 } else if (rarity === 'Legendary') {
-                    rarityElement = await loadLocalImage(
+                    const img = await loadLocalImage(
                         localIcons.legendary,
                         "Legendary",
                         "rarity-icon"
                     );
-                    rarityElement = rarityElement.outerHTML;
+                    rarityElement = img.outerHTML;
                 }
                 
                 if (rarityElement) {
@@ -347,15 +344,22 @@ function initializePage() {
             
             // Add special class for relic and epic names
             const nameClass = rune.colors.includes('Relic') ? 'relic-name' : 
-                             rune.colors.includes('Epic') ? 'epic-name' : '';
+                            rune.colors.includes('Epic') ? 'epic-name' : '';
 
-            // 1. Find the ID in itemsData
-            const matchingItem = itemsData.find(item => item.title && item.title.en === rune.name);
-            const itemId = matchingItem ? matchingItem.definition.item.id : null;
-            const runeUrl = `https://www.wakfu.com/en/mmorpg/encyclopedia/resources/${itemId}`;
+            // Find the ID in itemsData - handle case where itemsData might be empty
+            let itemId = null;
+            let runeUrl = '#';
+            if (itemsData && itemsData.length > 0) {
+                const matchingItem = itemsData.find(item => item.title && item.title.en === rune.name);
+                itemId = matchingItem ? matchingItem.definition.item.id : null;
+                if (itemId) {
+                    runeUrl = `https://www.wakfu.com/en/mmorpg/encyclopedia/resources/${itemId}`;
+                }
+            }
             
             const card = document.createElement('div');
             card.className = 'rune-card';
+            
             // Build the card content
             let cardContent = '';
 
@@ -425,8 +429,8 @@ function initializePage() {
                     const level = parseInt(this.value);
                     levelDisplay.textContent = level;
                     currentLevels[rune.name] = level;
-    
-                    // Update description with new values - FIXED: Replace all occurrences
+
+                    // Update description with new values
                     let updatedDescription = rune.description;
                     if (rune.values && rune.values.length > 0) {
                         rune.values.forEach(value => {
@@ -438,9 +442,9 @@ function initializePage() {
                             updatedDescription = updatedDescription.replace(regex, calculatedValue);
                         });
                     }
-    
+
                     card.querySelector('.rune-description').textContent = updatedDescription;
-                    card.querySelector('.rune-level').textContent = `Lvl. ${level}`; // Update this line
+                    card.querySelector('.rune-level').textContent = `Lvl. ${level}`;
                 });
             }
             
