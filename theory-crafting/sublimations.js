@@ -147,42 +147,39 @@ function getObtenationIconPath(obtenationName) {
 // Initialize the application
 async function initApp() {
     try {
-        console.log('Starting app initialization...');
+        console.log("Attempting to load data...");
         
-        // Load rune data first
-        runes = await loadRuneData();
-        console.log(`Loaded ${runes.length} runes`);
+        // Use the new path: sublis_data/items.json
+        const [runeData, itemsResponse] = await Promise.all([
+            loadRuneData(),
+            fetch('sublis_data/items.json').then(res => {
+                if (!res.ok) throw new Error(`Could not find items.json at sublis_data/items.json (Status: ${res.status})`);
+                return res.json();
+            })
+        ]);
+        
+        runes = runeData;
+        itemsData = itemsResponse;
+        
+        console.log("Items loaded successfully:", itemsData.length, "items found.");
         
         // Initialize current levels
         runes.forEach(rune => {
             currentLevels[rune.name] = rune.minLevel;
         });
         
-        // Try to load items.json with better debugging
-        try {
-            console.log('Attempting to fetch items.json...');
-            const response = await fetch('/theory-crafting/sublis_data/items.json');
-            
-            console.log('Response status:', response.status);
-            console.log('Response URL:', response.url);
-            
-            if (!response.ok) {
-                throw new Error(`HTTP ${response.status}: ${response.statusText}`);
-            }
-            
-            itemsData = await response.json();
-            console.log(`Successfully loaded ${itemsData.length} items from items.json`);
-        } catch (itemsError) {
-            console.error('Failed to load items.json:', itemsError);
-            console.log('Continuing without items data...');
-            itemsData = [];
-        }
-        
         initializePage();
-        
     } catch (error) {
-        console.error('Error initializing application:', error);
-        // Show error in UI
+        console.error('Initialization Error:', error);
+        const container = document.getElementById('runesContainer');
+        if (container) {
+            container.innerHTML = `
+                <div class="no-results">
+                    <h3>Data Load Error</h3>
+                    <p>${error.message}</p>
+                    <p>Make sure the folder <strong>sublis_data</strong> exists and contains <strong>items.json</strong>.</p>
+                </div>`;
+        }
     }
 }
 
@@ -345,40 +342,20 @@ function initializePage() {
             // Find the ID in itemsData - handle case where itemsData might be empty
             let itemId = null;
             let runeUrl = '#';
+            // Inside the for (const rune of runesToRender) loop
+            let itemId = null;
+            let runeUrl = '#';
+
             if (itemsData && itemsData.length > 0) {
-                console.log(`Looking for rune: "${rune.name}" in ${itemsData.length} items`);
-                
-                // Try exact match first
-                let matchingItem = itemsData.find(item => 
-                    item && item.title && item.title.en && 
-                    item.title.en.toLowerCase() === rune.name.toLowerCase()
-                );
-
-
-                if (isSpecialRune && !itemId) {
-                    // For testing, use a hardcoded ID for known runes
-                    const testIds = {
-                        "Yeah": 31003,      // Example ID for "Farsighted"
-                        "Influence": 12345, // Example ID
-                        // Add more as needed
-                    };
-                    
-                    if (testIds[rune.name]) {
-                        itemId = testIds[rune.name];
-                        runeUrl = `https://www.wakfu.com/en/mmorpg/encyclopedia/resources/${itemId}`;
-                        console.log(`Using test ID for ${rune.name}: ${itemId}`);
-                    }
-                }
+                // Find the item where the English title matches the rune name
+                const matchingItem = itemsData.find(item => item.title && item.title.en === rune.name);
                 
                 if (matchingItem) {
+                    // Extract the ID from the deep path definition -> item -> id
                     itemId = matchingItem.definition.item.id;
                     runeUrl = `https://www.wakfu.com/en/mmorpg/encyclopedia/resources/${itemId}`;
-                    console.log(`✓ Found match for "${rune.name}": "${matchingItem.title.en}" (ID: ${itemId})`);
-                } else {
-                    console.log(`✗ No match found for "${rune.name}"`);
                 }
             }
-            
             const card = document.createElement('div');
             card.className = 'rune-card';
             
