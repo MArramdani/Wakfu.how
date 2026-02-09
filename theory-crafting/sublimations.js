@@ -150,11 +150,19 @@ async function initApp() {
         // Fetch both JSON files simultaneously
         const [runeData, itemsResponse] = await Promise.all([
             loadRuneData(),
-            fetch('sublis_data/items.json').then(res => res.ok ? res.json() : []) // Add error handling
+            fetch('./sublis_data/items.json').then(res => {
+                if (!res.ok) {
+                    console.warn(`Failed to load items.json: ${res.status} ${res.statusText}`);
+                    return [];
+                }
+                return res.json();
+            })
         ]);
         
         runes = runeData;
         itemsData = itemsResponse || []; // Ensure itemsData is always an array
+
+        console.log(`Loaded ${runes.length} runes and ${itemsData.length} items`);
         
         // Initialize current levels for each rune
         runes.forEach(rune => {
