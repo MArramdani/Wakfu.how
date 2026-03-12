@@ -452,27 +452,147 @@
     .level-controls {
         flex-direction: column;
     }
+    
+    .container {
+        padding: 0 12px;
+    }
 }
 
 @media (max-width: 768px) {
     .controls {
         flex-direction: column;
+        gap: 12px;
+        padding: 12px;
     }
     
     .search-box {
         width: 100%;
+        min-width: auto;
     }
-}
-
-@media (max-width: 576px) {
-    .rune-name {
-        font-size: 1.3rem;
+    
+    .search-box input {
+        padding: 12px 14px;
+        font-size: 16px;
+        min-height: 44px;
+    }
+    
+    .search-btn {
+        padding: 0 14px;
+        min-height: 44px;
+        font-size: 1.1rem;
+    }
+    
+    .category-filter {
+        flex-direction: column;
+        gap: 10px;
+    }
+    
+    .category-tab {
+        width: 100%;
+        padding: 10px;
+        text-align: center;
+        min-height: 44px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    
+    .rarity-filters {
+        flex-direction: row;
+        flex-wrap: wrap;
+        gap: 12px;
+        margin-left: 0;
+        justify-content: flex-start;
+    }
+    
+    .filter-checkbox {
+        min-height: 44px;
+        padding: 6px 12px;
+    }
+    
+    .filter-checkbox input {
+        width: 20px;
+        height: 20px;
+    }
+    
+    .rune-card {
+        padding: 15px;
+    }
+    
+    .rune-header {
+        flex-direction: column;
+        gap: 10px;
+    }
+    
+    .level-controls {
+        width: 100%;
+        flex-direction: row;
+        align-items: center;
+        gap: 10px;
+    }
+    
+    .level-slider {
+        flex: 1;
+        min-height: 40px;
+    }
+    
+    .level-display {
+        min-width: 40px;
     }
     
     .rune-meta {
         flex-direction: column;
         align-items: flex-start;
         gap: 8px;
+    }
+    
+    .rune-colors {
+        flex-wrap: wrap;
+        gap: 8px;
+    }
+}
+
+@media (max-width: 576px) {
+    .container {
+        max-width: 100%;
+        margin: 1rem auto;
+        padding: 0 10px;
+    }
+    
+    .rune-name {
+        font-size: 1.2rem;
+    }
+    
+    .rune-level {
+        font-size: 0.9rem;
+    }
+    
+    .rune-description {
+        font-size: 0.95rem;
+        line-height: 1.5;
+    }
+    
+    .rune-card {
+        padding: 12px;
+        margin-bottom: 12px;
+    }
+    
+    .level-controls {
+        padding-top: 10px;
+    }
+    
+    .search-box input {
+        font-size: 14px;
+        padding: 10px 12px;
+    }
+    
+    .category-tab {
+        padding: 8px;
+        font-size: 0.9rem;
+    }
+    
+    .filter-checkbox {
+        font-size: 0.9rem;
     }
 }
 

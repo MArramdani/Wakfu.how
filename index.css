@@ -474,13 +474,14 @@ footer a:hover {
         width: 100%;
         height: auto;
         position: relative;
+        max-height: 180px;
     }
     
     .nav-menu {
         display: flex;
         overflow-x: auto;
         padding: 10px 0;
-        height: auto; /* Remove fixed height on mobile */
+        height: auto;
         -ms-overflow-style: none;
         scrollbar-width: none;
     }
@@ -492,6 +493,13 @@ footer a:hover {
     .nav-item {
         margin: 0 5px;
         flex-shrink: 0;
+    }
+    
+    .nav-link {
+        min-width: 80px;
+        justify-content: center;
+        padding: 8px 10px;
+        font-size: 0.9rem;
     }
     
     .logo-text, 
@@ -513,10 +521,12 @@ footer a:hover {
     
     .content-card {
         padding: 15px;
+        margin-bottom: 20px;
     }
     
     .hero-section {
         padding: 25px 20px;
+        margin-bottom: 20px;
     }
     
     .hero-content h1 {
